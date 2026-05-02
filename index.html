@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>No queda otra opción</title>
-  <meta name="description" content="Opciones, mercados y psicología del trader. Una web editorial y sobria para conectar YouTube, newsletter y marca personal." />
+  <title>No Queda Otra Opción – Opciones, Mercados y Psicología del Trader</title>
+  <meta name="description" content="Opciones, mercados y psicología del trader. Canal de YouTube y newsletter por José Antonio Rodríguez." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,260 +17,224 @@
       --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
       --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.4rem);
       --text-3xl: clamp(3rem, 1.25rem + 4vw, 5.75rem);
-      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
-      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
-      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem; --space-24: 6rem; --space-32: 8rem;
-      --color-bg: #f5f2ea;
-      --color-surface: rgba(255,255,255,0.45);
-      --color-surface-2: #eeeadf;
-      --color-line: rgba(30,30,27,0.12);
-      --color-line-soft: rgba(30,30,27,0.08);
-      --color-text: #1e1e1b;
-      --color-text-muted: #5d625d;
-      --color-text-faint: #8d928b;
-      --color-text-inverse: #f6f3ec;
-      --color-primary: #0f5c5a;
-      --color-primary-hover: #0b4a48;
-      --color-secondary: #9f6841;
-      --shadow-soft: 0 14px 40px rgba(15, 16, 12, 0.07);
-      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem; --radius-2xl: 1.5rem;
-      --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body: 'Inter', system-ui, sans-serif;
-      --content-wide: 1280px;
-      --content-article: 760px;
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;
+      --color-bg: #FFFBEB;
+      --color-surface: rgba(255,255,255,0.55);
+      --color-surface-2: #FFF6D6;
+      --color-line: rgba(30,26,20,0.12);
+      --color-line-soft: rgba(30,26,20,0.08);
+      --color-text: #1c1a14;
+      --color-text-muted: #7a6e55;
+      --color-text-faint: #a89880;
+      --color-text-inverse: #fff;
+      --color-primary: #FF6719;
+      --color-primary-hover: #e55610;
+      --color-secondary: #b8460f;
+      --shadow-soft: 0 14px 40px rgba(30,20,10,0.09);
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-2xl:1.5rem;
+      --font-display:'Instrument Serif',Georgia,serif;
+      --font-body:'Inter',system-ui,sans-serif;
+      --content-wide:1280px;
+      --content-article:760px;
+      --transition:180ms cubic-bezier(0.16,1,0.3,1);
     }
 
     [data-theme="dark"] {
-      --color-bg: #151513;
+      --color-bg: #151310;
       --color-surface: rgba(255,255,255,0.04);
-      --color-surface-2: #1d1d1a;
-      --color-line: rgba(245,242,234,0.12);
-      --color-line-soft: rgba(245,242,234,0.08);
-      --color-text: #ece7dc;
-      --color-text-muted: #bbb4a7;
-      --color-text-faint: #8a857a;
-      --color-text-inverse: #11110f;
-      --color-primary: #7fb4b0;
-      --color-primary-hover: #99c3bf;
-      --color-secondary: #c69367;
-      --shadow-soft: 0 18px 44px rgba(0,0,0,0.22);
+      --color-surface-2: #1e1b16;
+      --color-line: rgba(245,235,220,0.12);
+      --color-line-soft: rgba(245,235,220,0.07);
+      --color-text: #ede7d9;
+      --color-text-muted: #b8aa96;
+      --color-text-faint: #8a7d6a;
+      --color-text-inverse: #111;
+      --color-primary: #ff8c4a;
+      --color-primary-hover: #ff7733;
+      --color-secondary: #ffaa77;
+      --shadow-soft: 0 18px 44px rgba(0,0,0,0.28);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      min-height: 100vh;
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      line-height: 1.7;
-      color: var(--color-text);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      min-height:100vh;
+      font-family:var(--font-body);
+      font-size:var(--text-base);
+      line-height:1.7;
+      color:var(--color-text);
       background:
-        radial-gradient(circle at 12% 10%, rgba(15,92,90,0.08), transparent 24%),
-        radial-gradient(circle at 88% 18%, rgba(159,104,65,0.08), transparent 18%),
+        radial-gradient(circle at 10% 8%, rgba(255,103,25,0.07), transparent 22%),
+        radial-gradient(circle at 90% 15%, rgba(255,103,25,0.05), transparent 18%),
         var(--color-bg);
     }
+    img,svg{display:block;max-width:100%;height:auto;}
+    a{text-decoration:none;color:inherit;}
+    button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;}
 
-    img, svg { display: block; max-width: 100%; height: auto; }
-    a { text-decoration: none; color: inherit; }
-    button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; }
-    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+    .container{width:min(calc(100% - 2rem),var(--content-wide));margin:0 auto;}
+    .narrow{max-width:var(--content-article);}
 
-    .container { width: min(calc(100% - 2rem), var(--content-wide)); margin: 0 auto; }
-    .narrow { max-width: var(--content-article); }
+    .skip-link{position:absolute;left:1rem;top:-3rem;background:var(--color-primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;}
+    .skip-link:focus{top:1rem;}
 
-    .skip-link {
-      position: absolute; left: 1rem; top: -3rem; background: var(--color-primary); color: #fff;
-      padding: 0.75rem 1rem; border-radius: 999px; z-index: 50;
+    /* HEADER */
+    .site-header{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter:blur(14px);
+      background:color-mix(in srgb,var(--color-bg) 85%,transparent);
+      border-bottom:1px solid var(--color-line-soft);
     }
-    .skip-link:focus { top: 1rem; }
-
-    .site-header {
-      position: sticky; top: 0; z-index: 40;
-      backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--color-bg) 84%, transparent);
-      border-bottom: 1px solid var(--color-line-soft);
+    .header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--space-6);min-height:74px;}
+    .brand{display:inline-flex;align-items:center;gap:var(--space-3);font-weight:700;letter-spacing:-0.02em;}
+    .brand-mark{
+      width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+      border:1px solid var(--color-line);background:var(--color-surface);
+      color:var(--color-primary);
     }
-
-    .header-inner {
-      display: grid; grid-template-columns: auto 1fr auto; align-items: center;
-      gap: var(--space-6); min-height: 74px;
+    .brand-wording strong{display:block;font-size:var(--text-sm);}
+    .brand-wording span{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-muted);}
+    nav{display:none;justify-self:center;gap:var(--space-5);}
+    nav a{font-size:var(--text-sm);color:var(--color-text-muted);transition:color var(--transition);}
+    nav a:hover{color:var(--color-text);}
+    .header-actions{display:flex;align-items:center;gap:var(--space-2);}
+    .theme-toggle{
+      min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid var(--color-line);border-radius:999px;background:var(--color-surface);
+      transition:all var(--transition);
     }
+    .theme-toggle:hover{transform:translateY(-1px);}
 
-    .brand {
-      display: inline-flex; align-items: center; gap: var(--space-3);
-      font-weight: 700; letter-spacing: -0.02em;
+    /* BUTTONS */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+      min-height:48px;padding:.9rem 1.4rem;border-radius:999px;
+      font-size:var(--text-sm);font-weight:600;transition:all var(--transition);
     }
+    .btn-primary{background:var(--color-primary);color:#fff;}
+    .btn-primary:hover{background:var(--color-primary-hover);transform:translateY(-1px);}
+    .btn-secondary{border:1px solid var(--color-line);background:transparent;}
+    .btn-secondary:hover{background:var(--color-surface);border-color:var(--color-primary);}
 
-    .brand-mark {
-      width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
-      border: 1px solid var(--color-line); background: var(--color-surface);
+    /* HERO */
+    .hero{padding:clamp(3rem,6vw,6rem) 0 clamp(4rem,8vw,7rem);}
+    .hero-grid{display:grid;gap:var(--space-8);align-items:end;}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .85rem;
+      border-radius:999px;background:rgba(255,103,25,0.09);color:var(--color-primary);
+      font-size:var(--text-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      margin-bottom:var(--space-5);
     }
-
-    .brand-wording strong { display: block; font-size: var(--text-sm); }
-    .brand-wording span {
-      display: block; font-size: var(--text-xs); text-transform: uppercase;
-      letter-spacing: .12em; color: var(--color-text-muted);
-    }
-
-    nav { display: none; justify-self: center; gap: var(--space-5); }
-    nav a { font-size: var(--text-sm); color: var(--color-text-muted); }
-    nav a:hover { color: var(--color-text); }
-
-    .header-actions { display: flex; align-items: center; gap: var(--space-2); }
-
-    .theme-toggle {
-      min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
-      border: 1px solid var(--color-line); border-radius: 999px; background: var(--color-surface);
-      transition: all var(--transition);
-    }
-    .theme-toggle:hover { transform: translateY(-1px); }
-
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
-      min-height: 48px; padding: .9rem 1.2rem; border-radius: 999px;
-      font-size: var(--text-sm); font-weight: 600; transition: all var(--transition);
-    }
-    .btn-primary { background: var(--color-primary); color: var(--color-text-inverse); }
-    .btn-primary:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
-    .btn-secondary { border: 1px solid var(--color-line); background: transparent; }
-    .btn-secondary:hover { background: var(--color-surface); }
-
-    .hero { padding: clamp(3rem, 6vw, 6rem) 0 clamp(4rem, 8vw, 7rem); }
-    .hero-grid { display: grid; gap: var(--space-8); align-items: end; }
-
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: .55rem; padding: .45rem .85rem;
-      border-radius: 999px; background: rgba(15,92,90,0.08); color: var(--color-primary);
-      font-size: var(--text-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-      margin-bottom: var(--space-5);
+    h1,h2,h3{font-weight:400;letter-spacing:-0.03em;}
+    h1,h2{font-family:var(--font-display);line-height:.98;}
+    h1{font-size:var(--text-3xl);max-width:13ch;}
+    h2{font-size:var(--text-2xl);margin-bottom:var(--space-4);}
+    .hero-copy{padding-bottom:var(--space-6);}
+    .hero-copy .lede{font-size:var(--text-lg);max-width:36ch;color:var(--color-text);margin:var(--space-5) 0;}
+    .hero-copy p{max-width:60ch;color:var(--color-text-muted);}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
+    .hero-photo{
+      aspect-ratio:16/10;width:100%;object-fit:cover;object-position:center top;
+      border-radius:30px;box-shadow:var(--shadow-soft);
+      border:1px solid var(--color-line-soft);
     }
 
-    h1, h2, h3 { font-weight: 400; letter-spacing: -0.03em; }
-    h1, h2 { font-family: var(--font-display); line-height: .98; }
-    h1 { font-size: var(--text-3xl); max-width: 11ch; }
-    h2 { font-size: var(--text-2xl); margin-bottom: var(--space-4); }
+    /* SECTIONS */
+    .section{padding:clamp(3.5rem,7vw,6rem) 0;border-top:1px solid var(--color-line-soft);}
+    .section-head{display:grid;gap:var(--space-3);margin-bottom:var(--space-8);}
+    .section-head p{max-width:62ch;color:var(--color-text-muted);}
+    .path-list,.pillars-shell,.essay-side,.footer-grid{display:grid;gap:var(--space-5);}
 
-    .hero-copy { padding-bottom: var(--space-6); }
-    .hero-copy .lede {
-      font-size: var(--text-lg); max-width: 32ch; color: var(--color-text);
-      margin: var(--space-5) 0 var(--space-5);
+    /* PATH */
+    .path-item,.essay-item{display:grid;gap:var(--space-3);padding:0 0 var(--space-5);border-bottom:1px solid var(--color-line-soft);}
+    .path-item:last-child,.essay-item:last-child{border-bottom:0;padding-bottom:0;}
+    .path-num,.mini-kicker{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary);font-weight:700;}
+    .path-item h3,.essay-item h3,.pillar-item h3{font-size:clamp(1.35rem,1.1rem + .5vw,1.8rem);line-height:1.08;letter-spacing:-0.025em;}
+    .path-item p,.essay-item p,.pillar-item p,.about-copy p,.newsletter-copy p{color:var(--color-text-muted);}
+    .inline-link{display:inline-flex;align-items:center;gap:.45rem;font-weight:600;color:var(--color-primary);}
+    .inline-link:hover{color:var(--color-primary-hover);}
+
+    /* PILLARS */
+    .pillar-item{display:grid;gap:var(--space-3);padding-top:var(--space-4);border-top:1px solid var(--color-line);}
+
+    /* FEATURED */
+    .featured-band{
+      display:grid;gap:var(--space-8);align-items:start;
+      padding:var(--space-8) 0;
+      border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line);
     }
-    .hero-copy p { max-width: 60ch; color: var(--color-text-muted); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+    .featured-title{font-family:var(--font-display);font-size:clamp(2rem,1.5rem + 1.2vw,3.1rem);line-height:1.02;max-width:14ch;}
 
-    .hero-photo {
-      aspect-ratio: 16 / 10;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 30px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--color-line-soft);
+    /* VIDEO CARDS */
+    .video-card{
+      border:1px solid var(--color-line);border-radius:16px;
+      overflow:hidden;background:var(--color-surface);
+      transition:all var(--transition);cursor:pointer;
     }
-
-    .section {
-      padding: clamp(3.5rem, 7vw, 6rem) 0;
-      border-top: 1px solid var(--color-line-soft);
+    .video-card:hover{border-color:var(--color-primary);transform:translateY(-2px);box-shadow:var(--shadow-soft);}
+    .video-thumb{aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--color-surface-2);}
+    .video-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+    .video-card:hover .video-thumb img{transform:scale(1.03);}
+    .video-badge{
+      position:absolute;top:.6rem;left:.6rem;
+      background:var(--color-primary);color:#fff;
+      font-size:.65rem;font-weight:700;padding:.25rem .55rem;
+      border-radius:4px;text-transform:uppercase;letter-spacing:.05em;
     }
+    .video-info{padding:1rem 1.1rem 1.2rem;}
+    .video-info h4{font-size:.95rem;font-weight:600;line-height:1.4;margin-bottom:.3rem;}
+    .video-info span{font-size:.78rem;color:var(--color-text-faint);}
 
-    .section-head { display: grid; gap: var(--space-3); margin-bottom: var(--space-8); }
-    .section-head p { max-width: 62ch; color: var(--color-text-muted); }
+    /* ABOUT / NEWSLETTER */
+    .about-grid,.newsletter-grid{display:grid;gap:var(--space-8);}
+    .about-panel,.newsletter-panel{padding:var(--space-6);border:1px solid var(--color-line);border-radius:24px;background:var(--color-surface);}
+    .check-list{display:grid;gap:var(--space-3);}
+    .check-item{display:flex;gap:var(--space-3);align-items:flex-start;color:var(--color-text-muted);}
+    .check-item svg{flex:0 0 auto;color:var(--color-primary);margin-top:.2rem;}
+    .signature{margin-top:var(--space-5);font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-primary);}
 
-    .path-list, .pillars-shell, .essay-side, .footer-grid { display: grid; gap: var(--space-5); }
-
-    .path-item, .essay-item {
-      display: grid; gap: var(--space-3); padding: 0 0 var(--space-5);
-      border-bottom: 1px solid var(--color-line-soft);
+    /* FORM */
+    form{display:grid;gap:var(--space-3);margin-top:var(--space-5);}
+    label{font-size:var(--text-sm);font-weight:600;}
+    input[type="email"]{
+      width:100%;min-height:52px;padding:.95rem 1rem;
+      border-radius:16px;border:1px solid var(--color-line);
+      background:color-mix(in srgb,var(--color-bg) 75%,white 25%);
+      color:var(--color-text);font-family:inherit;font-size:var(--text-sm);
+      transition:border-color var(--transition);outline:none;
     }
-    .path-item:last-child, .essay-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    input[type="email"]:focus{border-color:var(--color-primary);}
+    .microcopy{font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-3);}
 
-    .path-num, .mini-kicker {
-      font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .14em;
-      color: var(--color-primary); font-weight: 700;
+    /* FOOTER */
+    footer{padding:var(--space-10) 0 var(--space-12);border-top:1px solid var(--color-line-soft);}
+    .footer-grid{align-items:center;}
+    .footer-links{display:flex;flex-wrap:wrap;gap:var(--space-4);color:var(--color-text-muted);}
+    .footer-links a{font-size:var(--text-sm);transition:color var(--transition);}
+    .footer-links a:hover{color:var(--color-primary);}
+    .footer-note{color:var(--color-text-muted);font-size:var(--text-sm);}
+
+    /* RESPONSIVE */
+    @media(min-width:860px){
+      nav{display:flex;}
+      .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(480px,.95fr);gap:var(--space-10);}
+      .path-list{grid-template-columns:repeat(3,1fr);gap:var(--space-8);}
+      .path-item{border-bottom:0;padding-bottom:0;}
+      .pillars-shell{grid-template-columns:repeat(3,1fr);}
+      .featured-band{grid-template-columns:1.1fr .9fr;}
+      .about-grid,.newsletter-grid,.footer-grid{grid-template-columns:1.05fr .95fr;}
+      .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
     }
-
-    .path-item h3, .essay-item h3, .pillar-item h3 {
-      font-size: clamp(1.35rem, 1.1rem + .5vw, 1.8rem);
-      line-height: 1.08; letter-spacing: -0.025em;
-    }
-
-    .path-item p, .essay-item p, .pillar-item p, .about-copy p, .newsletter-copy p {
-      color: var(--color-text-muted);
-    }
-
-    .inline-link {
-      display: inline-flex; align-items: center; gap: .45rem;
-      font-weight: 600; color: var(--color-primary);
-    }
-
-    .pillar-item {
-      display: grid; gap: var(--space-3); padding-top: var(--space-4);
-      border-top: 1px solid var(--color-line);
-    }
-
-    .featured-band {
-      display: grid; gap: var(--space-8); align-items: start;
-      padding: var(--space-8) 0; border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line);
-    }
-
-    .featured-title {
-      font-family: var(--font-display); font-size: clamp(2rem, 1.5rem + 1.2vw, 3.1rem);
-      line-height: 1.02; max-width: 12ch;
-    }
-
-    .about-grid, .newsletter-grid { display: grid; gap: var(--space-8); }
-
-    .about-panel, .newsletter-panel {
-      padding: var(--space-6); border: 1px solid var(--color-line);
-      border-radius: 24px; background: var(--color-surface);
-    }
-
-    .check-list { display: grid; gap: var(--space-3); }
-    .check-item { display: flex; gap: var(--space-3); align-items: flex-start; color: var(--color-text-muted); }
-    .check-item svg { flex: 0 0 auto; color: var(--color-primary); margin-top: .2rem; }
-
-    .signature {
-      margin-top: var(--space-5); font-family: var(--font-display);
-      font-size: var(--text-xl); color: var(--color-primary);
-    }
-
-    form { display: grid; gap: var(--space-3); margin-top: var(--space-5); }
-    label { font-size: var(--text-sm); font-weight: 600; }
-
-    input[type="email"] {
-      width: 100%; min-height: 52px; padding: .95rem 1rem;
-      border-radius: 16px; border: 1px solid var(--color-line);
-      background: color-mix(in srgb, var(--color-bg) 75%, white 25%);
-      color: var(--color-text);
-    }
-
-    .microcopy { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-3); }
-
-    footer {
-      padding: var(--space-10) 0 var(--space-12);
-      border-top: 1px solid var(--color-line-soft);
-    }
-
-    .footer-grid { align-items: center; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: var(--space-4); color: var(--color-text-muted); }
-    .footer-note { color: var(--color-text-muted); font-size: var(--text-sm); }
-
-    @media (min-width: 860px) {
-      nav { display: flex; }
-      .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(520px, .95fr); gap: var(--space-10); }
-      .path-list { grid-template-columns: repeat(3, 1fr); gap: var(--space-8); }
-      .path-item { border-bottom: 0; padding-bottom: 0; }
-      .pillars-shell { grid-template-columns: repeat(3, 1fr); }
-      .featured-band { grid-template-columns: 1.05fr .95fr; }
-      .about-grid, .newsletter-grid, .footer-grid { grid-template-columns: 1.05fr .95fr; }
-    }
-
-    @media (max-width: 859px) {
-      .hide-mobile { display: none; }
-      .header-inner { grid-template-columns: auto auto; }
-      .header-actions { justify-self: end; }
-      h1 { max-width: 12ch; }
-      .hero-photo { aspect-ratio: 4 / 3; }
+    @media(max-width:859px){
+      .hide-mobile{display:none;}
+      .header-inner{grid-template-columns:auto auto;}
+      .header-actions{justify-self:end;}
+      h1{max-width:12ch;}
+      .hero-photo{aspect-ratio:4/3;}
+      .video-grid{display:grid;gap:1.2rem;}
     }
   </style>
 </head>
@@ -282,104 +246,104 @@
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <span class="brand-mark" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 16.5 9.5 11 13 14.5 20 7.5" />
-            <path d="M20 13V7h-6" />
+            <path d="M4 16.5 9.5 11 13 14.5 20 7.5"/><path d="M20 13V7h-6"/>
           </svg>
         </span>
-        <span class="brand-wording"><strong>No queda otra opción</strong><span>Opciones · Mercados · Psicología</span></span>
+        <span class="brand-wording">
+          <strong>No Queda Otra Opción</strong>
+          <span>Opciones · Mercados · Psicología</span>
+        </span>
       </a>
 
       <nav aria-label="Principal">
         <a href="#empieza">Empieza aquí</a>
         <a href="#pilares">Pilares</a>
-        <a href="#destacados">Destacados</a>
+        <a href="#videos">Vídeos</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#newsletter">Newsletter</a>
       </nav>
 
       <div class="header-actions">
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar modo de color">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
-        <a class="btn btn-primary hide-mobile" href="#newsletter">Suscribirme</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar modo de color"></button>
+        <a class="btn btn-primary hide-mobile" href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Suscribirme</a>
       </div>
     </div>
   </header>
 
   <main id="contenido">
+
+    <!-- HERO -->
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Marca personal · NQOO</span>
-          <h1>No queda otra opción.</h1>
-          <p class="lede">Opciones, mercados y psicología del trader para operar con más criterio y menos ruido.</p>
-          <p>Este proyecto reúne mis vídeos, mis cartas y mis reflexiones sobre trading de opciones, lectura de mercado y disciplina operativa. No busca vender certezas rápidas, sino ofrecer un enfoque serio para entender el riesgo y construir consistencia.</p>
+          <span class="eyebrow">📈 Canal · Newsletter · Marca personal</span>
+          <h1>En un mercado que no perdona…</h1>
+          <p class="lede"><em style="font-family:var(--font-display);font-size:1.2em;color:var(--color-primary);">no queda otra opción.</em></p>
+          <p>Opciones, mercados y la mentalidad que necesitas para sobrevivir — y prosperar — como trader. Sin filtros, sin promesas vacías, sin ruido innecesario.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Ver el canal</a>
-            <a class="btn btn-secondary" href="https://jaralm.substack.com/" target="_blank" rel="noopener noreferrer">Leer la newsletter</a>
+            <a class="btn btn-primary" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">Ver el canal</a>
+            <a class="btn btn-secondary" href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Leer la newsletter</a>
           </div>
         </div>
-
         <div>
-          <img class="hero-photo" src="https://raw.githubusercontent.com/jaralm/noquedaotraopcion/main/foto-jose.png" alt="José Antonio Rodríguez en su despacho, en un entorno sobrio relacionado con mercados financieros" width="1366" height="768" loading="eager" />
+          <img class="hero-photo"
+            src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
+            alt="José Antonio Rodríguez, trader y creador de No Queda Otra Opción"
+            width="1366" height="768" loading="eager" />
         </div>
       </div>
     </section>
 
+    <!-- EMPIEZA AQUÍ -->
     <section class="section" id="empieza">
       <div class="container">
         <div class="section-head narrow">
           <h2>Empieza por donde más te encaje</h2>
-          <p>No todo el mundo llega con la misma necesidad. Aquí la estructura es más abierta y menos tarjetera, para que la navegación respire y la página no se sienta rígida.</p>
+          <p>No todo el mundo llega con la misma necesidad. Tres rutas según lo que estés buscando ahora mismo.</p>
         </div>
-
         <div class="path-list">
           <article class="path-item">
             <div class="path-num">Ruta 01</div>
             <h3>Si operas opciones y buscas método</h3>
-            <p>Estrategias, gestión del riesgo, estructura de volatilidad y ejecución con criterio. Menos teoría decorativa y más operativa con sentido.</p>
-            <a class="inline-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Ver vídeos de opciones →</a>
+            <p>Estrategias, gestión del riesgo, griegas y estructura de volatilidad. Menos teoría decorativa y más operativa con criterio.</p>
+            <a class="inline-link" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">Ver vídeos de opciones →</a>
           </article>
-
           <article class="path-item">
             <div class="path-num">Ruta 02</div>
             <h3>Si quieres entender mejor el mercado</h3>
             <p>Lecturas de contexto, volatilidad, narrativa y comportamiento del mercado para no operar a ciegas ni depender del titular del día.</p>
-            <a class="inline-link" href="#destacados">Ir a piezas destacadas →</a>
+            <a class="inline-link" href="#videos">Ver piezas destacadas →</a>
           </article>
-
           <article class="path-item">
             <div class="path-num">Ruta 03</div>
             <h3>Si el problema no es técnico, sino mental</h3>
             <p>Psicología del trader, sesgos, disciplina y construcción de un proceso sostenible para mantenerse en pie cuando el mercado aprieta.</p>
-            <a class="inline-link" href="https://jaralm.substack.com/" target="_blank" rel="noopener noreferrer">Leer reflexiones →</a>
+            <a class="inline-link" href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Leer reflexiones →</a>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- PILARES -->
     <section class="section" id="pilares">
       <div class="container">
         <div class="section-head narrow">
           <h2>Tres pilares. Un mismo enfoque.</h2>
-          <p>Esta vez no van en cajas iguales, sino en una composición más lineal y más editorial, que encaja mejor con una marca personal seria.</p>
+          <p>Todo el contenido de este proyecto gira en torno a tres ejes que se complementan y se necesitan mutuamente.</p>
         </div>
-
         <div class="pillars-shell">
           <article class="pillar-item">
-            <div class="mini-kicker">Opciones</div>
+            <div class="mini-kicker">⚙️ Opciones</div>
             <h3>Estrategias reales y riesgo bien entendido</h3>
             <p>Griegas, estructura de volatilidad, garantías, selección de setups y gestión de posiciones explicadas desde la práctica.</p>
           </article>
-
           <article class="pillar-item">
-            <div class="mini-kicker">Mercados</div>
+            <div class="mini-kicker">📊 Mercados</div>
             <h3>Contexto para no operar en vacío</h3>
             <p>Lectura del entorno, comportamiento del VIX, flujos y estructura del mercado para que cada decisión tenga un marco más amplio.</p>
           </article>
-
           <article class="pillar-item">
-            <div class="mini-kicker">Psicología</div>
+            <div class="mini-kicker">🧠 Psicología</div>
             <h3>La parte invisible que acaba decidiendo</h3>
             <p>Disciplina, identidad del trader, errores recurrentes y construcción de criterio para sostener una operativa razonable.</p>
           </article>
@@ -387,47 +351,62 @@
       </div>
     </section>
 
-    <section class="section" id="destacados">
+    <!-- VÍDEOS -->
+    <section class="section" id="videos">
       <div class="container">
         <div class="section-head narrow">
-          <h2>Una forma mejor de presentar el contenido</h2>
-          <p>Aquí cambiamos el mosaico de tarjetas por una pieza principal más horizontal y una columna de apoyos más parecida a una selección editorial.</p>
+          <h2>Últimos vídeos</h2>
+          <p>Desde episodios largos tipo podcast hasta análisis concretos y series formativas desde cero.</p>
         </div>
 
-        <div class="featured-band">
+        <!-- Vídeo destacado -->
+        <div class="featured-band" style="margin-bottom:var(--space-8);">
           <div>
-            <div class="mini-kicker">Pieza de entrada</div>
+            <div class="mini-kicker">🎙️ Podcast destacado</div>
             <div class="featured-title">Dejé de vender opciones (y esto me cambió todo)</div>
-            <p style="max-width:56ch; color:var(--color-text-muted); margin-top:var(--space-5);">Una pieza perfecta para entrar en el proyecto: experiencia personal, cambio de enfoque y una visión más madura sobre el riesgo.</p>
+            <p style="max-width:52ch;color:var(--color-text-muted);margin-top:var(--space-5);">Un episodio de referencia: experiencia personal, cambio de enfoque operativo y una visión madura sobre el riesgo. Con José María, operador que pasó de vender volatilidad a comprarla.</p>
+            <p style="color:var(--color-text-faint);font-size:var(--text-sm);margin-top:var(--space-3);">Entre Opciones · Ep. 2 · 1h 51min</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://jaralm.substack.com/p/deje-de-vender-opciones-y-esto-me" target="_blank" rel="noopener noreferrer">Leer artículo</a>
-              <a class="btn btn-secondary" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Ver canal</a>
+              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=TO3pN-B-rWc" target="_blank" rel="noopener noreferrer">Ver episodio</a>
+              <a class="btn btn-secondary" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">Ver canal completo</a>
+            </div>
+          </div>
+          <div>
+            <img src="https://img.youtube.com/vi/TO3pN-B-rWc/maxresdefault.jpg"
+              alt="Dejé de vender opciones"
+              style="width:100%;border-radius:16px;border:1px solid var(--color-line-soft);box-shadow:var(--shadow-soft);"
+              loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Otros vídeos -->
+        <div class="video-grid">
+          <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=8EeNPXXmsE8','_blank')">
+            <div class="video-thumb">
+              <img src="https://img.youtube.com/vi/8EeNPXXmsE8/maxresdefault.jpg" alt="No arruina la operación… arruina las garantías" loading="lazy" />
+            </div>
+            <div class="video-info">
+              <h4>No arruina la operación… arruina las garantías</h4>
+              <span>Gestión de riesgo · Mar 2026</span>
             </div>
           </div>
 
-          <div class="essay-side">
-            <article class="essay-item">
-              <div class="mini-kicker">Vídeo</div>
-              <h3>Mi sistema real para operar opciones</h3>
-              <p>Una pieza ideal para mostrar estructura, proceso y una forma de trabajar nada grandilocuente.</p>
-            </article>
-
-            <article class="essay-item">
-              <div class="mini-kicker">Análisis</div>
-              <h3>Descomposición del VIX</h3>
-              <p>Contenido técnico para quien quiere entender mejor la volatilidad más allá de la superficie.</p>
-            </article>
-
-            <article class="essay-item">
-              <div class="mini-kicker">Reflexión</div>
-              <h3>Los niveles del trader</h3>
-              <p>Una pieza útil para enseñar que el proyecto no habla solo de ejecución, sino también de evolución mental.</p>
-            </article>
+          <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=SVdRziM8Wwo&list=PLi2ky7XMbYiZMzKiZQ7n3ZAJKdRincAEt','_blank')">
+            <div class="video-thumb">
+              <img src="https://img.youtube.com/vi/SVdRziM8Wwo/maxresdefault.jpg" alt="Opciones desde cero" loading="lazy" />
+              <div class="video-badge">Serie</div>
+            </div>
+            <div class="video-info">
+              <h4>Opciones desde cero: la lógica del asegurador (1/5)</h4>
+              <span>Serie completa · Mar 2026</span>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- SOBRE MÍ -->
     <section class="section" id="sobre-mi">
       <div class="container about-grid">
         <div class="about-copy narrow">
@@ -435,21 +414,30 @@
             <h2>Sobre mí</h2>
           </div>
           <p>Soy José Antonio Rodríguez. Opero, estudio y escribo sobre opciones, mercados y la parte mental del trading. Este proyecto nace de una idea sencilla: en español faltan espacios que hablen de opciones con más criterio, más contexto y menos espectáculo.</p>
-          <p>Mi enfoque no parte de la necesidad de parecer brillante, sino de la necesidad de sobrevivir, entender el riesgo y tomar mejores decisiones. Por eso esta web reúne vídeos, cartas y reflexiones pensadas para quien valora la experiencia más que la pose.</p>
+          <p style="margin-top:var(--space-4);">Mi enfoque no parte de la necesidad de parecer brillante, sino de la necesidad de sobrevivir, entender el riesgo y tomar mejores decisiones. Por eso este proyecto reúne vídeos, cartas y reflexiones pensadas para quien valora la experiencia más que la pose.</p>
           <div class="signature">José Antonio Rodríguez</div>
         </div>
-
         <aside class="about-panel">
           <div class="mini-kicker" style="margin-bottom:1rem;">Qué encontrarás aquí</div>
           <div class="check-list">
-            <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span>Análisis y piezas formativas sobre opciones con foco en estructura y gestión del riesgo.</span></div>
-            <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span>Lecturas de mercado y volatilidad para entender el contexto antes de abrir una posición.</span></div>
-            <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span>Reflexiones sobre disciplina, proceso e identidad del trader para pensar mejor bajo presión.</span></div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Análisis y piezas formativas sobre opciones con foco en estructura y gestión del riesgo.</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Lecturas de mercado y volatilidad para entender el contexto antes de abrir una posición.</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Reflexiones sobre disciplina, proceso e identidad del trader para pensar mejor bajo presión.</span>
+            </div>
           </div>
         </aside>
       </div>
     </section>
 
+    <!-- NEWSLETTER -->
     <section class="section" id="newsletter">
       <div class="container newsletter-grid">
         <div class="newsletter-copy narrow">
@@ -457,27 +445,35 @@
             <h2>La newsletter</h2>
             <p>Reflexiones y análisis que no siempre caben en un vídeo. Un formato más pausado para desarrollar ideas con más contexto y mejor estructura.</p>
           </div>
-
           <div class="check-list">
-            <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span>Lecturas de mercado y contexto semanal.</span></div>
-            <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span>Ideas sobre opciones, volatilidad y gestión del riesgo.</span></div>
-            <div class="check-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span>Reflexiones sobre disciplina, proceso y psicología del trader.</span></div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Visión semanal de mercados y contexto para operar mejor.</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Ideas sobre opciones, volatilidad y gestión del riesgo.</span>
+            </div>
+            <div class="check-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
+              <span>Reflexiones sobre disciplina, proceso y psicología del trader.</span>
+            </div>
           </div>
         </div>
-
         <aside class="newsletter-panel">
-          <div class="mini-kicker" style="margin-bottom:1rem;">Suscripción</div>
-          <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-3);">Una carta para quien quiere pensar mejor lo que hace delante de la pantalla.</h3>
-          <p style="color:var(--color-text-muted);">Gratis, directa y escrita para gente que quiere profundidad sin ruido innecesario.</p>
-          <form action="https://jaralm.substack.com/" method="get" target="_blank" novalidate>
+          <div class="mini-kicker" style="margin-bottom:1rem;">Suscripción gratuita</div>
+          <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-3);font-family:var(--font-display);font-weight:400;">Una carta para quien quiere pensar mejor lo que hace delante de la pantalla.</h3>
+          <p style="color:var(--color-text-muted);">Gratis, directa y sin ruido innecesario.</p>
+          <form action="https://jaralm.substack.com" method="get" target="_blank" novalidate>
             <label for="email">Tu email</label>
             <input id="email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" />
             <button class="btn btn-primary" type="submit">Suscribirme gratis</button>
           </form>
-          <p class="microcopy">Sin spam. Sin automatismos agresivos. Solo contenido que merezca la pena abrir.</p>
+          <p class="microcopy">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
         </aside>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -486,41 +482,40 @@
         <div class="brand" style="margin-bottom:.65rem;">
           <span class="brand-mark" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 16.5 9.5 11 13 14.5 20 7.5" />
-              <path d="M20 13V7h-6" />
+              <path d="M4 16.5 9.5 11 13 14.5 20 7.5"/><path d="M20 13V7h-6"/>
             </svg>
           </span>
-          <span>No queda otra opción</span>
+          <span style="font-weight:700;">No Queda Otra Opción</span>
         </div>
-        <div class="footer-note">Opciones · Mercados · Psicología</div>
+        <div class="footer-note">© 2025 · noquedaotraopcion.com</div>
       </div>
-
       <div class="footer-links">
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://jaralm.substack.com/" target="_blank" rel="noopener noreferrer">Newsletter</a>
-        <a href="mailto:contacto@noquedaotraopcion.com">Contacto</a>
+        <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Newsletter</a>
+        <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+        <a href="#">Aviso Legal</a>
       </div>
     </div>
   </footer>
 
   <script>
-    (function () {
+    (function(){
       const root = document.documentElement;
-      const button = document.querySelector('[data-theme-toggle]');
+      const btn = document.querySelector('[data-theme-toggle]');
       let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       root.setAttribute('data-theme', theme);
 
-      function renderIcon(nextTheme) {
-        button.innerHTML = nextTheme === 'dark'
+      function icon(t){
+        return t === 'light'
           ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
           : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
       }
 
-      renderIcon(theme);
-      button.addEventListener('click', function () {
+      btn.innerHTML = icon(theme);
+      btn.addEventListener('click', function(){
         theme = theme === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', theme);
-        renderIcon(theme);
+        btn.innerHTML = icon(theme);
       });
     })();
   </script>
