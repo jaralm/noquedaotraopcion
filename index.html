@@ -134,11 +134,14 @@
   .yt-thumb {
     aspect-ratio:16/9; background:var(--bg);
     display:flex; align-items:center; justify-content:center;
-    font-size:2.5rem; position:relative;
+    font-size:2.5rem; position:relative; overflow:hidden;
+  }
+  .yt-thumb img {
+    width:100%; height:100%; object-fit:cover; display:block;
   }
   .yt-badge {
     position:absolute; top:.6rem; left:.6rem;
-    background:var(--amber); color:#fff; font-size:.65rem;
+    background:var(--amber); color:#000; font-size:.65rem;
     font-weight:700; padding:.2rem .5rem; border-radius:2px;
     text-transform:uppercase; letter-spacing:.5px;
   }
@@ -186,6 +189,21 @@
   .footer-links a:hover { color:var(--green); }
   .footer-copy { color:var(--text-dim); font-size:.8rem; }
 
+  /* TICKER */
+  .ticker-bar {
+    background:var(--bg3); border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:.5rem 0; overflow:hidden; position:relative;
+  }
+  .ticker-track {
+    display:flex; gap:3rem; white-space:nowrap;
+    animation: ticker 25s linear infinite;
+  }
+  .ticker-item { font-size:.78rem; color:var(--text-dim); }
+  .ticker-item .up { color:var(--green); }
+  .ticker-item .dn { color:#ff5c5c; }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
   @media(max-width:768px) {
     nav ul { display:none; }
     .sobre-grid, .pilares-grid, .yt-grid, .nl-wrapper { grid-template-columns:1fr; }
@@ -217,8 +235,8 @@
     para sobrevivir — y prosperar — como trader. Sin filtros, sin bullshit.
   </p>
   <div>
-    <a href="https://jaralm.substack.com" target="_blank" class="btn-primary">Suscríbete gratis →</a>
-    <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" class="btn-ghost">Ver vídeos</a>
+    <a href="#newsletter" class="btn-primary">Suscríbete gratis →</a>
+    <a href="#youtube" class="btn-ghost">Ver vídeos</a>
   </div>
   <div class="hero-stats">
     <div>
@@ -293,7 +311,7 @@
   <div class="yt-grid">
     <div class="yt-card" onclick="window.open('https://www.youtube.com/watch?v=TO3pN-B-rWc','_blank')" style="cursor:pointer">
       <div class="yt-thumb">
-        🎙️
+        <img src="https://img.youtube.com/vi/TO3pN-B-rWc/maxresdefault.jpg" alt="Dejé de vender opciones">
         <div class="yt-badge">Podcast</div>
       </div>
       <div class="yt-info">
@@ -302,7 +320,9 @@
       </div>
     </div>
     <div class="yt-card" onclick="window.open('https://www.youtube.com/watch?v=8EeNPXXmsE8','_blank')" style="cursor:pointer">
-      <div class="yt-thumb">📊</div>
+      <div class="yt-thumb">
+        <img src="https://img.youtube.com/vi/8EeNPXXmsE8/maxresdefault.jpg" alt="No arruina la operación">
+      </div>
       <div class="yt-info">
         <h4>No arruina la operación… arruina las garantías</h4>
         <span>Gestión de riesgo · Mar 2026</span>
@@ -310,7 +330,7 @@
     </div>
     <div class="yt-card" onclick="window.open('https://www.youtube.com/watch?v=SVdRziM8Wwo&list=PLi2ky7XMbYiZMzKiZQ7n3ZAJKdRincAEt','_blank')" style="cursor:pointer">
       <div class="yt-thumb">
-        📚
+        <img src="https://img.youtube.com/vi/SVdRziM8Wwo/maxresdefault.jpg" alt="Opciones desde cero">
         <div class="yt-badge">Serie</div>
       </div>
       <div class="yt-info">
@@ -347,7 +367,7 @@
       <div class="input-group">
         <input type="text" placeholder="Tu nombre">
         <input type="email" placeholder="tu@email.com">
-        <a href="https://jaralm.substack.com" target="_blank" class="btn-primary" style="text-align:center">Quiero suscribirme →</a>
+        <a href="#" class="btn-primary" style="text-align:center">Quiero suscribirme →</a>
       </div>
       <p class="nl-disclaimer">Sin spam. Tus datos no se comparten con nadie.</p>
     </div>
