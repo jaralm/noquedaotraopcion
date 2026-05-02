@@ -6,15 +6,15 @@
 <title>No Queda Otra Opción</title>
 <style>
   :root {
-    --bg: #0d0f12;
-    --bg2: #13161b;
-    --bg3: #1a1e26;
-    --green: #00e5a0;
-    --green-dim: #00e5a022;
-    --amber: #f5a623;
-    --text: #e8eaf0;
-    --text-dim: #7a8099;
-    --border: #222733;
+    --bg: #FFFBEB;
+    --bg2: #FFF6D6;
+    --bg3: #FFF0BC;
+    --green: #FF6719;
+    --green-dim: #FF671918;
+    --amber: #d94f00;
+    --text: #1c1a14;
+    --text-dim: #7a6e55;
+    --border: #e8d9b0;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
@@ -23,7 +23,7 @@
   /* NAV */
   nav {
     position:fixed; top:0; width:100%; z-index:100;
-    background:rgba(13,15,18,0.92); backdrop-filter:blur(12px);
+    background:rgba(255,251,235,0.92); backdrop-filter:blur(12px);
     border-bottom:1px solid var(--border);
     display:flex; justify-content:space-between; align-items:center;
     padding:0 5%; height:60px;
@@ -61,12 +61,12 @@
     margin-bottom:2.5rem; line-height:1.8;
   }
   .btn-primary {
-    background:var(--green); color:#000; font-weight:700;
+    background:var(--green); color:#fff; font-weight:700;
     padding:.85rem 2rem; border:none; border-radius:4px;
     font-size:.95rem; cursor:pointer; text-decoration:none;
     display:inline-block; transition:.2s; letter-spacing:.3px;
   }
-  .btn-primary:hover { background:#00c98c; transform:translateY(-1px); }
+  .btn-primary:hover { background:#e55610; transform:translateY(-1px); }
   .btn-ghost {
     color:var(--text-dim); border:1px solid var(--border);
     padding:.85rem 2rem; border-radius:4px; font-size:.95rem;
@@ -95,16 +95,12 @@
   .sobre-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-top:2.5rem; }
   .sobre-text p { color:var(--text-dim); margin-bottom:1rem; font-size:1rem; line-height:1.9; }
   .sobre-img {
-    background:var(--bg3); border:1px solid var(--border);
-    border-radius:8px; aspect-ratio:1; display:flex;
-    flex-direction:column; align-items:center; justify-content:center;
-    gap:1rem; color:var(--text-dim); font-size:.85rem;
+    border-radius:8px; overflow:hidden;
+    aspect-ratio:16/9;
   }
-  .avatar-placeholder {
-    width:90px; height:90px; border-radius:50%;
-    background:var(--green-dim); border:2px solid var(--green);
-    display:flex; align-items:center; justify-content:center;
-    font-size:2.5rem;
+  .sobre-img img {
+    width:100%; height:100%; object-fit:cover; object-position:center top;
+    display:block;
   }
 
   /* PILARES */
@@ -142,7 +138,7 @@
   }
   .yt-badge {
     position:absolute; top:.6rem; left:.6rem;
-    background:var(--amber); color:#000; font-size:.65rem;
+    background:var(--amber); color:#fff; font-size:.65rem;
     font-weight:700; padding:.2rem .5rem; border-radius:2px;
     text-transform:uppercase; letter-spacing:.5px;
   }
@@ -190,21 +186,6 @@
   .footer-links a:hover { color:var(--green); }
   .footer-copy { color:var(--text-dim); font-size:.8rem; }
 
-  /* TICKER */
-  .ticker-bar {
-    background:var(--bg3); border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-    padding:.5rem 0; overflow:hidden; position:relative;
-  }
-  .ticker-track {
-    display:flex; gap:3rem; white-space:nowrap;
-    animation: ticker 25s linear infinite;
-  }
-  .ticker-item { font-size:.78rem; color:var(--text-dim); }
-  .ticker-item .up { color:var(--green); }
-  .ticker-item .dn { color:#ff5c5c; }
-  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-
   @media(max-width:768px) {
     nav ul { display:none; }
     .sobre-grid, .pilares-grid, .yt-grid, .nl-wrapper { grid-template-columns:1fr; }
@@ -219,46 +200,25 @@
   <div class="logo">No Queda Otra <span>Opción</span></div>
   <ul>
     <li><a href="#sobre">Sobre mí</a></li>
-    <li><a href="#youtube">YouTube</a></li>
-    <li><a href="#newsletter">Newsletter</a></li>
+    <li><a href="https://www.youtube.com/@noquedaotraopcion" target="_blank">YouTube</a></li>
+    <li><a href="https://jaralm.substack.com" target="_blank">Newsletter</a></li>
   </ul>
 </nav>
 
-<!-- TICKER -->
-<div style="margin-top:60px" class="ticker-bar">
-  <div class="ticker-track">
-    <span class="ticker-item">SPX <span class="up">▲ +0.42%</span></span>
-    <span class="ticker-item">VIX <span class="dn">▼ 16.8</span></span>
-    <span class="ticker-item">QQQ <span class="up">▲ +0.67%</span></span>
-    <span class="ticker-item">IV Rank <span class="up">68</span></span>
-    <span class="ticker-item">NDX <span class="up">▲ +0.51%</span></span>
-    <span class="ticker-item">RUT <span class="dn">▼ -0.18%</span></span>
-    <span class="ticker-item">DXY <span class="up">▲ 104.2</span></span>
-    <span class="ticker-item">GLD <span class="dn">▼ -0.33%</span></span>
-    <!-- repeat for loop effect -->
-    <span class="ticker-item">SPX <span class="up">▲ +0.42%</span></span>
-    <span class="ticker-item">VIX <span class="dn">▼ 16.8</span></span>
-    <span class="ticker-item">QQQ <span class="up">▲ +0.67%</span></span>
-    <span class="ticker-item">IV Rank <span class="up">68</span></span>
-    <span class="ticker-item">NDX <span class="up">▲ +0.51%</span></span>
-    <span class="ticker-item">RUT <span class="dn">▼ -0.18%</span></span>
-    <span class="ticker-item">DXY <span class="up">▲ 104.2</span></span>
-    <span class="ticker-item">GLD <span class="dn">▼ -0.33%</span></span>
-  </div>
-</div>
+<div style="margin-top:60px"></div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-tag">📈 Opciones · Mercados · Psicología</div>
-  <h1>El mercado no perdona.<br>Pero <em>siempre hay una opción.</em></h1>
+  <h1>En un mercado que no perdona…<br><em>no queda otra opción.</em></h1>
   <p class="hero-sub">
     Análisis de opciones, visión de mercados y la mentalidad que necesitas
     para sobrevivir — y prosperar — como trader. Sin filtros, sin bullshit.
   </p>
   <div>
-    <a href="#newsletter" class="btn-primary">Suscríbete gratis →</a>
-    <a href="#youtube" class="btn-ghost">Ver vídeos</a>
+    <a href="https://jaralm.substack.com" target="_blank" class="btn-primary">Suscríbete gratis →</a>
+    <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" class="btn-ghost">Ver vídeos</a>
   </div>
   <div class="hero-stats">
     <div>
@@ -283,23 +243,22 @@
   <div class="sobre-grid">
     <div class="sobre-text">
       <p>
-        Llevo años operando opciones y estudiando los mercados. No tengo una fórmula mágica
-        ni prometo rentabilidades absurdas — lo que sí tengo es criterio propio,
-        ganas de compartirlo y poca paciencia con el ruido que inunda este mundo.
+        Aquí no encontrarás promesas de beneficios rápidos ni estrategias milagrosas.
+        Encontrarás criterio, gestión del riesgo y experiencia aplicada — en opciones,
+        en mercados y en la cabeza del trader.
       </p>
       <p>
-        Empecé el canal y la newsletter porque no encontraba el contenido que yo
-        hubiera querido cuando comencé: cercano, sin humo, que hablara tanto
-        de estrategia como de la cabeza del trader.
+        El objetivo no es "ganar siempre". Es entender el juego, sobrevivir
+        y construir consistencia. Empecé el canal y la newsletter porque no
+        encontraba ese contenido en ningún sitio.
       </p>
       <p>
-        Si estás aquí es porque <strong style="color:var(--green)">no te conformas con lo de siempre</strong>.
-        Bienvenido — aquí tampoco.
+        Si te interesan las opciones financieras, la disciplina y un enfoque
+        profesional de los mercados, <strong style="color:var(--green)">estás en el sitio correcto.</strong>
       </p>
     </div>
     <div class="sobre-img">
-      <div class="avatar-placeholder">👤</div>
-      <span>Tu foto aquí</span>
+      <img src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png" alt="Jose Antonio Rodriguez - No Queda Otra Opción">
     </div>
   </div>
 </section>
@@ -361,7 +320,7 @@
     </div>
   </div>
   <div class="yt-cta">
-    <a href="https://youtube.com" target="_blank" class="btn-ghost">Ver todos los vídeos en YouTube →</a>
+    <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" class="btn-ghost">Ver todos los vídeos en YouTube →</a>
   </div>
 </section>
 
@@ -388,7 +347,7 @@
       <div class="input-group">
         <input type="text" placeholder="Tu nombre">
         <input type="email" placeholder="tu@email.com">
-        <a href="#" class="btn-primary" style="text-align:center">Quiero suscribirme →</a>
+        <a href="https://jaralm.substack.com" target="_blank" class="btn-primary" style="text-align:center">Quiero suscribirme →</a>
       </div>
       <p class="nl-disclaimer">Sin spam. Tus datos no se comparten con nadie.</p>
     </div>
@@ -399,12 +358,12 @@
 <footer>
   <div class="footer-logo">No Queda Otra <span>Opción</span></div>
   <div class="footer-links">
-    <a href="#">YouTube</a>
-    <a href="#">Newsletter</a>
-    <a href="#">Contacto</a>
+    <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank">YouTube</a>
+    <a href="https://jaralm.substack.com" target="_blank">Newsletter</a>
+    <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
     <a href="#">Aviso Legal</a>
   </div>
-  <div class="footer-copy">© 2025 · noquedaotraopcion.com</div>
+  <div class="footer-copy">© 2025 · noquedaotraopcion.com · joseantonio@noquedaotraopcion.com</div>
 </footer>
 
 </body>
