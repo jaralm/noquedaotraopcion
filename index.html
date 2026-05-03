@@ -3,117 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>No Queda Otra Opción – Opciones, Mercados y Psicología del Trader</title>
-  <meta name="description" content="Opciones, mercados y psicología del trader. Canal de YouTube y newsletter por José Antonio Rodríguez." />
+  <title>No Queda Otra Opción – Opciones, Mercados y Experiencia del Trader</title>
+  <meta name="description" content="Opciones, mercados y experiencia del trader. Canal de YouTube y newsletter por José Antonio Rodríguez." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.4rem);
-      --text-3xl: clamp(3rem, 1.25rem + 4vw, 5.75rem);
+    :root,[data-theme="light"]{
+      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+      --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+      --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.4rem);
+      --text-3xl:clamp(3rem,1.25rem + 4vw,5.75rem);
       --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
       --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
-      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;--space-32:8rem;
-      --color-bg: #FFFBEB;
-      --color-surface: rgba(255,255,255,0.55);
-      --color-surface-2: #FFF6D6;
-      --color-line: rgba(30,26,20,0.12);
-      --color-line-soft: rgba(30,26,20,0.08);
-      --color-text: #1c1a14;
-      --color-text-muted: #7a6e55;
-      --color-text-faint: #a89880;
-      --color-text-inverse: #fff;
-      --color-primary: #FF6719;
-      --color-primary-hover: #e55610;
-      --color-secondary: #b8460f;
-      --shadow-soft: 0 14px 40px rgba(30,20,10,0.09);
-      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-2xl:1.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+      --color-bg:#FFFBEB;
+      --color-surface:rgba(255,255,255,0.55);
+      --color-surface-2:#FFF6D6;
+      --color-line:rgba(30,26,20,0.12);
+      --color-line-soft:rgba(30,26,20,0.08);
+      --color-text:#1c1a14;
+      --color-text-muted:#7a6e55;
+      --color-text-faint:#a89880;
+      --color-text-inverse:#fff;
+      --color-primary:#FF6719;
+      --color-primary-hover:#e55610;
+      --shadow-soft:0 14px 40px rgba(30,20,10,0.09);
       --font-display:'Instrument Serif',Georgia,serif;
       --font-body:'Inter',system-ui,sans-serif;
       --content-wide:1280px;
       --content-article:760px;
       --transition:180ms cubic-bezier(0.16,1,0.3,1);
     }
-
-    [data-theme="dark"] {
-      --color-bg: #151310;
-      --color-surface: rgba(255,255,255,0.04);
-      --color-surface-2: #1e1b16;
-      --color-line: rgba(245,235,220,0.12);
-      --color-line-soft: rgba(245,235,220,0.07);
-      --color-text: #ede7d9;
-      --color-text-muted: #b8aa96;
-      --color-text-faint: #8a7d6a;
-      --color-text-inverse: #111;
-      --color-primary: #ff8c4a;
-      --color-primary-hover: #ff7733;
-      --color-secondary: #ffaa77;
-      --shadow-soft: 0 18px 44px rgba(0,0,0,0.28);
+    [data-theme="dark"]{
+      --color-bg:#151310;
+      --color-surface:rgba(255,255,255,0.04);
+      --color-surface-2:#1e1b16;
+      --color-line:rgba(245,235,220,0.12);
+      --color-line-soft:rgba(245,235,220,0.07);
+      --color-text:#ede7d9;
+      --color-text-muted:#b8aa96;
+      --color-text-faint:#8a7d6a;
+      --color-text-inverse:#111;
+      --color-primary:#ff8c4a;
+      --color-primary-hover:#ff7733;
+      --shadow-soft:0 18px 44px rgba(0,0,0,0.28);
     }
-
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      min-height:100vh;
-      font-family:var(--font-body);
-      font-size:var(--text-base);
-      line-height:1.7;
-      color:var(--color-text);
+      min-height:100vh;font-family:var(--font-body);font-size:var(--text-base);
+      line-height:1.7;color:var(--color-text);
       background:
-        radial-gradient(circle at 10% 8%, rgba(255,103,25,0.07), transparent 22%),
-        radial-gradient(circle at 90% 15%, rgba(255,103,25,0.05), transparent 18%),
+        radial-gradient(circle at 10% 8%,rgba(255,103,25,0.07),transparent 22%),
+        radial-gradient(circle at 90% 15%,rgba(255,103,25,0.05),transparent 18%),
         var(--color-bg);
     }
     img,svg{display:block;max-width:100%;height:auto;}
     a{text-decoration:none;color:inherit;}
     button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
     :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;}
-
     .container{width:min(calc(100% - 2rem),var(--content-wide));margin:0 auto;}
     .narrow{max-width:var(--content-article);}
-
     .skip-link{position:absolute;left:1rem;top:-3rem;background:var(--color-primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;}
     .skip-link:focus{top:1rem;}
 
     /* HEADER */
-    .site-header{
-      position:sticky;top:0;z-index:40;
-      backdrop-filter:blur(14px);
-      background:color-mix(in srgb,var(--color-bg) 85%,transparent);
-      border-bottom:1px solid var(--color-line-soft);
-    }
+    .site-header{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--color-bg) 85%,transparent);border-bottom:1px solid var(--color-line-soft);}
     .header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--space-6);min-height:74px;}
     .brand{display:inline-flex;align-items:center;gap:var(--space-3);font-weight:700;letter-spacing:-0.02em;}
-    .brand-mark{
-      width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
-      border:1px solid var(--color-line);background:var(--color-surface);
-      color:var(--color-primary);
+
+    /* Logo icono en header */
+    .brand-logo-icon{
+      width:38px;height:38px;border-radius:10px;
+      background:var(--color-primary);display:grid;place-items:center;flex-shrink:0;
     }
+
     .brand-wording strong{display:block;font-size:var(--text-sm);}
     .brand-wording span{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-muted);}
     nav{display:none;justify-self:center;gap:var(--space-5);}
     nav a{font-size:var(--text-sm);color:var(--color-text-muted);transition:color var(--transition);}
     nav a:hover{color:var(--color-text);}
     .header-actions{display:flex;align-items:center;gap:var(--space-2);}
-    .theme-toggle{
-      min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;
-      border:1px solid var(--color-line);border-radius:999px;background:var(--color-surface);
-      transition:all var(--transition);
-    }
+    .theme-toggle{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--color-line);border-radius:999px;background:var(--color-surface);transition:all var(--transition);}
     .theme-toggle:hover{transform:translateY(-1px);}
 
     /* BUTTONS */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
-      min-height:48px;padding:.9rem 1.4rem;border-radius:999px;
-      font-size:var(--text-sm);font-weight:600;transition:all var(--transition);
-    }
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:.9rem 1.4rem;border-radius:999px;font-size:var(--text-sm);font-weight:600;transition:all var(--transition);}
     .btn-primary{background:var(--color-primary);color:#fff;}
     .btn-primary:hover{background:var(--color-primary-hover);transform:translateY(-1px);}
     .btn-secondary{border:1px solid var(--color-line);background:transparent;}
@@ -122,12 +101,7 @@
     /* HERO */
     .hero{padding:clamp(3rem,6vw,6rem) 0 clamp(4rem,8vw,7rem);}
     .hero-grid{display:grid;gap:var(--space-8);align-items:end;}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .85rem;
-      border-radius:999px;background:rgba(255,103,25,0.09);color:var(--color-primary);
-      font-size:var(--text-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-      margin-bottom:var(--space-5);
-    }
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .85rem;border-radius:999px;background:rgba(255,103,25,0.09);color:var(--color-primary);font-size:var(--text-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--space-5);}
     h1,h2,h3{font-weight:400;letter-spacing:-0.03em;}
     h1,h2{font-family:var(--font-display);line-height:.98;}
     h1{font-size:var(--text-3xl);max-width:13ch;}
@@ -136,19 +110,13 @@
     .hero-copy .lede{font-size:var(--text-lg);max-width:36ch;color:var(--color-text);margin:var(--space-5) 0;}
     .hero-copy p{max-width:60ch;color:var(--color-text-muted);}
     .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
-    .hero-photo{
-      aspect-ratio:16/10;width:100%;object-fit:cover;object-position:center top;
-      border-radius:30px;box-shadow:var(--shadow-soft);
-      border:1px solid var(--color-line-soft);
-    }
+    .hero-photo{aspect-ratio:16/10;width:100%;object-fit:cover;object-position:center top;border-radius:30px;box-shadow:var(--shadow-soft);border:1px solid var(--color-line-soft);}
 
     /* SECTIONS */
     .section{padding:clamp(3.5rem,7vw,6rem) 0;border-top:1px solid var(--color-line-soft);}
     .section-head{display:grid;gap:var(--space-3);margin-bottom:var(--space-8);}
     .section-head p{max-width:62ch;color:var(--color-text-muted);}
     .path-list,.pillars-shell,.essay-side,.footer-grid{display:grid;gap:var(--space-5);}
-
-    /* PATH */
     .path-item,.essay-item{display:grid;gap:var(--space-3);padding:0 0 var(--space-5);border-bottom:1px solid var(--color-line-soft);}
     .path-item:last-child,.essay-item:last-child{border-bottom:0;padding-bottom:0;}
     .path-num,.mini-kicker{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary);font-weight:700;}
@@ -156,34 +124,19 @@
     .path-item p,.essay-item p,.pillar-item p,.about-copy p,.newsletter-copy p{color:var(--color-text-muted);}
     .inline-link{display:inline-flex;align-items:center;gap:.45rem;font-weight:600;color:var(--color-primary);}
     .inline-link:hover{color:var(--color-primary-hover);}
-
-    /* PILLARS */
     .pillar-item{display:grid;gap:var(--space-3);padding-top:var(--space-4);border-top:1px solid var(--color-line);}
 
     /* FEATURED */
-    .featured-band{
-      display:grid;gap:var(--space-8);align-items:start;
-      padding:var(--space-8) 0;
-      border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line);
-    }
+    .featured-band{display:grid;gap:var(--space-8);align-items:start;padding:var(--space-8) 0;border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line);}
     .featured-title{font-family:var(--font-display);font-size:clamp(2rem,1.5rem + 1.2vw,3.1rem);line-height:1.02;max-width:14ch;}
 
     /* VIDEO CARDS */
-    .video-card{
-      border:1px solid var(--color-line);border-radius:16px;
-      overflow:hidden;background:var(--color-surface);
-      transition:all var(--transition);cursor:pointer;
-    }
+    .video-card{border:1px solid var(--color-line);border-radius:16px;overflow:hidden;background:var(--color-surface);transition:all var(--transition);cursor:pointer;}
     .video-card:hover{border-color:var(--color-primary);transform:translateY(-2px);box-shadow:var(--shadow-soft);}
     .video-thumb{aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--color-surface-2);}
     .video-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
     .video-card:hover .video-thumb img{transform:scale(1.03);}
-    .video-badge{
-      position:absolute;top:.6rem;left:.6rem;
-      background:var(--color-primary);color:#fff;
-      font-size:.65rem;font-weight:700;padding:.25rem .55rem;
-      border-radius:4px;text-transform:uppercase;letter-spacing:.05em;
-    }
+    .video-badge{position:absolute;top:.6rem;left:.6rem;background:var(--color-primary);color:#fff;font-size:.65rem;font-weight:700;padding:.25rem .55rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;}
     .video-info{padding:1rem 1.1rem 1.2rem;}
     .video-info h4{font-size:.95rem;font-weight:600;line-height:1.4;margin-bottom:.3rem;}
     .video-info span{font-size:.78rem;color:var(--color-text-faint);}
@@ -195,17 +148,9 @@
     .check-item{display:flex;gap:var(--space-3);align-items:flex-start;color:var(--color-text-muted);}
     .check-item svg{flex:0 0 auto;color:var(--color-primary);margin-top:.2rem;}
     .signature{margin-top:var(--space-5);font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-primary);}
-
-    /* FORM */
     form{display:grid;gap:var(--space-3);margin-top:var(--space-5);}
     label{font-size:var(--text-sm);font-weight:600;}
-    input[type="email"]{
-      width:100%;min-height:52px;padding:.95rem 1rem;
-      border-radius:16px;border:1px solid var(--color-line);
-      background:color-mix(in srgb,var(--color-bg) 75%,white 25%);
-      color:var(--color-text);font-family:inherit;font-size:var(--text-sm);
-      transition:border-color var(--transition);outline:none;
-    }
+    input[type="email"]{width:100%;min-height:52px;padding:.95rem 1rem;border-radius:16px;border:1px solid var(--color-line);background:color-mix(in srgb,var(--color-bg) 75%,white 25%);color:var(--color-text);font-family:inherit;font-size:var(--text-sm);transition:border-color var(--transition);outline:none;}
     input[type="email"]:focus{border-color:var(--color-primary);}
     .microcopy{font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-3);}
 
@@ -226,7 +171,7 @@
       .pillars-shell{grid-template-columns:repeat(3,1fr);}
       .featured-band{grid-template-columns:1.1fr .9fr;}
       .about-grid,.newsletter-grid,.footer-grid{grid-template-columns:1.05fr .95fr;}
-      .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+      .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
     }
     @media(max-width:859px){
       .hide-mobile{display:none;}
@@ -244,14 +189,16 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 16.5 9.5 11 13 14.5 20 7.5"/><path d="M20 13V7h-6"/>
+        <!-- Logo icono: payoff de opción call -->
+        <span class="brand-logo-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
           </svg>
         </span>
         <span class="brand-wording">
           <strong>No Queda Otra Opción</strong>
-          <span>Opciones · Mercados · Psicología</span>
+          <span>Opciones · Mercados · Experiencia</span>
         </span>
       </a>
 
@@ -317,7 +264,7 @@
           <article class="path-item">
             <div class="path-num">Ruta 03</div>
             <h3>Si el problema no es técnico, sino mental</h3>
-            <p>Psicología del trader, sesgos, disciplina y construcción de un proceso sostenible para mantenerse en pie cuando el mercado aprieta.</p>
+            <p>Experiencia aplicada, sesgos, disciplina y construcción de un proceso sostenible para mantenerse en pie cuando el mercado aprieta.</p>
             <a class="inline-link" href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Leer reflexiones →</a>
           </article>
         </div>
@@ -343,9 +290,9 @@
             <p>Lectura del entorno, comportamiento del VIX, flujos y estructura del mercado para que cada decisión tenga un marco más amplio.</p>
           </article>
           <article class="pillar-item">
-            <div class="mini-kicker">🧠 Psicología</div>
-            <h3>La parte invisible que acaba decidiendo</h3>
-            <p>Disciplina, identidad del trader, errores recurrentes y construcción de criterio para sostener una operativa razonable.</p>
+            <div class="mini-kicker">🎯 Experiencia</div>
+            <h3>Lo que solo enseña el tiempo en el mercado</h3>
+            <p>Errores cometidos, lecciones aprendidas y criterio construido a base de operar. Sin atajos, sin teoría vacía.</p>
           </article>
         </div>
       </div>
@@ -358,8 +305,6 @@
           <h2>Últimos vídeos</h2>
           <p>Desde episodios largos tipo podcast hasta análisis concretos y series formativas desde cero.</p>
         </div>
-
-        <!-- Vídeo destacado -->
         <div class="featured-band" style="margin-bottom:var(--space-8);">
           <div>
             <div class="mini-kicker">🎙️ Podcast destacado</div>
@@ -378,8 +323,6 @@
               loading="lazy" />
           </div>
         </div>
-
-        <!-- Otros vídeos -->
         <div class="video-grid">
           <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=8EeNPXXmsE8','_blank')">
             <div class="video-thumb">
@@ -390,7 +333,6 @@
               <span>Gestión de riesgo · Mar 2026</span>
             </div>
           </div>
-
           <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=SVdRziM8Wwo&list=PLi2ky7XMbYiZMzKiZQ7n3ZAJKdRincAEt','_blank')">
             <div class="video-thumb">
               <img src="https://img.youtube.com/vi/SVdRziM8Wwo/maxresdefault.jpg" alt="Opciones desde cero" loading="lazy" />
@@ -402,7 +344,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -430,7 +371,7 @@
             </div>
             <div class="check-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Reflexiones sobre disciplina, proceso e identidad del trader para pensar mejor bajo presión.</span>
+              <span>Experiencia real aplicada al trading: errores, aprendizajes y criterio construido con el tiempo.</span>
             </div>
           </div>
         </aside>
@@ -456,7 +397,7 @@
             </div>
             <div class="check-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Reflexiones sobre disciplina, proceso y psicología del trader.</span>
+              <span>Experiencia y criterio aplicados: lo que solo enseña el tiempo delante del mercado.</span>
             </div>
           </div>
         </div>
@@ -480,14 +421,15 @@
     <div class="container footer-grid">
       <div>
         <div class="brand" style="margin-bottom:.65rem;">
-          <span class="brand-mark" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 16.5 9.5 11 13 14.5 20 7.5"/><path d="M20 13V7h-6"/>
+          <span class="brand-logo-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
             </svg>
           </span>
           <span style="font-weight:700;">No Queda Otra Opción</span>
         </div>
-        <div class="footer-note">© 2025 · noquedaotraopcion.com</div>
+        <div class="footer-note">© 2025 · noquedaotraopcion.com · Opciones · Mercados · Experiencia</div>
       </div>
       <div class="footer-links">
         <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">YouTube</a>
@@ -500,22 +442,20 @@
 
   <script>
     (function(){
-      const root = document.documentElement;
-      const btn = document.querySelector('[data-theme-toggle]');
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-
+      const root=document.documentElement;
+      const btn=document.querySelector('[data-theme-toggle]');
+      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',theme);
       function icon(t){
-        return t === 'light'
-          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
-          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
+        return t==='light'
+          ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+          :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
       }
-
-      btn.innerHTML = icon(theme);
-      btn.addEventListener('click', function(){
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        btn.innerHTML = icon(theme);
+      btn.innerHTML=icon(theme);
+      btn.addEventListener('click',function(){
+        theme=theme==='dark'?'light':'dark';
+        root.setAttribute('data-theme',theme);
+        btn.innerHTML=icon(theme);
       });
     })();
   </script>
