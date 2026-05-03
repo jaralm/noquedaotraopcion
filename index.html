@@ -204,7 +204,8 @@
 
     /* MOBILE */
     @media(max-width:780px){
-      .hero{grid-template-columns:1fr;gap:2.5rem;min-height:auto;padding-top:2.5rem;}
+      .hero{gap:1.5rem;min-height:auto;padding-top:2.5rem;}
+      .hero-body{grid-template-columns:1fr;gap:2rem;}
       .hero-right{order:-1;}
       .hero-photo{aspect-ratio:4/3;}
       .photo-badge{left:.5rem;bottom:.5rem;}
@@ -238,58 +239,63 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
+  <!-- Titular: ancho completo -->
+  <div class="hero-headline">
     <span class="kicker">Opciones · Mercados · Experiencia</span>
-
     <h1>En un mercado que no perdona…<br><em>no queda otra opción.</em></h1>
-
-    <p class="hero-bio">
-      Opero opciones, leo mercados y comparto lo que aprendo — sin filtros, sin promesas vacías.<br><br>
-      Llevo años estudiando cómo se mueve la volatilidad, cómo se forman las opciones y por qué el mercado castiga a quien improvisa. No enseño atajos ni vendo métodos. Comparto el proceso real de alguien que opera con convicción, construida con tiempo, datos y muchos errores bien pagados.<br><br>
-      He aprendido que la ventaja no está en la señal, sino en el criterio y la gestión. Cada operación va con mi propio capital, cada análisis responde a mi propia convicción. Escribo sobre lo que me funciona, lo que no, y por qué la mayoría del ruido financiero no merece tu atención — para quien prefiera pensar antes de actuar.
-    </p>
-
-    <div class="subscribe-box">
-      <div>
-        <strong>Suscríbete a la newsletter</strong>
-        <p>Gratis. Cada semana. Te puedes dar de baja cuando quieras.</p>
-      </div>
-      <form action="https://jaralm.substack.com" method="get" target="_blank" novalidate>
-        <div class="field-row">
-          <input type="text" placeholder="Tu nombre" autocomplete="given-name"/>
-          <input type="email" name="email" placeholder="tu@email.com" autocomplete="email"/>
-          <button class="btn-subscribe" type="submit">Quiero suscribirme →</button>
-        </div>
-      </form>
-      <p class="fine-print">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
-    </div>
-
-    <div class="stats">
-      <div>
-        <div class="stat-n">YouTube</div>
-        <div class="stat-l">Canal activo</div>
-      </div>
-      <div>
-        <div class="stat-n">2 años</div>
-        <div class="stat-l">Newsletter</div>
-      </div>
-      <div>
-        <div class="stat-n">3 pilares</div>
-        <div class="stat-l">Opciones · Mercados · Experiencia</div>
-      </div>
-    </div>
-
-    <div class="signature">José Antonio Rodríguez</div>
   </div>
 
-  <div class="hero-right">
-    <img
-      class="hero-photo"
-      src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
-      alt="José Antonio Rodríguez, trader y creador de No Queda Otra Opción"
-      loading="eager"
-    />
-    <div class="photo-badge">📈 Vendo opciones desde 2018</div>
+  <!-- Cuerpo: texto izquierda, foto derecha al mismo nivel -->
+  <div class="hero-body">
+    <div class="hero-left">
+      <p class="hero-bio">
+        Opero opciones, leo mercados y comparto lo que aprendo — sin filtros, sin promesas vacías.<br><br>
+        Llevo años estudiando cómo se mueve la volatilidad, cómo se forman las opciones y por qué el mercado castiga a quien improvisa. No enseño atajos ni vendo métodos. Comparto el proceso real de alguien que opera con convicción, construida con tiempo, datos y muchos errores bien pagados.<br><br>
+        He aprendido que la ventaja no está en la señal, sino en el criterio y la gestión. Cada operación va con mi propio capital, cada análisis responde a mi propia convicción. Escribo sobre lo que me funciona, lo que no, y por qué la mayoría del ruido financiero no merece tu atención — para quien prefiera pensar antes de actuar.
+      </p>
+
+      <div class="subscribe-box">
+        <div>
+          <strong>Suscríbete a la newsletter</strong>
+          <p>Gratis. Cada semana. Te puedes dar de baja cuando quieras.</p>
+        </div>
+        <form action="https://jaralm.substack.com" method="get" target="_blank" novalidate>
+          <div class="field-row">
+            <input type="text" placeholder="Tu nombre" autocomplete="given-name"/>
+            <input type="email" name="email" placeholder="tu@email.com" autocomplete="email"/>
+            <button class="btn-subscribe" type="submit">Quiero suscribirme →</button>
+          </div>
+        </form>
+        <p class="fine-print">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
+      </div>
+
+      <div class="stats">
+        <div>
+          <div class="stat-n">YouTube</div>
+          <div class="stat-l">Canal activo</div>
+        </div>
+        <div>
+          <div class="stat-n">2 años</div>
+          <div class="stat-l">Newsletter</div>
+        </div>
+        <div>
+          <div class="stat-n">3 pilares</div>
+          <div class="stat-l">Opciones · Mercados · Experiencia</div>
+        </div>
+      </div>
+
+      <div class="signature">José Antonio Rodríguez</div>
+    </div>
+
+    <div class="hero-right">
+      <img
+        class="hero-photo"
+        src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
+        alt="José Antonio Rodríguez, trader y creador de No Queda Otra Opción"
+        loading="eager"
+      />
+      <div class="photo-badge">📈 Vendo opciones desde 2018</div>
+    </div>
   </div>
 </section>
 
