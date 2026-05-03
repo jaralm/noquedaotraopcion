@@ -1,463 +1,349 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>No Queda Otra Opción – Opciones, Mercados y Experiencia del Trader</title>
-  <meta name="description" content="Opciones, mercados y experiencia del trader. Canal de YouTube y newsletter por José Antonio Rodríguez." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No Queda Otra Opción – José Antonio Rodríguez</title>
+  <meta name="description" content="Opciones, mercados y experiencia del trader. Canal de YouTube y newsletter semanal por José Antonio Rodríguez."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root,[data-theme="light"]{
-      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
-      --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
-      --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
-      --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
-      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
-      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.4rem);
-      --text-3xl:clamp(3rem,1.25rem + 4vw,5.75rem);
-      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
-      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
-      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
       --color-bg:#FFFBEB;
-      --color-surface:rgba(255,255,255,0.55);
+      --color-surface:rgba(255,255,255,0.6);
       --color-surface-2:#FFF6D6;
-      --color-line:rgba(30,26,20,0.12);
-      --color-line-soft:rgba(30,26,20,0.08);
+      --color-line:rgba(30,26,20,0.11);
+      --color-line-soft:rgba(30,26,20,0.07);
       --color-text:#1c1a14;
       --color-text-muted:#7a6e55;
       --color-text-faint:#a89880;
-      --color-text-inverse:#fff;
       --color-primary:#FF6719;
       --color-primary-hover:#e55610;
-      --shadow-soft:0 14px 40px rgba(30,20,10,0.09);
+      --shadow:0 16px 48px rgba(30,20,10,0.10);
       --font-display:'Instrument Serif',Georgia,serif;
       --font-body:'Inter',system-ui,sans-serif;
-      --content-wide:1280px;
-      --content-article:760px;
       --transition:180ms cubic-bezier(0.16,1,0.3,1);
     }
     [data-theme="dark"]{
       --color-bg:#151310;
       --color-surface:rgba(255,255,255,0.04);
       --color-surface-2:#1e1b16;
-      --color-line:rgba(245,235,220,0.12);
-      --color-line-soft:rgba(245,235,220,0.07);
+      --color-line:rgba(245,235,220,0.11);
+      --color-line-soft:rgba(245,235,220,0.06);
       --color-text:#ede7d9;
       --color-text-muted:#b8aa96;
       --color-text-faint:#8a7d6a;
-      --color-text-inverse:#111;
       --color-primary:#ff8c4a;
       --color-primary-hover:#ff7733;
-      --shadow-soft:0 18px 44px rgba(0,0,0,0.28);
+      --shadow:0 18px 48px rgba(0,0,0,0.30);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      min-height:100vh;font-family:var(--font-body);font-size:var(--text-base);
-      line-height:1.7;color:var(--color-text);
+      font-family:var(--font-body);font-size:1rem;line-height:1.7;
+      color:var(--color-text);min-height:100vh;
       background:
-        radial-gradient(circle at 10% 8%,rgba(255,103,25,0.07),transparent 22%),
-        radial-gradient(circle at 90% 15%,rgba(255,103,25,0.05),transparent 18%),
+        radial-gradient(circle at 8% 6%, rgba(255,103,25,0.08), transparent 28%),
+        radial-gradient(circle at 92% 12%, rgba(255,103,25,0.05), transparent 22%),
         var(--color-bg);
     }
-    img,svg{display:block;max-width:100%;height:auto;}
+    img{display:block;max-width:100%;}
     a{text-decoration:none;color:inherit;}
     button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
     :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;}
-    .container{width:min(calc(100% - 2rem),var(--content-wide));margin:0 auto;}
-    .narrow{max-width:var(--content-article);}
-    .skip-link{position:absolute;left:1rem;top:-3rem;background:var(--color-primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;}
-    .skip-link:focus{top:1rem;}
 
-    /* HEADER */
-    .site-header{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--color-bg) 85%,transparent);border-bottom:1px solid var(--color-line-soft);}
-    .header-inner{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--space-6);min-height:74px;}
-    .brand{display:inline-flex;align-items:center;gap:var(--space-3);font-weight:700;letter-spacing:-0.02em;}
-
-    /* Logo icono en header */
-    .brand-logo-icon{
-      width:38px;height:38px;border-radius:10px;
+    /* NAV */
+    nav{
+      position:sticky;top:0;z-index:40;
+      backdrop-filter:blur(16px);
+      background:color-mix(in srgb,var(--color-bg) 88%,transparent);
+      border-bottom:1px solid var(--color-line-soft);
+    }
+    .nav-inner{
+      max-width:1100px;margin:0 auto;padding:0 2rem;
+      display:flex;justify-content:space-between;align-items:center;
+      min-height:68px;
+    }
+    .nav-brand{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:.95rem;}
+    .nav-icon{
+      width:32px;height:32px;border-radius:8px;
       background:var(--color-primary);display:grid;place-items:center;flex-shrink:0;
     }
-
-    .brand-wording strong{display:block;font-size:var(--text-sm);}
-    .brand-wording span{display:block;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-muted);}
-    nav{display:none;justify-self:center;gap:var(--space-5);}
-    nav a{font-size:var(--text-sm);color:var(--color-text-muted);transition:color var(--transition);}
-    nav a:hover{color:var(--color-text);}
-    .header-actions{display:flex;align-items:center;gap:var(--space-2);}
-    .theme-toggle{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--color-line);border-radius:999px;background:var(--color-surface);transition:all var(--transition);}
-    .theme-toggle:hover{transform:translateY(-1px);}
-
-    /* BUTTONS */
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:.9rem 1.4rem;border-radius:999px;font-size:var(--text-sm);font-weight:600;transition:all var(--transition);}
-    .btn-primary{background:var(--color-primary);color:#fff;}
-    .btn-primary:hover{background:var(--color-primary-hover);transform:translateY(-1px);}
-    .btn-secondary{border:1px solid var(--color-line);background:transparent;}
-    .btn-secondary:hover{background:var(--color-surface);border-color:var(--color-primary);}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .nav-link{font-size:.85rem;color:var(--color-text-muted);transition:color var(--transition);}
+    .nav-link:hover{color:var(--color-primary);}
+    .theme-btn{
+      width:38px;height:38px;border-radius:50%;
+      border:1px solid var(--color-line);background:var(--color-surface);
+      display:grid;place-items:center;transition:all var(--transition);
+    }
+    .theme-btn:hover{transform:translateY(-1px);}
 
     /* HERO */
-    .hero{padding:clamp(3rem,6vw,6rem) 0 clamp(4rem,8vw,7rem);}
-    .hero-grid{display:grid;gap:var(--space-8);align-items:end;}
-    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;padding:.45rem .85rem;border-radius:999px;background:rgba(255,103,25,0.09);color:var(--color-primary);font-size:var(--text-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--space-5);}
-    h1,h2,h3{font-weight:400;letter-spacing:-0.03em;}
-    h1,h2{font-family:var(--font-display);line-height:.98;}
-    h1{font-size:var(--text-3xl);max-width:13ch;}
-    h2{font-size:var(--text-2xl);margin-bottom:var(--space-4);}
-    .hero-copy{padding-bottom:var(--space-6);}
-    .hero-copy .lede{font-size:var(--text-lg);max-width:36ch;color:var(--color-text);margin:var(--space-5) 0;}
-    .hero-copy p{max-width:60ch;color:var(--color-text-muted);}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6);}
-    .hero-photo{aspect-ratio:16/10;width:100%;object-fit:cover;object-position:center top;border-radius:30px;box-shadow:var(--shadow-soft);border:1px solid var(--color-line-soft);}
+    .hero{
+      max-width:1100px;margin:0 auto;padding:4rem 2rem 3rem;
+      display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+      min-height:calc(100vh - 68px);
+    }
+    .hero-left{display:flex;flex-direction:column;gap:1.5rem;}
+    .kicker{
+      display:inline-flex;align-items:center;gap:.5rem;
+      font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+      color:var(--color-primary);
+    }
+    .kicker::before{content:'';width:24px;height:2px;background:var(--color-primary);border-radius:2px;}
+    h1{
+      font-family:var(--font-display);font-size:clamp(2.6rem,4vw,4rem);
+      font-weight:400;line-height:1.02;letter-spacing:-0.02em;
+    }
+    h1 em{font-style:italic;color:var(--color-primary);}
+    .hero-bio{color:var(--color-text-muted);font-size:1.05rem;line-height:1.8;max-width:48ch;}
 
-    /* SECTIONS */
-    .section{padding:clamp(3.5rem,7vw,6rem) 0;border-top:1px solid var(--color-line-soft);}
-    .section-head{display:grid;gap:var(--space-3);margin-bottom:var(--space-8);}
-    .section-head p{max-width:62ch;color:var(--color-text-muted);}
-    .path-list,.pillars-shell,.essay-side,.footer-grid{display:grid;gap:var(--space-5);}
-    .path-item,.essay-item{display:grid;gap:var(--space-3);padding:0 0 var(--space-5);border-bottom:1px solid var(--color-line-soft);}
-    .path-item:last-child,.essay-item:last-child{border-bottom:0;padding-bottom:0;}
-    .path-num,.mini-kicker{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary);font-weight:700;}
-    .path-item h3,.essay-item h3,.pillar-item h3{font-size:clamp(1.35rem,1.1rem + .5vw,1.8rem);line-height:1.08;letter-spacing:-0.025em;}
-    .path-item p,.essay-item p,.pillar-item p,.about-copy p,.newsletter-copy p{color:var(--color-text-muted);}
-    .inline-link{display:inline-flex;align-items:center;gap:.45rem;font-weight:600;color:var(--color-primary);}
-    .inline-link:hover{color:var(--color-primary-hover);}
-    .pillar-item{display:grid;gap:var(--space-3);padding-top:var(--space-4);border-top:1px solid var(--color-line);}
+    /* FORM */
+    .subscribe-box{
+      background:var(--color-surface);
+      border:1px solid var(--color-line);
+      border-radius:20px;padding:1.8rem;
+      display:flex;flex-direction:column;gap:1rem;
+    }
+    .subscribe-box p{font-size:.9rem;color:var(--color-text-muted);}
+    .subscribe-box strong{color:var(--color-text);font-size:1rem;}
+    .field-row{display:flex;flex-direction:column;gap:.6rem;}
+    .field-row input{
+      width:100%;padding:.85rem 1rem;
+      border:1px solid var(--color-line);border-radius:12px;
+      background:color-mix(in srgb,var(--color-bg) 70%,white 30%);
+      color:var(--color-text);font-family:inherit;font-size:.95rem;
+      outline:none;transition:border-color var(--transition);
+    }
+    .field-row input:focus{border-color:var(--color-primary);}
+    .field-row input::placeholder{color:var(--color-text-faint);}
+    .btn-subscribe{
+      width:100%;padding:.95rem;border-radius:12px;
+      background:var(--color-primary);color:#fff;
+      font-weight:700;font-size:.95rem;
+      transition:all var(--transition);
+    }
+    .btn-subscribe:hover{background:var(--color-primary-hover);transform:translateY(-1px);}
+    .fine-print{font-size:.72rem;color:var(--color-text-faint);text-align:center;}
 
-    /* FEATURED */
-    .featured-band{display:grid;gap:var(--space-8);align-items:start;padding:var(--space-8) 0;border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line);}
-    .featured-title{font-family:var(--font-display);font-size:clamp(2rem,1.5rem + 1.2vw,3.1rem);line-height:1.02;max-width:14ch;}
+    /* FOTO */
+    .hero-right{position:relative;}
+    .hero-photo{
+      width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;
+      border-radius:28px;box-shadow:var(--shadow);
+      border:1px solid var(--color-line-soft);
+    }
+    .photo-badge{
+      position:absolute;bottom:1.2rem;left:-1.2rem;
+      background:var(--color-primary);color:#fff;
+      padding:.6rem 1.1rem;border-radius:12px;
+      font-size:.78rem;font-weight:700;
+      box-shadow:0 4px 16px rgba(255,103,25,0.35);
+      white-space:nowrap;
+    }
 
-    /* VIDEO CARDS */
-    .video-card{border:1px solid var(--color-line);border-radius:16px;overflow:hidden;background:var(--color-surface);transition:all var(--transition);cursor:pointer;}
-    .video-card:hover{border-color:var(--color-primary);transform:translateY(-2px);box-shadow:var(--shadow-soft);}
-    .video-thumb{aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--color-surface-2);}
-    .video-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
-    .video-card:hover .video-thumb img{transform:scale(1.03);}
-    .video-badge{position:absolute;top:.6rem;left:.6rem;background:var(--color-primary);color:#fff;font-size:.65rem;font-weight:700;padding:.25rem .55rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;}
-    .video-info{padding:1rem 1.1rem 1.2rem;}
-    .video-info h4{font-size:.95rem;font-weight:600;line-height:1.4;margin-bottom:.3rem;}
-    .video-info span{font-size:.78rem;color:var(--color-text-faint);}
+    /* STATS */
+    .stats{
+      display:flex;gap:2.5rem;padding-top:1.5rem;
+      border-top:1px solid var(--color-line-soft);
+    }
+    .stat-n{font-size:1.5rem;font-weight:800;color:var(--color-primary);}
+    .stat-l{font-size:.72rem;color:var(--color-text-faint);text-transform:uppercase;letter-spacing:.1em;margin-top:.1rem;}
 
-    /* ABOUT / NEWSLETTER */
-    .about-grid,.newsletter-grid{display:grid;gap:var(--space-8);}
-    .about-panel,.newsletter-panel{padding:var(--space-6);border:1px solid var(--color-line);border-radius:24px;background:var(--color-surface);}
-    .check-list{display:grid;gap:var(--space-3);}
-    .check-item{display:flex;gap:var(--space-3);align-items:flex-start;color:var(--color-text-muted);}
-    .check-item svg{flex:0 0 auto;color:var(--color-primary);margin-top:.2rem;}
-    .signature{margin-top:var(--space-5);font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-primary);}
-    form{display:grid;gap:var(--space-3);margin-top:var(--space-5);}
-    label{font-size:var(--text-sm);font-weight:600;}
-    input[type="email"]{width:100%;min-height:52px;padding:.95rem 1rem;border-radius:16px;border:1px solid var(--color-line);background:color-mix(in srgb,var(--color-bg) 75%,white 25%);color:var(--color-text);font-family:inherit;font-size:var(--text-sm);transition:border-color var(--transition);outline:none;}
-    input[type="email"]:focus{border-color:var(--color-primary);}
-    .microcopy{font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-3);}
+    /* SIGNATURE */
+    .signature{
+      font-family:var(--font-display);font-size:1.6rem;
+      color:var(--color-primary);line-height:1;
+    }
+
+    /* PUENTES */
+    .bridges{
+      max-width:1100px;margin:0 auto;
+      padding:0 2rem 5rem;
+      display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+    }
+    .bridge-card{
+      border:1px solid var(--color-line);border-radius:20px;
+      padding:2rem 2.2rem;background:var(--color-surface);
+      display:flex;flex-direction:column;gap:1rem;
+      transition:all var(--transition);
+      text-decoration:none;color:inherit;
+    }
+    .bridge-card:hover{
+      border-color:var(--color-primary);
+      transform:translateY(-3px);
+      box-shadow:var(--shadow);
+    }
+    .bridge-icon{font-size:2rem;}
+    .bridge-kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary);}
+    .bridge-card h2{font-family:var(--font-display);font-size:clamp(1.5rem,2vw,2rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;}
+    .bridge-card p{color:var(--color-text-muted);font-size:.92rem;line-height:1.7;}
+    .bridge-cta{
+      display:inline-flex;align-items:center;gap:.4rem;
+      font-weight:700;font-size:.88rem;color:var(--color-primary);
+      margin-top:.5rem;
+    }
 
     /* FOOTER */
-    footer{padding:var(--space-10) 0 var(--space-12);border-top:1px solid var(--color-line-soft);}
-    .footer-grid{align-items:center;}
-    .footer-links{display:flex;flex-wrap:wrap;gap:var(--space-4);color:var(--color-text-muted);}
-    .footer-links a{font-size:var(--text-sm);transition:color var(--transition);}
-    .footer-links a:hover{color:var(--color-primary);}
-    .footer-note{color:var(--color-text-muted);font-size:var(--text-sm);}
-
-    /* RESPONSIVE */
-    @media(min-width:860px){
-      nav{display:flex;}
-      .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(480px,.95fr);gap:var(--space-10);}
-      .path-list{grid-template-columns:repeat(3,1fr);gap:var(--space-8);}
-      .path-item{border-bottom:0;padding-bottom:0;}
-      .pillars-shell{grid-template-columns:repeat(3,1fr);}
-      .featured-band{grid-template-columns:1.1fr .9fr;}
-      .about-grid,.newsletter-grid,.footer-grid{grid-template-columns:1.05fr .95fr;}
-      .video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    footer{
+      border-top:1px solid var(--color-line-soft);
+      padding:2rem;
     }
-    @media(max-width:859px){
-      .hide-mobile{display:none;}
-      .header-inner{grid-template-columns:auto auto;}
-      .header-actions{justify-self:end;}
-      h1{max-width:12ch;}
+    .footer-inner{
+      max-width:1100px;margin:0 auto;
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:1rem;
+    }
+    .footer-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
+    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .footer-links a{font-size:.82rem;color:var(--color-text-muted);transition:color var(--transition);}
+    .footer-links a:hover{color:var(--color-primary);}
+    .footer-copy{font-size:.78rem;color:var(--color-text-faint);}
+
+    /* MOBILE */
+    @media(max-width:780px){
+      .hero{grid-template-columns:1fr;gap:2.5rem;min-height:auto;padding-top:2.5rem;}
+      .hero-right{order:-1;}
       .hero-photo{aspect-ratio:4/3;}
-      .video-grid{display:grid;gap:1.2rem;}
+      .photo-badge{left:.5rem;bottom:.5rem;}
+      .bridges{grid-template-columns:1fr;}
+      .stats{gap:1.5rem;flex-wrap:wrap;}
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <!-- Logo icono: payoff de opción call -->
-        <span class="brand-logo-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
-          </svg>
-        </span>
-        <span class="brand-wording">
-          <strong>No Queda Otra Opción</strong>
-          <span>Opciones · Mercados · Experiencia</span>
-        </span>
-      </a>
-
-      <nav aria-label="Principal">
-        <a href="#empieza">Empieza aquí</a>
-        <a href="#pilares">Pilares</a>
-        <a href="#videos">Vídeos</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#newsletter">Newsletter</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Cambiar modo de color"></button>
-        <a class="btn btn-primary hide-mobile" href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Suscribirme</a>
-      </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#" aria-label="Inicio">
+      <span class="nav-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+          <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
+        </svg>
+      </span>
+      No Queda Otra Opción
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
+      <a class="nav-link" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a class="nav-link" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+      <button class="theme-btn" data-theme-toggle aria-label="Cambiar modo"></button>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <main id="contenido">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="kicker">Opciones · Mercados · Experiencia</span>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">📈 Canal · Newsletter · Marca personal</span>
-          <h1>En un mercado que no perdona…</h1>
-          <p class="lede"><em style="font-family:var(--font-display);font-size:1.2em;color:var(--color-primary);">no queda otra opción.</em></p>
-          <p>Opciones, mercados y la mentalidad que necesitas para sobrevivir — y prosperar — como trader. Sin filtros, sin promesas vacías, sin ruido innecesario.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">Ver el canal</a>
-            <a class="btn btn-secondary" href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Leer la newsletter</a>
-          </div>
-        </div>
-        <div>
-          <img class="hero-photo"
-            src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
-            alt="José Antonio Rodríguez, trader y creador de No Queda Otra Opción"
-            width="1366" height="768" loading="eager" />
-        </div>
-      </div>
-    </section>
+    <h1>En un mercado que no perdona…<br><em>no queda otra opción.</em></h1>
 
-    <!-- EMPIEZA AQUÍ -->
-    <section class="section" id="empieza">
-      <div class="container">
-        <div class="section-head narrow">
-          <h2>Empieza por donde más te encaje</h2>
-          <p>No todo el mundo llega con la misma necesidad. Tres rutas según lo que estés buscando ahora mismo.</p>
-        </div>
-        <div class="path-list">
-          <article class="path-item">
-            <div class="path-num">Ruta 01</div>
-            <h3>Si operas opciones y buscas método</h3>
-            <p>Estrategias, gestión del riesgo, griegas y estructura de volatilidad. Menos teoría decorativa y más operativa con criterio.</p>
-            <a class="inline-link" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">Ver vídeos de opciones →</a>
-          </article>
-          <article class="path-item">
-            <div class="path-num">Ruta 02</div>
-            <h3>Si quieres entender mejor el mercado</h3>
-            <p>Lecturas de contexto, volatilidad, narrativa y comportamiento del mercado para no operar a ciegas ni depender del titular del día.</p>
-            <a class="inline-link" href="#videos">Ver piezas destacadas →</a>
-          </article>
-          <article class="path-item">
-            <div class="path-num">Ruta 03</div>
-            <h3>Si el problema no es técnico, sino mental</h3>
-            <p>Experiencia aplicada, sesgos, disciplina y construcción de un proceso sostenible para mantenerse en pie cuando el mercado aprieta.</p>
-            <a class="inline-link" href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Leer reflexiones →</a>
-          </article>
-        </div>
-      </div>
-    </section>
+    <p class="hero-bio">
+      Soy José Antonio Rodríguez. Opero opciones, leo mercados y comparto lo que aprendo — sin filtros, sin promesas vacías. Cada semana escribo una carta para quien quiere operar con más criterio y menos ruido.
+    </p>
 
-    <!-- PILARES -->
-    <section class="section" id="pilares">
-      <div class="container">
-        <div class="section-head narrow">
-          <h2>Tres pilares. Un mismo enfoque.</h2>
-          <p>Todo el contenido de este proyecto gira en torno a tres ejes que se complementan y se necesitan mutuamente.</p>
-        </div>
-        <div class="pillars-shell">
-          <article class="pillar-item">
-            <div class="mini-kicker">⚙️ Opciones</div>
-            <h3>Estrategias reales y riesgo bien entendido</h3>
-            <p>Griegas, estructura de volatilidad, garantías, selección de setups y gestión de posiciones explicadas desde la práctica.</p>
-          </article>
-          <article class="pillar-item">
-            <div class="mini-kicker">📊 Mercados</div>
-            <h3>Contexto para no operar en vacío</h3>
-            <p>Lectura del entorno, comportamiento del VIX, flujos y estructura del mercado para que cada decisión tenga un marco más amplio.</p>
-          </article>
-          <article class="pillar-item">
-            <div class="mini-kicker">🎯 Experiencia</div>
-            <h3>Lo que solo enseña el tiempo en el mercado</h3>
-            <p>Errores cometidos, lecciones aprendidas y criterio construido a base de operar. Sin atajos, sin teoría vacía.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- VÍDEOS -->
-    <section class="section" id="videos">
-      <div class="container">
-        <div class="section-head narrow">
-          <h2>Últimos vídeos</h2>
-          <p>Desde episodios largos tipo podcast hasta análisis concretos y series formativas desde cero.</p>
-        </div>
-        <div class="featured-band" style="margin-bottom:var(--space-8);">
-          <div>
-            <div class="mini-kicker">🎙️ Podcast destacado</div>
-            <div class="featured-title">Dejé de vender opciones (y esto me cambió todo)</div>
-            <p style="max-width:52ch;color:var(--color-text-muted);margin-top:var(--space-5);">Un episodio de referencia: experiencia personal, cambio de enfoque operativo y una visión madura sobre el riesgo. Con José María, operador que pasó de vender volatilidad a comprarla.</p>
-            <p style="color:var(--color-text-faint);font-size:var(--text-sm);margin-top:var(--space-3);">Entre Opciones · Ep. 2 · 1h 51min</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=TO3pN-B-rWc" target="_blank" rel="noopener noreferrer">Ver episodio</a>
-              <a class="btn btn-secondary" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">Ver canal completo</a>
-            </div>
-          </div>
-          <div>
-            <img src="https://img.youtube.com/vi/TO3pN-B-rWc/maxresdefault.jpg"
-              alt="Dejé de vender opciones"
-              style="width:100%;border-radius:16px;border:1px solid var(--color-line-soft);box-shadow:var(--shadow-soft);"
-              loading="lazy" />
-          </div>
-        </div>
-        <div class="video-grid">
-          <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=8EeNPXXmsE8','_blank')">
-            <div class="video-thumb">
-              <img src="https://img.youtube.com/vi/8EeNPXXmsE8/maxresdefault.jpg" alt="No arruina la operación… arruina las garantías" loading="lazy" />
-            </div>
-            <div class="video-info">
-              <h4>No arruina la operación… arruina las garantías</h4>
-              <span>Gestión de riesgo · Mar 2026</span>
-            </div>
-          </div>
-          <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=SVdRziM8Wwo&list=PLi2ky7XMbYiZMzKiZQ7n3ZAJKdRincAEt','_blank')">
-            <div class="video-thumb">
-              <img src="https://img.youtube.com/vi/SVdRziM8Wwo/maxresdefault.jpg" alt="Opciones desde cero" loading="lazy" />
-              <div class="video-badge">Serie</div>
-            </div>
-            <div class="video-info">
-              <h4>Opciones desde cero: la lógica del asegurador (1/5)</h4>
-              <span>Serie completa · Mar 2026</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE MÍ -->
-    <section class="section" id="sobre-mi">
-      <div class="container about-grid">
-        <div class="about-copy narrow">
-          <div class="section-head">
-            <h2>Sobre mí</h2>
-          </div>
-          <p>Soy José Antonio Rodríguez. Opero, estudio y escribo sobre opciones, mercados y la parte mental del trading. Este proyecto nace de una idea sencilla: en español faltan espacios que hablen de opciones con más criterio, más contexto y menos espectáculo.</p>
-          <p style="margin-top:var(--space-4);">Mi enfoque no parte de la necesidad de parecer brillante, sino de la necesidad de sobrevivir, entender el riesgo y tomar mejores decisiones. Por eso este proyecto reúne vídeos, cartas y reflexiones pensadas para quien valora la experiencia más que la pose.</p>
-          <div class="signature">José Antonio Rodríguez</div>
-        </div>
-        <aside class="about-panel">
-          <div class="mini-kicker" style="margin-bottom:1rem;">Qué encontrarás aquí</div>
-          <div class="check-list">
-            <div class="check-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Análisis y piezas formativas sobre opciones con foco en estructura y gestión del riesgo.</span>
-            </div>
-            <div class="check-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Lecturas de mercado y volatilidad para entender el contexto antes de abrir una posición.</span>
-            </div>
-            <div class="check-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Experiencia real aplicada al trading: errores, aprendizajes y criterio construido con el tiempo.</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER -->
-    <section class="section" id="newsletter">
-      <div class="container newsletter-grid">
-        <div class="newsletter-copy narrow">
-          <div class="section-head">
-            <h2>La newsletter</h2>
-            <p>Reflexiones y análisis que no siempre caben en un vídeo. Un formato más pausado para desarrollar ideas con más contexto y mejor estructura.</p>
-          </div>
-          <div class="check-list">
-            <div class="check-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Visión semanal de mercados y contexto para operar mejor.</span>
-            </div>
-            <div class="check-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Ideas sobre opciones, volatilidad y gestión del riesgo.</span>
-            </div>
-            <div class="check-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg>
-              <span>Experiencia y criterio aplicados: lo que solo enseña el tiempo delante del mercado.</span>
-            </div>
-          </div>
-        </div>
-        <aside class="newsletter-panel">
-          <div class="mini-kicker" style="margin-bottom:1rem;">Suscripción gratuita</div>
-          <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-3);font-family:var(--font-display);font-weight:400;">Una carta para quien quiere pensar mejor lo que hace delante de la pantalla.</h3>
-          <p style="color:var(--color-text-muted);">Gratis, directa y sin ruido innecesario.</p>
-          <form action="https://jaralm.substack.com" method="get" target="_blank" novalidate>
-            <label for="email">Tu email</label>
-            <input id="email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" />
-            <button class="btn btn-primary" type="submit">Suscribirme gratis</button>
-          </form>
-          <p class="microcopy">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
-        </aside>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
+    <div class="subscribe-box">
       <div>
-        <div class="brand" style="margin-bottom:.65rem;">
-          <span class="brand-logo-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
-            </svg>
-          </span>
-          <span style="font-weight:700;">No Queda Otra Opción</span>
-        </div>
-        <div class="footer-note">© 2025 · noquedaotraopcion.com · Opciones · Mercados · Experiencia</div>
+        <strong>Suscríbete a la newsletter</strong>
+        <p>Gratis. Cada semana. Te puedes dar de baja cuando quieras.</p>
       </div>
-      <div class="footer-links">
-        <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://jaralm.substack.com" target="_blank" rel="noopener noreferrer">Newsletter</a>
-        <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
-        <a href="#">Aviso Legal</a>
+      <form action="https://jaralm.substack.com" method="get" target="_blank" novalidate>
+        <div class="field-row">
+          <input type="text" placeholder="Tu nombre" autocomplete="given-name"/>
+          <input type="email" name="email" placeholder="tu@email.com" autocomplete="email"/>
+          <button class="btn-subscribe" type="submit">Quiero suscribirme →</button>
+        </div>
+      </form>
+      <p class="fine-print">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
+    </div>
+
+    <div class="stats">
+      <div>
+        <div class="stat-n">YouTube</div>
+        <div class="stat-l">Canal activo</div>
+      </div>
+      <div>
+        <div class="stat-n">2 años</div>
+        <div class="stat-l">Newsletter</div>
+      </div>
+      <div>
+        <div class="stat-n">3 pilares</div>
+        <div class="stat-l">Opciones · Mercados · Experiencia</div>
       </div>
     </div>
-  </footer>
 
-  <script>
-    (function(){
-      const root=document.documentElement;
-      const btn=document.querySelector('[data-theme-toggle]');
-      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-      root.setAttribute('data-theme',theme);
-      function icon(t){
-        return t==='light'
-          ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
-          :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
-      }
-      btn.innerHTML=icon(theme);
-      btn.addEventListener('click',function(){
-        theme=theme==='dark'?'light':'dark';
-        root.setAttribute('data-theme',theme);
-        btn.innerHTML=icon(theme);
-      });
-    })();
-  </script>
+    <div class="signature">José Antonio Rodríguez</div>
+  </div>
+
+  <div class="hero-right">
+    <img
+      class="hero-photo"
+      src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
+      alt="José Antonio Rodríguez, trader y creador de No Queda Otra Opción"
+      loading="eager"
+    />
+    <div class="photo-badge">📈 Vendo opciones desde 2018</div>
+  </div>
+</section>
+
+<!-- PUENTES -->
+<div class="bridges">
+  <a class="bridge-card" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">
+    <div class="bridge-icon">▶️</div>
+    <div class="bridge-kicker">Canal de YouTube</div>
+    <h2>Vídeos, podcasts y series sobre opciones</h2>
+    <p>Episodios largos, análisis de mercado y formación desde cero. Sin prisas, con criterio.</p>
+    <span class="bridge-cta">Ver el canal →</span>
+  </a>
+
+  <a class="bridge-card" href="https://jaralm.substack.com" target="_blank" rel="noopener">
+    <div class="bridge-icon">✉️</div>
+    <div class="bridge-kicker">Newsletter semanal</div>
+    <h2>Una carta para pensar mejor el mercado</h2>
+    <p>Reflexiones y análisis que no caben en un vídeo. Cada semana, directa a tu bandeja de entrada.</p>
+    <span class="bridge-cta">Leer la newsletter →</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+          <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
+        </svg>
+      </span>
+      No Queda Otra Opción
+    </div>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+      <a href="#">Aviso Legal</a>
+    </div>
+    <span class="footer-copy">© 2025 · noquedaotraopcion.com</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const root=document.documentElement;
+  const btn=document.querySelector('[data-theme-toggle]');
+  let t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  root.setAttribute('data-theme',t);
+  function ic(v){return v==='light'
+    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';}
+  btn.innerHTML=ic(t);
+  btn.addEventListener('click',function(){t=t==='dark'?'light':'dark';root.setAttribute('data-theme',t);btn.innerHTML=ic(t);});
+})();
+</script>
 </body>
 </html>
