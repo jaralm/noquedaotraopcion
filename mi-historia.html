@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mi historia – No Queda Otra Opción</title>
   <meta name="description" content="La historia de José Antonio Rodríguez: más de treinta años en finanzas, una empresa propia y un camino largo hasta entender las opciones de verdad."/>
-  <!-- Open Graph -->
   <meta property="og:title" content="Mi historia – No Queda Otra Opción"/>
   <meta property="og:description" content="Más de treinta años construyendo criterio. Una carrera en finanzas, una empresa propia y el camino hasta las opciones."/>
   <meta property="og:image" content="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"/>
@@ -77,10 +76,7 @@
     .theme-btn:hover{transform:translateY(-1px);}
 
     /* HERO BIO */
-    .bio-hero{
-      max-width:1100px;margin:0 auto;padding:4rem 2rem 3rem;
-      display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start;
-    }
+    .bio-hero{max-width:1100px;margin:0 auto;padding:4rem 2rem 3rem;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start;}
     .bio-head{margin-bottom:2rem;}
     .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
     .kicker::before{content:'';width:24px;height:2px;background:var(--primary);border-radius:2px;}
@@ -95,17 +91,10 @@
     .bio-block p{color:var(--muted);line-height:1.85;margin-bottom:1rem;}
     .bio-block p:last-child{margin-bottom:0;}
     .bio-block strong{color:var(--text);}
-
-    /* CITA DESTACADA */
-    .bio-quote{
-      margin:1.5rem 0;padding:1.2rem 1.5rem;
-      border-left:3px solid var(--primary);
-      background:rgba(255,103,25,0.05);
-      border-radius:0 12px 12px 0;
-    }
+    .bio-quote{margin:1.5rem 0;padding:1.2rem 1.5rem;border-left:3px solid var(--primary);background:rgba(255,103,25,0.05);border-radius:0 12px 12px 0;}
     .bio-quote p{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--text);margin:0 !important;}
 
-    /* FOTO LATERAL */
+    /* ASIDE */
     .bio-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:1.5rem;}
     .bio-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line-soft);}
     .bio-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:.8rem;}
@@ -116,17 +105,9 @@
     .bio-stat-n{font-size:.95rem;font-weight:700;color:var(--text);}
     .sig{font-family:var(--serif);font-size:1.5rem;color:var(--primary);margin-top:.5rem;}
 
-    /* CTA FINAL */
-    .bio-cta{
-      max-width:1100px;margin:2rem auto 5rem;padding:3rem 2.5rem;
-      background:var(--surface2);border:1px solid var(--line);border-radius:24px;
-      display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;
-    }
+    /* CTA */
+    .bio-cta{max-width:1100px;margin:2rem auto 5rem;padding:2.5rem;background:var(--surface2);border:1px solid var(--line);border-radius:24px;}
     .bio-cta h2{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:400;letter-spacing:-0.02em;}
-    .bio-cta p{color:var(--muted);font-size:.95rem;margin-top:.5rem;}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.6rem;border-radius:999px;font-weight:700;font-size:.9rem;transition:all var(--ease);}
-    .btn-primary{background:var(--primary);color:#fff;}
-    .btn-primary:hover{background:var(--primary-h);transform:translateY(-1px);}
 
     /* FOOTER */
     footer{border-top:1px solid var(--line-soft);padding:2rem;}
@@ -141,7 +122,7 @@
       .bio-hero{grid-template-columns:1fr;}
       .bio-aside{position:static;}
       .bio-photo{aspect-ratio:4/3;}
-      .bio-cta{grid-template-columns:1fr;}
+      .bio-cta{margin-left:2rem;margin-right:2rem;}
     }
   </style>
 </head>
@@ -181,7 +162,7 @@
       <div class="bio-block">
         <div class="block-num">01</div>
         <div class="block-title">De dónde vengo</div>
-        <p>Estudié Economía en la Complutense — Finanzas y Auditoría — y llevo más de treinta años en el sector financiero, la mayor parte de ellos en una de las principales aseguradoras multinacionales de Europa.</p>
+        <p>Estudié Economía en la Complutense — Finanzas y Auditoría — y llevo más de treinta años en el sector financiero, la mayor parte de ellos en una de las principales aseguradoras multinacionales de Europa, donde he construido mi carrera desde técnico de control de gestión hasta responsable de Reporting y Operaciones en Finanzas.</p>
         <p>En paralelo, en 2008 fundé con un socio una empresa de administración de fincas. Sin inversores, sin red de seguridad corporativa. La construimos, la hicimos crecer y la vendimos en 2016 — y sigue funcionando con sus nuevos dueños. Fue una de las experiencias más completas que he tenido: cliente, proveedor, gestor y propietario al mismo tiempo.</p>
         <div class="bio-quote">
           <p>"La única forma de entender de verdad el riesgo es tener algo propio en juego."</p>
@@ -212,13 +193,11 @@
     </div>
   </div>
 
-  <!-- ASIDE DERECHO -->
   <aside class="bio-aside">
     <img class="bio-photo"
       src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
       alt="José Antonio Rodríguez"
       loading="eager"/>
-
     <div class="bio-card">
       <div class="bio-card-title">En números</div>
       <div class="bio-stat"><span class="bio-stat-l">Años en finanzas</span><span class="bio-stat-n">+30</span></div>
@@ -228,16 +207,12 @@
       <div class="bio-stat"><span class="bio-stat-l">Canal YouTube</span><span class="bio-stat-n">Activo · 2 años</span></div>
       <div class="bio-stat"><span class="bio-stat-l">Newsletter activa</span><span class="bio-stat-n">2 años</span></div>
     </div>
-
     <div class="sig">José Antonio Rodríguez</div>
   </aside>
 </div>
 
-<!-- CTA FINAL -->
-<div class="bio-cta" style="margin-left:2rem;margin-right:2rem;max-width:calc(1100px - 0px);">
-  <div>
-    <h2>¿Te identificas con esta forma de ver los mercados?</h2>
-  </div>
+<div class="bio-cta" style="margin-left:2rem;margin-right:2rem;">
+  <h2>¿Te identificas con esta forma de ver los mercados?</h2>
 </div>
 
 <footer>
@@ -257,7 +232,7 @@
       <a href="mi-historia.html">Mi historia</a>
       <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
     </div>
-    <span class="foot-copy">© 2025 · noquedaotraopcion.com</span>
+    <span class="foot-copy">© 2026 · noquedaotraopcion.com</span>
   </div>
 </footer>
 
