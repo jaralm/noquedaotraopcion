@@ -10,217 +10,143 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root,[data-theme="light"]{
-      --color-bg:#FFFBEB;
-      --color-surface:rgba(255,255,255,0.6);
-      --color-surface-2:#FFF6D6;
-      --color-line:rgba(30,26,20,0.11);
-      --color-line-soft:rgba(30,26,20,0.07);
-      --color-text:#1c1a14;
-      --color-text-muted:#7a6e55;
-      --color-text-faint:#a89880;
-      --color-primary:#FF6719;
-      --color-primary-hover:#e55610;
+      --bg:#FFFBEB;
+      --surface:rgba(255,255,255,0.6);
+      --surface2:#FFF6D6;
+      --line:rgba(30,26,20,0.11);
+      --line-soft:rgba(30,26,20,0.07);
+      --text:#1c1a14;
+      --muted:#7a6e55;
+      --faint:#a89880;
+      --primary:#FF6719;
+      --primary-h:#e55610;
       --shadow:0 16px 48px rgba(30,20,10,0.10);
-      --font-display:'Instrument Serif',Georgia,serif;
-      --font-body:'Inter',system-ui,sans-serif;
-      --transition:180ms cubic-bezier(0.16,1,0.3,1);
+      --serif:'Instrument Serif',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+      --ease:180ms cubic-bezier(0.16,1,0.3,1);
     }
     [data-theme="dark"]{
-      --color-bg:#151310;
-      --color-surface:rgba(255,255,255,0.04);
-      --color-surface-2:#1e1b16;
-      --color-line:rgba(245,235,220,0.11);
-      --color-line-soft:rgba(245,235,220,0.06);
-      --color-text:#ede7d9;
-      --color-text-muted:#b8aa96;
-      --color-text-faint:#8a7d6a;
-      --color-primary:#ff8c4a;
-      --color-primary-hover:#ff7733;
+      --bg:#151310;
+      --surface:rgba(255,255,255,0.04);
+      --surface2:#1e1b16;
+      --line:rgba(245,235,220,0.11);
+      --line-soft:rgba(245,235,220,0.06);
+      --text:#ede7d9;
+      --muted:#b8aa96;
+      --faint:#8a7d6a;
+      --primary:#ff8c4a;
+      --primary-h:#ff7733;
       --shadow:0 18px 48px rgba(0,0,0,0.30);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      font-family:var(--font-body);font-size:1rem;line-height:1.7;
-      color:var(--color-text);min-height:100vh;
+      font-family:var(--sans);font-size:1rem;line-height:1.7;
+      color:var(--text);min-height:100vh;
       background:
-        radial-gradient(circle at 8% 6%, rgba(255,103,25,0.08), transparent 28%),
-        radial-gradient(circle at 92% 12%, rgba(255,103,25,0.05), transparent 22%),
-        var(--color-bg);
+        radial-gradient(circle at 8% 6%,rgba(255,103,25,0.08),transparent 28%),
+        radial-gradient(circle at 92% 12%,rgba(255,103,25,0.05),transparent 22%),
+        var(--bg);
     }
     img{display:block;max-width:100%;}
     a{text-decoration:none;color:inherit;}
     button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
-    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;}
+    :focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
 
-    /* NAV */
-    nav{
+    /* ── NAV ── */
+    .nav{
       position:sticky;top:0;z-index:40;
       backdrop-filter:blur(16px);
-      background:color-mix(in srgb,var(--color-bg) 88%,transparent);
-      border-bottom:1px solid var(--color-line-soft);
+      background:color-mix(in srgb,var(--bg) 88%,transparent);
+      border-bottom:1px solid var(--line-soft);
     }
-    .nav-inner{
+    .nav-in{
       max-width:1100px;margin:0 auto;padding:0 2rem;
-      display:flex;justify-content:space-between;align-items:center;
-      min-height:68px;
+      display:flex;justify-content:space-between;align-items:center;min-height:68px;
     }
-    .nav-brand{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:.95rem;}
-    .nav-icon{
-      width:32px;height:32px;border-radius:8px;
-      background:var(--color-primary);display:grid;place-items:center;flex-shrink:0;
-    }
-    .nav-right{display:flex;align-items:center;gap:1rem;}
-    .nav-link{font-size:.85rem;color:var(--color-text-muted);transition:color var(--transition);}
-    .nav-link:hover{color:var(--color-primary);}
-    .theme-btn{
-      width:38px;height:38px;border-radius:50%;
-      border:1px solid var(--color-line);background:var(--color-surface);
-      display:grid;place-items:center;transition:all var(--transition);
-    }
+    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;}
+    .nav-ico{width:32px;height:32px;border-radius:8px;background:var(--primary);display:grid;place-items:center;flex-shrink:0;}
+    .nav-links{display:flex;align-items:center;gap:1rem;}
+    .nav-a{font-size:.85rem;color:var(--muted);transition:color var(--ease);}
+    .nav-a:hover{color:var(--primary);}
+    .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:all var(--ease);}
     .theme-btn:hover{transform:translateY(-1px);}
 
-    /* HERO */
-    .hero{
-      max-width:1100px;margin:0 auto;padding:4rem 2rem 3rem;
-      display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
-      min-height:calc(100vh - 68px);
-    }
+    /* ── HERO WRAPPER ── */
+    .hero-wrap{max-width:1100px;margin:0 auto;padding:3.5rem 2rem 3rem;}
+
+    /* 1. Titular – ancho completo */
+    .hero-head{margin-bottom:2.5rem;}
+    .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
+    .kicker::before{content:'';width:24px;height:2px;background:var(--primary);border-radius:2px;}
+    h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.8rem);font-weight:400;line-height:1.0;letter-spacing:-0.02em;}
+    h1 em{font-style:italic;color:var(--primary);}
+
+    /* 2. Cuerpo – dos columnas al mismo nivel */
+    .hero-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
     .hero-left{display:flex;flex-direction:column;gap:1.5rem;}
-    .kicker{
-      display:inline-flex;align-items:center;gap:.5rem;
-      font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
-      color:var(--color-primary);
-    }
-    .kicker::before{content:'';width:24px;height:2px;background:var(--color-primary);border-radius:2px;}
-    h1{
-      font-family:var(--font-display);font-size:clamp(2.6rem,4vw,4rem);
-      font-weight:400;line-height:1.02;letter-spacing:-0.02em;
-    }
-    h1 em{font-style:italic;color:var(--color-primary);}
-    .hero-bio{color:var(--color-text-muted);font-size:1.05rem;line-height:1.8;max-width:48ch;}
+    .hero-bio{color:var(--muted);font-size:1rem;line-height:1.85;}
+    .hero-bio p+p{margin-top:1rem;}
 
-    /* FORM */
-    .subscribe-box{
-      background:var(--color-surface);
-      border:1px solid var(--color-line);
-      border-radius:20px;padding:1.8rem;
-      display:flex;flex-direction:column;gap:1rem;
-    }
-    .subscribe-box p{font-size:.9rem;color:var(--color-text-muted);}
-    .subscribe-box strong{color:var(--color-text);font-size:1rem;}
-    .field-row{display:flex;flex-direction:column;gap:.6rem;}
-    .field-row input{
-      width:100%;padding:.85rem 1rem;
-      border:1px solid var(--color-line);border-radius:12px;
-      background:color-mix(in srgb,var(--color-bg) 70%,white 30%);
-      color:var(--color-text);font-family:inherit;font-size:.95rem;
-      outline:none;transition:border-color var(--transition);
-    }
-    .field-row input:focus{border-color:var(--color-primary);}
-    .field-row input::placeholder{color:var(--color-text-faint);}
-    .btn-subscribe{
-      width:100%;padding:.95rem;border-radius:12px;
-      background:var(--color-primary);color:#fff;
-      font-weight:700;font-size:.95rem;
-      transition:all var(--transition);
-    }
-    .btn-subscribe:hover{background:var(--color-primary-hover);transform:translateY(-1px);}
-    .fine-print{font-size:.72rem;color:var(--color-text-faint);text-align:center;}
+    /* Form */
+    .sub-box{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:.9rem;}
+    .sub-box strong{font-size:1rem;}
+    .sub-box span{font-size:.88rem;color:var(--muted);}
+    .sub-box input{width:100%;padding:.8rem 1rem;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--bg) 70%,white 30%);color:var(--text);font-family:var(--sans);font-size:.9rem;outline:none;transition:border-color var(--ease);}
+    .sub-box input:focus{border-color:var(--primary);}
+    .sub-box input::placeholder{color:var(--faint);}
+    .sub-btn{width:100%;padding:.9rem;border-radius:12px;background:var(--primary);color:#fff;font-weight:700;font-size:.92rem;transition:all var(--ease);}
+    .sub-btn:hover{background:var(--primary-h);transform:translateY(-1px);}
+    .fine{font-size:.72rem;color:var(--faint);text-align:center;}
 
-    /* FOTO */
+    /* Stats */
+    .stats{display:flex;gap:2rem;padding-top:1.2rem;border-top:1px solid var(--line-soft);flex-wrap:wrap;}
+    .stat-n{font-size:1.4rem;font-weight:800;color:var(--primary);}
+    .stat-l{font-size:.68rem;color:var(--faint);text-transform:uppercase;letter-spacing:.1em;margin-top:.1rem;}
+    .sig{font-family:var(--serif);font-size:1.6rem;color:var(--primary);}
+
+    /* Foto */
     .hero-right{position:relative;}
-    .hero-photo{
-      width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;
-      border-radius:28px;box-shadow:var(--shadow);
-      border:1px solid var(--color-line-soft);
-    }
-    .photo-badge{
-      position:absolute;bottom:1.2rem;left:-1.2rem;
-      background:var(--color-primary);color:#fff;
-      padding:.6rem 1.1rem;border-radius:12px;
-      font-size:.78rem;font-weight:700;
-      box-shadow:0 4px 16px rgba(255,103,25,0.35);
-      white-space:nowrap;
-    }
+    .hero-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line-soft);}
+    .photo-badge{position:absolute;bottom:1rem;left:-1rem;background:var(--primary);color:#fff;padding:.5rem 1rem;border-radius:10px;font-size:.76rem;font-weight:700;box-shadow:0 4px 16px rgba(255,103,25,0.35);white-space:nowrap;}
 
-    /* STATS */
-    .stats{
-      display:flex;gap:2.5rem;padding-top:1.5rem;
-      border-top:1px solid var(--color-line-soft);
-    }
-    .stat-n{font-size:1.5rem;font-weight:800;color:var(--color-primary);}
-    .stat-l{font-size:.72rem;color:var(--color-text-faint);text-transform:uppercase;letter-spacing:.1em;margin-top:.1rem;}
+    /* ── PUENTES ── */
+    .bridges{max-width:1100px;margin:0 auto;padding:0 2rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+    .bridge{border:1px solid var(--line);border-radius:20px;padding:2rem 2.2rem;background:var(--surface);display:flex;flex-direction:column;gap:1rem;transition:all var(--ease);color:inherit;}
+    .bridge:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow);}
+    .bridge-ico{font-size:1.8rem;}
+    .bridge-k{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);}
+    .bridge h2{font-family:var(--serif);font-size:clamp(1.4rem,2vw,1.9rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;}
+    .bridge p{color:var(--muted);font-size:.9rem;line-height:1.7;}
+    .bridge-cta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.86rem;color:var(--primary);margin-top:.4rem;}
 
-    /* SIGNATURE */
-    .signature{
-      font-family:var(--font-display);font-size:1.6rem;
-      color:var(--color-primary);line-height:1;
-    }
+    /* ── FOOTER ── */
+    footer{border-top:1px solid var(--line-soft);padding:2rem;}
+    .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
+    .foot-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
+    .foot-links a:hover{color:var(--primary);}
+    .foot-copy{font-size:.78rem;color:var(--faint);}
 
-    /* PUENTES */
-    .bridges{
-      max-width:1100px;margin:0 auto;
-      padding:0 2rem 5rem;
-      display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
-    }
-    .bridge-card{
-      border:1px solid var(--color-line);border-radius:20px;
-      padding:2rem 2.2rem;background:var(--color-surface);
-      display:flex;flex-direction:column;gap:1rem;
-      transition:all var(--transition);
-      text-decoration:none;color:inherit;
-    }
-    .bridge-card:hover{
-      border-color:var(--color-primary);
-      transform:translateY(-3px);
-      box-shadow:var(--shadow);
-    }
-    .bridge-icon{font-size:2rem;}
-    .bridge-kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary);}
-    .bridge-card h2{font-family:var(--font-display);font-size:clamp(1.5rem,2vw,2rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;}
-    .bridge-card p{color:var(--color-text-muted);font-size:.92rem;line-height:1.7;}
-    .bridge-cta{
-      display:inline-flex;align-items:center;gap:.4rem;
-      font-weight:700;font-size:.88rem;color:var(--color-primary);
-      margin-top:.5rem;
-    }
-
-    /* FOOTER */
-    footer{
-      border-top:1px solid var(--color-line-soft);
-      padding:2rem;
-    }
-    .footer-inner{
-      max-width:1100px;margin:0 auto;
-      display:flex;justify-content:space-between;align-items:center;
-      flex-wrap:wrap;gap:1rem;
-    }
-    .footer-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
-    .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
-    .footer-links a{font-size:.82rem;color:var(--color-text-muted);transition:color var(--transition);}
-    .footer-links a:hover{color:var(--color-primary);}
-    .footer-copy{font-size:.78rem;color:var(--color-text-faint);}
-
-    /* MOBILE */
+    /* ── RESPONSIVE ── */
     @media(max-width:780px){
-      .hero{gap:1.5rem;min-height:auto;padding-top:2.5rem;}
-      .hero-body{grid-template-columns:1fr;gap:2rem;}
+      .hero-body{grid-template-columns:1fr;}
       .hero-right{order:-1;}
       .hero-photo{aspect-ratio:4/3;}
       .photo-badge{left:.5rem;bottom:.5rem;}
       .bridges{grid-template-columns:1fr;}
-      .stats{gap:1.5rem;flex-wrap:wrap;}
+      .stats{gap:1.2rem;}
     }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a class="nav-brand" href="#" aria-label="Inicio">
-      <span class="nav-icon" aria-hidden="true">
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="#">
+      <span class="nav-ico" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
           <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
@@ -228,90 +154,80 @@
       </span>
       No Queda Otra Opción
     </a>
-    <div class="nav-right">
-      <a class="nav-link" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
-      <a class="nav-link" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
-      <a class="nav-link" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+    <div class="nav-links">
+      <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
+      <a class="nav-a" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a class="nav-a" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
       <button class="theme-btn" data-theme-toggle aria-label="Cambiar modo"></button>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <!-- Titular: ancho completo -->
-  <div class="hero-headline">
-    <span class="kicker">Opciones · Mercados · Experiencia</span>
+<div class="hero-wrap">
+
+  <!-- 1. Titular completo -->
+  <div class="hero-head">
+    <div class="kicker">Opciones · Mercados · Experiencia</div>
     <h1>En un mercado que no perdona…<br><em>no queda otra opción.</em></h1>
   </div>
 
-  <!-- Cuerpo: texto izquierda, foto derecha al mismo nivel -->
+  <!-- 2. Texto izquierda / Foto derecha al mismo nivel -->
   <div class="hero-body">
-    <div class="hero-left">
-      <p class="hero-bio">
-        Opero opciones, leo mercados y comparto lo que aprendo — sin filtros, sin promesas vacías.<br><br>
-        Llevo años estudiando cómo se mueve la volatilidad, cómo se forman las opciones y por qué el mercado castiga a quien improvisa. No enseño atajos ni vendo métodos. Comparto el proceso real de alguien que opera con convicción, construida con tiempo, datos y muchos errores bien pagados.<br><br>
-        He aprendido que la ventaja no está en la señal, sino en el criterio y la gestión. Cada operación va con mi propio capital, cada análisis responde a mi propia convicción. Escribo sobre lo que me funciona, lo que no, y por qué la mayoría del ruido financiero no merece tu atención — para quien prefiera pensar antes de actuar.
-      </p>
 
-      <div class="subscribe-box">
+    <div class="hero-left">
+      <div class="hero-bio">
+        <p>Opero opciones, leo mercados y comparto lo que aprendo — sin filtros, sin promesas vacías.</p>
+        <p>Llevo años estudiando cómo se mueve la volatilidad, cómo se forman las opciones y por qué el mercado castiga a quien improvisa. No enseño atajos ni vendo métodos. Comparto el proceso real de alguien que opera con convicción, construida con tiempo, datos y muchos errores bien pagados.</p>
+        <p>He aprendido que la ventaja no está en la señal, sino en el criterio y la gestión. Cada operación va con mi propio capital, cada análisis responde a mi propia convicción. Escribo sobre lo que me funciona, lo que no, y por qué la mayoría del ruido financiero no merece tu atención — para quien prefiera pensar antes de actuar.</p>
+      </div>
+
+      <div class="sub-box">
         <div>
-          <strong>Suscríbete a la newsletter</strong>
-          <p>Gratis. Cada semana. Te puedes dar de baja cuando quieras.</p>
+          <strong>Suscríbete a la newsletter</strong><br>
+          <span>Gratis. Cada semana. Te puedes dar de baja cuando quieras.</span>
         </div>
         <form action="https://jaralm.substack.com" method="get" target="_blank" novalidate>
-          <div class="field-row">
+          <div style="display:flex;flex-direction:column;gap:.6rem;">
             <input type="text" placeholder="Tu nombre" autocomplete="given-name"/>
             <input type="email" name="email" placeholder="tu@email.com" autocomplete="email"/>
-            <button class="btn-subscribe" type="submit">Quiero suscribirme →</button>
+            <button class="sub-btn" type="submit">Quiero suscribirme →</button>
           </div>
         </form>
-        <p class="fine-print">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
+        <p class="fine">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
       </div>
 
       <div class="stats">
-        <div>
-          <div class="stat-n">YouTube</div>
-          <div class="stat-l">Canal activo</div>
-        </div>
-        <div>
-          <div class="stat-n">2 años</div>
-          <div class="stat-l">Newsletter</div>
-        </div>
-        <div>
-          <div class="stat-n">3 pilares</div>
-          <div class="stat-l">Opciones · Mercados · Experiencia</div>
-        </div>
+        <div><div class="stat-n">YouTube</div><div class="stat-l">Canal activo</div></div>
+        <div><div class="stat-n">2 años</div><div class="stat-l">Newsletter</div></div>
+        <div><div class="stat-n">3 pilares</div><div class="stat-l">Opciones · Mercados · Experiencia</div></div>
       </div>
 
-      <div class="signature">José Antonio Rodríguez</div>
+      <div class="sig">José Antonio Rodríguez</div>
     </div>
 
     <div class="hero-right">
-      <img
-        class="hero-photo"
+      <img class="hero-photo"
         src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
         alt="José Antonio Rodríguez, trader y creador de No Queda Otra Opción"
-        loading="eager"
-      />
+        loading="eager"/>
       <div class="photo-badge">📈 Vendo opciones desde 2018</div>
     </div>
+
   </div>
-</section>
+</div>
 
 <!-- PUENTES -->
 <div class="bridges">
-  <a class="bridge-card" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">
-    <div class="bridge-icon">▶️</div>
-    <div class="bridge-kicker">Canal de YouTube</div>
+  <a class="bridge" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">
+    <div class="bridge-ico">▶️</div>
+    <div class="bridge-k">Canal de YouTube</div>
     <h2>Vídeos, podcasts y series sobre opciones</h2>
     <p>Episodios largos, análisis de mercado y formación desde cero. Sin prisas, con criterio.</p>
     <span class="bridge-cta">Ver el canal →</span>
   </a>
-
-  <a class="bridge-card" href="https://jaralm.substack.com" target="_blank" rel="noopener">
-    <div class="bridge-icon">✉️</div>
-    <div class="bridge-kicker">Newsletter semanal</div>
+  <a class="bridge" href="https://jaralm.substack.com" target="_blank" rel="noopener">
+    <div class="bridge-ico">✉️</div>
+    <div class="bridge-k">Newsletter semanal</div>
     <h2>Una carta para pensar mejor el mercado</h2>
     <p>Reflexiones y análisis que no caben en un vídeo. Cada semana, directa a tu bandeja de entrada.</p>
     <span class="bridge-cta">Leer la newsletter →</span>
@@ -320,9 +236,9 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="nav-icon" aria-hidden="true">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <span class="nav-ico" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
           <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
@@ -330,13 +246,13 @@
       </span>
       No Queda Otra Opción
     </div>
-    <div class="footer-links">
+    <div class="foot-links">
       <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
       <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
       <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
       <a href="#">Aviso Legal</a>
     </div>
-    <span class="footer-copy">© 2025 · noquedaotraopcion.com</span>
+    <span class="foot-copy">© 2025 · noquedaotraopcion.com</span>
   </div>
 </footer>
 
