@@ -4,10 +4,11 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>No Queda Otra Opción – José Antonio Rodríguez</title>
-  <meta name="description" content="Opciones, mercados y experiencia del trader. Canal de YouTube y newsletter semanal por José Antonio Rodríguez."/>
+  <meta name="description" content="Opciones, mercados y experiencia del trader. Canal de YouTube y newsletter por José Antonio Rodríguez."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
     :root,[data-theme="light"]{
       --bg:#FFFBEB;
@@ -53,17 +54,9 @@
     button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
     :focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
 
-    /* ── NAV ── */
-    .nav{
-      position:sticky;top:0;z-index:40;
-      backdrop-filter:blur(16px);
-      background:color-mix(in srgb,var(--bg) 88%,transparent);
-      border-bottom:1px solid var(--line-soft);
-    }
-    .nav-in{
-      max-width:1100px;margin:0 auto;padding:0 2rem;
-      display:flex;justify-content:space-between;align-items:center;min-height:68px;
-    }
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--line-soft);}
+    .nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;min-height:68px;}
     .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;}
     .nav-ico{width:32px;height:32px;border-radius:8px;background:var(--primary);display:grid;place-items:center;flex-shrink:0;}
     .nav-links{display:flex;align-items:center;gap:1rem;}
@@ -72,45 +65,39 @@
     .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:all var(--ease);}
     .theme-btn:hover{transform:translateY(-1px);}
 
-    /* ── HERO WRAPPER ── */
+    /* HERO */
     .hero-wrap{max-width:1100px;margin:0 auto;padding:3.5rem 2rem 3rem;}
-
-    /* 1. Titular – ancho completo */
     .hero-head{margin-bottom:2.5rem;}
     .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
     .kicker::before{content:'';width:24px;height:2px;background:var(--primary);border-radius:2px;}
     h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.8rem);font-weight:400;line-height:1.0;letter-spacing:-0.02em;}
     h1 em{font-style:italic;color:var(--primary);}
-
-    /* 2. Cuerpo – dos columnas al mismo nivel */
     .hero-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
     .hero-left{display:flex;flex-direction:column;gap:1.5rem;}
     .hero-bio{color:var(--muted);font-size:1rem;line-height:1.85;}
     .hero-bio p+p{margin-top:1rem;}
 
-    /* Form */
-    .sub-box{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.6rem;display:flex;flex-direction:column;gap:.9rem;}
-    .sub-box strong{font-size:1rem;}
-    .sub-box span{font-size:.88rem;color:var(--muted);}
-    .sub-box input{width:100%;padding:.8rem 1rem;border:1px solid var(--line);border-radius:12px;background:color-mix(in srgb,var(--bg) 70%,white 30%);color:var(--text);font-family:var(--sans);font-size:.9rem;outline:none;transition:border-color var(--ease);}
-    .sub-box input:focus{border-color:var(--primary);}
-    .sub-box input::placeholder{color:var(--faint);}
-    .sub-btn{width:100%;padding:.9rem;border-radius:12px;background:var(--primary);color:#fff;font-weight:700;font-size:.92rem;transition:all var(--ease);}
-    .sub-btn:hover{background:var(--primary-h);transform:translateY(-1px);}
-    .fine{font-size:.72rem;color:var(--faint);text-align:center;}
-
-    /* Stats */
-    .stats{display:flex;gap:2rem;padding-top:1.2rem;border-top:1px solid var(--line-soft);flex-wrap:wrap;}
-    .stat-n{font-size:1.4rem;font-weight:800;color:var(--primary);}
-    .stat-l{font-size:.68rem;color:var(--faint);text-transform:uppercase;letter-spacing:.1em;margin-top:.1rem;}
-    .sig{font-family:var(--serif);font-size:1.6rem;color:var(--primary);}
-
     /* Foto */
-    .hero-right{position:relative;}
+    .hero-right{position:relative;display:flex;flex-direction:column;align-items:center;gap:1rem;}
     .hero-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line-soft);}
-    .photo-badge{position:absolute;bottom:1rem;left:-1rem;background:var(--primary);color:#fff;padding:.5rem 1rem;border-radius:10px;font-size:.76rem;font-weight:700;box-shadow:0 4px 16px rgba(255,103,25,0.35);white-space:nowrap;}
+    .photo-badge{
+      position:absolute;bottom:4rem;left:-1rem;
+      background:var(--primary);color:#fff;
+      padding:.5rem 1rem;border-radius:10px;
+      font-size:.76rem;font-weight:700;font-style:italic;
+      box-shadow:0 4px 16px rgba(255,103,25,0.35);
+    }
+    .sig{font-family:var(--serif);font-size:1.5rem;color:var(--primary);text-align:center;}
 
-    /* ── PUENTES ── */
+    /* FRASE SEPARADORA */
+    .separator{
+      max-width:1100px;margin:0 auto;
+      padding:3rem 2rem;text-align:center;
+      border-top:1px solid var(--line-soft);
+    }
+    .separator p{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:400;line-height:1.2;letter-spacing:-0.02em;color:var(--text);font-style:italic;}
+
+    /* PUENTES */
     .bridges{max-width:1100px;margin:0 auto;padding:0 2rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
     .bridge{border:1px solid var(--line);border-radius:20px;padding:2rem 2.2rem;background:var(--surface);display:flex;flex-direction:column;gap:1rem;transition:all var(--ease);color:inherit;}
     .bridge:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow);}
@@ -120,7 +107,7 @@
     .bridge p{color:var(--muted);font-size:.9rem;line-height:1.7;}
     .bridge-cta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.86rem;color:var(--primary);margin-top:.4rem;}
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer{border-top:1px solid var(--line-soft);padding:2rem;}
     .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
     .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
@@ -129,14 +116,12 @@
     .foot-links a:hover{color:var(--primary);}
     .foot-copy{font-size:.78rem;color:var(--faint);}
 
-    /* ── RESPONSIVE ── */
     @media(max-width:780px){
       .hero-body{grid-template-columns:1fr;}
       .hero-right{order:-1;}
       .hero-photo{aspect-ratio:4/3;}
-      .photo-badge{left:.5rem;bottom:.5rem;}
+      .photo-badge{left:.5rem;bottom:5rem;}
       .bridges{grid-template-columns:1fr;}
-      .stats{gap:1.2rem;}
     }
   </style>
 </head>
@@ -166,44 +151,20 @@
 
 <div class="hero-wrap">
 
-  <!-- 1. Titular completo -->
+  <!-- Titular completo -->
   <div class="hero-head">
     <div class="kicker">Opciones · Mercados · Experiencia</div>
     <h1>En un mercado que no perdona…<br><em>no queda otra opción.</em></h1>
   </div>
 
-  <!-- 2. Texto izquierda / Foto derecha al mismo nivel -->
+  <!-- Texto izquierda / Foto derecha -->
   <div class="hero-body">
-
     <div class="hero-left">
       <div class="hero-bio">
         <p>Opero opciones, leo mercados y comparto lo que aprendo — sin filtros, sin promesas vacías.</p>
         <p>Llevo años estudiando cómo se mueve la volatilidad, cómo se forman las opciones y por qué el mercado castiga a quien improvisa. No enseño atajos ni vendo métodos. Comparto el proceso real de alguien que opera con convicción, construida con tiempo, datos y muchos errores bien pagados.</p>
         <p>He aprendido que la ventaja no está en la señal, sino en el criterio y la gestión. Cada operación va con mi propio capital, cada análisis responde a mi propia convicción. Escribo sobre lo que me funciona, lo que no, y por qué la mayoría del ruido financiero no merece tu atención — para quien prefiera pensar antes de actuar.</p>
       </div>
-
-      <div class="sub-box">
-        <div>
-          <strong>Suscríbete a la newsletter</strong><br>
-          <span>Gratis. Cada semana. Te puedes dar de baja cuando quieras.</span>
-        </div>
-        <form action="https://jaralm.substack.com" method="get" target="_blank" novalidate>
-          <div style="display:flex;flex-direction:column;gap:.6rem;">
-            <input type="text" placeholder="Tu nombre" autocomplete="given-name"/>
-            <input type="email" name="email" placeholder="tu@email.com" autocomplete="email"/>
-            <button class="sub-btn" type="submit">Quiero suscribirme →</button>
-          </div>
-        </form>
-        <p class="fine">Sin spam. Sin automatismos. Solo contenido que merezca la pena abrir.</p>
-      </div>
-
-      <div class="stats">
-        <div><div class="stat-n">YouTube</div><div class="stat-l">Canal activo</div></div>
-        <div><div class="stat-n">2 años</div><div class="stat-l">Newsletter</div></div>
-        <div><div class="stat-n">3 pilares</div><div class="stat-l">Opciones · Mercados · Experiencia</div></div>
-      </div>
-
-      <div class="sig">José Antonio Rodríguez</div>
     </div>
 
     <div class="hero-right">
@@ -211,17 +172,15 @@
         src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
         alt="José Antonio Rodríguez, trader y creador de No Queda Otra Opción"
         loading="eager"/>
-      <div class="photo-badge"><em>"No va de acertar más… va de equivocarse mejor"</em></div>
+      <div class="photo-badge">"No va de acertar más. Va de equivocarse mejor… y seguir en el juego."</div>
+      <div class="sig">José Antonio Rodríguez</div>
     </div>
-
   </div>
 </div>
 
 <!-- FRASE SEPARADORA -->
-<div style="max-width:1100px;margin:0 auto;padding:3rem 2rem;text-align:center;border-top:1px solid var(--line-soft);">
-  <p style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:400;line-height:1.2;letter-spacing:-0.02em;color:var(--text);font-style:italic;">
-    "El mercado no premia al que más hace…<br>sino al que mejor gestiona."
-  </p>
+<div class="separator">
+  <p>"El mercado no premia al que más hace…<br>sino al que mejor gestiona."</p>
 </div>
 
 <!-- PUENTES -->
@@ -230,14 +189,14 @@
     <div class="bridge-ico">▶️</div>
     <div class="bridge-k">Canal de YouTube</div>
     <h2>Vídeos, podcasts y series sobre opciones</h2>
-    <p>Episodios largos, análisis de mercado y formación desde cero. Sin prisas, con criterio.</p>
+    <p>El canal que me hubiera gustado encontrar cuando empecé. Lo que falta en español sobre opciones y volatilidad.</p>
     <span class="bridge-cta">Ver el canal →</span>
   </a>
   <a class="bridge" href="https://jaralm.substack.com" target="_blank" rel="noopener">
     <div class="bridge-ico">✉️</div>
-    <div class="bridge-k">Newsletter semanal</div>
-    <h2>Una carta para pensar mejor el mercado</h2>
-    <p>Reflexiones y análisis que no caben en un vídeo. Cada semana, directa a tu bandeja de entrada.</p>
+    <div class="bridge-k">Newsletter</div>
+    <h2>Conocimiento sobre el mercado</h2>
+    <p>Reflexiones y análisis que no caben en un vídeo. Suscríbete para que vaya directa a tu bandeja de entrada.</p>
     <span class="bridge-cta">Leer la newsletter →</span>
   </a>
 </div>
@@ -257,8 +216,8 @@
     <div class="foot-links">
       <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
       <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a href="mi-historia.html">Mi historia</a>
       <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
-      <a href="#">Aviso Legal</a>
     </div>
     <span class="foot-copy">© 2025 · noquedaotraopcion.com</span>
   </div>
