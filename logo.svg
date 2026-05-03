@@ -1,0 +1,52 @@
+<svg viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+
+  <!-- Fondo claro (para ver el logo) -->
+  <rect width="520" height="180" fill="#FFFBEB" rx="16"/>
+
+  <!-- ICONO: marca cuadrada con línea de mercado ascendente -->
+  <rect x="28" y="34" width="112" height="112" rx="18" fill="#FF6719"/>
+
+  <!-- Línea ascendente tipo payoff de opción (hockey stick) -->
+  <!-- Baja plana, luego sube con ángulo — referencia call option -->
+  <polyline
+    points="50,110  72,110  104,62"
+    fill="none"
+    stroke="#FFFBEB"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- Punto de inflexión (strike) -->
+  <circle cx="72" cy="110" r="5" fill="#FFFBEB"/>
+
+  <!-- WORDMARK principal -->
+  <text
+    x="162" y="92"
+    font-size="38"
+    font-weight="800"
+    fill="#1c1a14"
+    letter-spacing="-1"
+  >No Queda Otra</text>
+
+  <!-- "Opción" con el acento naranja -->
+  <text
+    x="162" y="137"
+    font-size="38"
+    font-weight="800"
+    fill="#FF6719"
+    letter-spacing="-1"
+  >Opción</text>
+
+  <!-- Línea separadora fina -->
+  <line x1="162" y1="100" x2="490" y2="100" stroke="#e8d9b0" stroke-width="1"/>
+
+  <!-- Subtítulo / tagline -->
+  <text
+    x="163" y="156"
+    font-size="12"
+    font-weight="500"
+    fill="#7a6e55"
+    letter-spacing="2.5"
+  >OPCIONES · MERCADOS · PSICOLOGÍA</text>
+
+</svg>
