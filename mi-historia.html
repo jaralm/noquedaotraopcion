@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://noquedaotraopcion.com/mi-historia.html"/>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <style>
     :root,[data-theme="light"]{
@@ -128,6 +129,8 @@
 </head>
 <body>
 
+<a href="#contenido" style="position:absolute;left:1rem;top:-3rem;background:var(--primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;font-size:.85rem;font-weight:600;transition:top .2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-3rem'">Saltar al contenido</a>
+
 <nav class="nav">
   <div class="nav-in">
     <a class="nav-brand" href="index.html">
@@ -150,7 +153,7 @@
   </div>
 </nav>
 
-<div class="bio-hero">
+<div class="bio-hero" id="contenido">
   <div>
     <div class="bio-head">
       <div class="kicker">Mi historia</div>
@@ -198,7 +201,7 @@
     <img class="bio-photo"
       src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
       alt="José Antonio Rodríguez"
-      loading="eager"/>
+      loading="eager" fetchpriority="high"/>
     <div class="bio-card">
       <div class="bio-card-title">En números</div>
       <div class="bio-stat"><span class="bio-stat-l">Años en finanzas</span><span class="bio-stat-n">+30</span></div>
