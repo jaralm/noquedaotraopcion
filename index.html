@@ -237,6 +237,7 @@
       No Queda Otra Opción
     </div>
     <div class="foot-links">
+      <a href="recursos.html">Recursos</a>
       <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
       <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
       <a href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
@@ -249,15 +250,25 @@
 
 <script>
 (function(){
-  const root=document.documentElement;
-  const btn=document.querySelector('[data-theme-toggle]');
-  let t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
-  root.setAttribute('data-theme',t);
-  function ic(v){return v==='light'
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';}
-  btn.innerHTML=ic(t);
-  btn.addEventListener('click',function(){t=t==='dark'?'light':'dark';root.setAttribute('data-theme',t);btn.innerHTML=ic(t);});
+  const root = document.documentElement;
+  const btn  = document.querySelector('[data-theme-toggle]');
+  // FIX: leer localStorage primero; si no existe, respetar preferencia del sistema
+  let t = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', t);
+
+  function ic(v){
+    return v === 'light'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  }
+  btn.innerHTML = ic(t);
+  btn.addEventListener('click', function(){
+    t = t === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', t);
+    btn.innerHTML = ic(t);
+    localStorage.setItem('theme', t); // FIX: guardar preferencia
+  });
 })();
 </script>
 </body>
