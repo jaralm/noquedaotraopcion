@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>No Queda Otra Opción – José Antonio Rodríguez</title>
   <meta name="description" content="José Antonio Rodríguez. Opciones, volatilidad y mercados. Sin filtros, sin atajos. Para quien prefiere pensar antes de operar."/>
-  <!-- Open Graph -->
   <meta property="og:title" content="No Queda Otra Opción – José Antonio Rodríguez"/>
   <meta property="og:description" content="Opciones, volatilidad y mercados. Sin filtros, sin atajos. Para quien prefiere pensar antes de operar."/>
   <meta property="og:image" content="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"/>
@@ -20,35 +19,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://noquedaotraopcion.com"/>
   <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     :root,[data-theme="light"]{
-      --bg:#FFFBEB;
-      --surface:rgba(255,255,255,0.6);
-      --surface2:#FFF6D6;
-      --line:rgba(30,26,20,0.11);
-      --line-soft:rgba(30,26,20,0.07);
-      --text:#1c1a14;
-      --muted:#7a6e55;
-      --faint:#a89880;
-      --primary:#FF6719;
-      --primary-h:#e55610;
+      --bg:#FFFBEB; --surface:rgba(255,255,255,0.6); --surface2:#FFF6D6;
+      --line:rgba(30,26,20,0.11); --line-soft:rgba(30,26,20,0.07);
+      --text:#1c1a14; --muted:#7a6e55; --faint:#a89880;
+      --primary:#FF6719; --primary-h:#e55610;
       --shadow:0 16px 48px rgba(30,20,10,0.10);
       --serif:'Instrument Serif',Georgia,serif;
       --sans:'Inter',system-ui,sans-serif;
       --ease:180ms cubic-bezier(0.16,1,0.3,1);
     }
     [data-theme="dark"]{
-      --bg:#151310;
-      --surface:rgba(255,255,255,0.04);
-      --surface2:#1e1b16;
-      --line:rgba(245,235,220,0.11);
-      --line-soft:rgba(245,235,220,0.06);
-      --text:#ede7d9;
-      --muted:#b8aa96;
-      --faint:#8a7d6a;
-      --primary:#ff8c4a;
-      --primary-h:#ff7733;
+      --bg:#151310; --surface:rgba(255,255,255,0.04); --surface2:#1e1b16;
+      --line:rgba(245,235,220,0.11); --line-soft:rgba(245,235,220,0.06);
+      --text:#ede7d9; --muted:#b8aa96; --faint:#8a7d6a;
+      --primary:#ff8c4a; --primary-h:#ff7733;
       --shadow:0 18px 48px rgba(0,0,0,0.30);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -66,7 +53,6 @@
     button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
     :focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
 
-    /* NAV */
     .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--line-soft);}
     .nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;min-height:68px;}
     .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;}
@@ -74,10 +60,10 @@
     .nav-links{display:flex;align-items:center;gap:1rem;}
     .nav-a{font-size:.85rem;color:var(--muted);transition:color var(--ease);}
     .nav-a:hover{color:var(--primary);}
+    .nav-a.active{color:var(--primary);font-weight:600;}
     .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:all var(--ease);}
     .theme-btn:hover{transform:translateY(-1px);}
 
-    /* HERO */
     .hero-wrap{max-width:1100px;margin:0 auto;padding:3.5rem 2rem 3rem;}
     .hero-head{margin-bottom:2.5rem;}
     .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
@@ -89,7 +75,6 @@
     .hero-bio{color:var(--muted);font-size:1rem;line-height:1.85;}
     .hero-bio p+p{margin-top:1rem;}
 
-    /* Foto */
     .hero-right{position:relative;display:flex;flex-direction:column;align-items:center;gap:1rem;}
     .hero-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line-soft);}
     .photo-badge{
@@ -101,25 +86,17 @@
     }
     .sig{font-family:var(--serif);font-size:1.5rem;color:var(--primary);text-align:center;}
 
-    /* FRASE SEPARADORA */
-    .separator{
-      max-width:1100px;margin:0 auto;
-      padding:3rem 2rem;text-align:center;
-      border-top:1px solid var(--line-soft);
-    }
+    .separator{max-width:1100px;margin:0 auto;padding:3rem 2rem;text-align:center;border-top:1px solid var(--line-soft);}
     .separator p{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:400;line-height:1.2;letter-spacing:-0.02em;color:var(--text);font-style:italic;}
 
-    /* PUENTES */
     .bridges{max-width:1100px;margin:0 auto;padding:0 2rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
     .bridge{border:1px solid var(--line);border-radius:20px;padding:2rem 2.2rem;background:var(--surface);display:flex;flex-direction:column;gap:1rem;transition:all var(--ease);color:inherit;}
     .bridge:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow);}
-    .bridge-ico{font-size:1.8rem;}
     .bridge-k{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);}
     .bridge h2{font-family:var(--serif);font-size:clamp(1.4rem,2vw,1.9rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;}
     .bridge p{color:var(--muted);font-size:.9rem;line-height:1.7;}
     .bridge-cta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.86rem;color:var(--primary);margin-top:.4rem;}
 
-    /* FOOTER */
     footer{border-top:1px solid var(--line-soft);padding:2rem;}
     .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
     .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
@@ -127,8 +104,6 @@
     .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
     .foot-links a:hover{color:var(--primary);}
     .foot-copy{font-size:.78rem;color:var(--faint);}
-
-    .skip-to-content:focus{top:.5rem;}
 
     @media(max-width:780px){
       .hero-body{grid-template-columns:1fr;}
@@ -141,12 +116,11 @@
 </head>
 <body>
 
-<a href="#contenido" class="skip-to-content" style="position:absolute;left:1rem;top:-3rem;background:var(--primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;font-size:.85rem;font-weight:600;transition:top var(--ease);">Ir al contenido</a>
+<a href="#contenido" style="position:absolute;left:1rem;top:-3rem;background:var(--primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;font-size:.85rem;font-weight:600;transition:top .2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-3rem'">Saltar al contenido</a>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-in">
-    <a class="nav-brand" href="#">
+    <a class="nav-brand" href="/index.html">
       <span class="nav-ico" aria-hidden="true">
         <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
           <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -156,11 +130,11 @@
       No Queda Otra Opción
     </a>
     <div class="nav-links">
-      <a class="nav-a" href="recursos/recursos.html">Recursos</a>
+      <a class="nav-a" href="/recursos/recursos.html">Recursos</a>
       <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
       <a class="nav-a" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
       <a class="nav-a" href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
-      <a class="nav-a" href="mi-historia.html">Mi historia</a>
+      <a class="nav-a" href="/mi-historia.html">Mi historia</a>
       <a class="nav-a" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
       <button class="theme-btn" data-theme-toggle aria-label="Cambiar modo"></button>
     </div>
@@ -168,14 +142,10 @@
 </nav>
 
 <div class="hero-wrap" id="contenido">
-
-  <!-- Titular completo -->
   <div class="hero-head">
     <div class="kicker">Opciones · Mercados · Experiencia</div>
     <h1>En un mercado que no perdona…<br><em>no queda otra opción.</em></h1>
   </div>
-
-  <!-- Texto izquierda / Foto derecha -->
   <div class="hero-body">
     <div class="hero-left">
       <div class="hero-bio">
@@ -187,7 +157,6 @@
         </blockquote>
       </div>
     </div>
-
     <div class="hero-right">
       <img class="hero-photo"
         src="https://jaralm.github.io/noquedaotraopcion/foto-jose.png"
@@ -199,26 +168,18 @@
   </div>
 </div>
 
-<!-- FRASE SEPARADORA -->
 <div class="separator">
   <p>"El mercado no premia al que más hace…<br>sino al que mejor gestiona."</p>
 </div>
 
-<!-- PUENTES -->
 <div class="bridges">
   <a class="bridge" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">
-    <div class="bridge-ico">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" color="var(--primary)"><rect x="2" y="7" width="20" height="15" rx="2.18" ry="2.18"/><line x1="7" y1="17" x2="17" y2="17"/><polyline points="12 17 12 7 8 11 12 7 16 11 12 7"/></svg>
-    </div>
     <div class="bridge-k">Canal de YouTube</div>
     <h2>Vídeos, podcasts y series sobre opciones</h2>
     <p>El canal que me hubiera gustado encontrar cuando empecé. Lo que falta en español sobre opciones y volatilidad.</p>
     <span class="bridge-cta">Ver el canal →</span>
   </a>
   <a class="bridge" href="https://jaralm.substack.com" target="_blank" rel="noopener">
-    <div class="bridge-ico">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" color="var(--primary)"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 9l5 4 5-4"/></svg>
-    </div>
     <div class="bridge-k">Newsletter</div>
     <h2>Conocimiento sobre el mercado</h2>
     <p>Reflexiones y análisis que no caben en un vídeo. Suscríbete para que vaya directa a tu bandeja de entrada.</p>
@@ -226,7 +187,6 @@
   </a>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-in">
     <div class="foot-brand">
@@ -239,11 +199,11 @@
       No Queda Otra Opción
     </div>
     <div class="foot-links">
-      <a href="recursos/recursos.html">Recursos</a>
+      <a href="/recursos/recursos.html">Recursos</a>
       <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
       <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
       <a href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
-      <a href="mi-historia.html">Mi historia</a>
+      <a href="/mi-historia.html">Mi historia</a>
       <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
     </div>
     <span class="foot-copy">© 2026 · noquedaotraopcion.com</span>
@@ -254,22 +214,20 @@
 (function(){
   const root = document.documentElement;
   const btn  = document.querySelector('[data-theme-toggle]');
-  // FIX: leer localStorage primero; si no existe, respetar preferencia del sistema
   let t = localStorage.getItem('theme') ||
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   root.setAttribute('data-theme', t);
-
   function ic(v){
     return v === 'light'
       ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"/></svg>';
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
   }
   btn.innerHTML = ic(t);
   btn.addEventListener('click', function(){
     t = t === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', t);
     btn.innerHTML = ic(t);
-    localStorage.setItem('theme', t); // FIX: guardar preferencia
+    localStorage.setItem('theme', t);
   });
 })();
 </script>
