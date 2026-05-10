@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – No Queda Otra Opción</title>
+  <meta name="description" content="Esta página no existe. Pero el resto del sitio, sí." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="404 – No Queda Otra Opción" />
+  <meta property="og:description" content="Esta página no existe. Pero el resto del sitio, sí." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://noquedaotraopcion.com/404.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Variables ─────────────────────────────────────────────── */
+    :root {
+      --cream:   #FFFBEB;
+      --orange:  #FF6719;
+      --ink:     #1a1a18;
+      --muted:   #6b6b5e;
+      --border:  #e8e2cc;
+    }
+
+    /* ─── Reset & base ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Skip link ─────────────────────────────────────────────── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--orange);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      border-radius: 0 0 4px 4px;
+      text-decoration: none;
+      transition: top 0.2s;
+      z-index: 999;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ─── Header ────────────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem clamp(1.25rem, 5vw, 3rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .logo:hover { color: var(--orange); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: color 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      color: var(--ink);
+      background: rgba(0,0,0,0.04);
+    }
+    nav a.nav-cta {
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 0.3rem 0.75rem;
+    }
+    nav a.nav-cta:hover {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    /* ─── Main 404 content ──────────────────────────────────────── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(3rem, 10vw, 6rem) clamp(1.25rem, 5vw, 3rem);
+    }
+
+    .error-block {
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .error-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      margin-bottom: 2rem;
+    }
+
+    .error-code {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(5rem, 18vw, 8rem);
+      line-height: 0.9;
+      color: var(--ink);
+      letter-spacing: -0.04em;
+      margin-bottom: 1.5rem;
+      /* Subtle texture via layered shadows */
+      text-shadow: 2px 2px 0 rgba(255,103,25,0.12);
+    }
+
+    .error-headline {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .error-body {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+    }
+
+    .error-body em {
+      font-style: italic;
+      color: var(--ink);
+    }
+
+    .divider {
+      width: 2.5rem;
+      height: 2px;
+      background: var(--orange);
+      margin-bottom: 2.25rem;
+    }
+
+    /* ─── CTA button ────────────────────────────────────────────── */
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--orange);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: -0.01em;
+    }
+    .btn-home:hover {
+      background: #e55a14;
+      transform: translateY(-1px);
+    }
+    .btn-home:active { transform: translateY(0); }
+
+    .btn-home svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem clamp(1.25rem, 5vw, 3rem);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-family: 'Instrument Serif', serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      transition: color 0.15s;
+    }
+    .footer-nav a:hover { color: var(--ink); }
+
+    .footer-copy {
+      width: 100%;
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      margin-top: 0.5rem;
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- ── Header ── -->
+  <header>
+    <a class="logo" href="https://noquedaotraopcion.com/">No Queda Otra Opción</a>
+    <nav aria-label="Navegación principal">
+      <a href="https://www.youtube.com/@noquedaotraopcion">YouTube</a>
+      <a href="https://jaralm.substack.com">Newsletter</a>
+      <a href="https://x.com/NoQOtraOpcion">Twitter / X</a>
+      <a href="https://noquedaotraopcion.com/mi-historia.html">Mi historia</a>
+      <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+      <a href="https://noquedaotraopcion.com/recursos/recursos.html" class="nav-cta">Recursos</a>
+    </nav>
+  </header>
+
+  <!-- ── 404 ── -->
+  <main id="contenido">
+    <div class="error-block">
+      <span class="error-tag">Error 404</span>
+      <div class="error-code">404</div>
+      <h1 class="error-headline">Esta página ha vencido.<br>Como una opción fuera del dinero.</h1>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="error-body">
+        La URL que buscas no existe —o existió y ya no está.
+        En los mercados, cuando algo no está donde lo esperabas,
+        <em>no te quedas paralizado: buscas el precio real</em>.
+        Aquí lo tienes.
+      </p>
+      <a class="btn-home" href="https://noquedaotraopcion.com/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Volver al inicio
+      </a>
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">No Queda Otra Opción</span>
+      <nav class="footer-nav" aria-label="Navegación secundaria">
+        <a href="https://www.youtube.com/@noquedaotraopcion">YouTube</a>
+        <a href="https://jaralm.substack.com">Newsletter</a>
+        <a href="https://x.com/NoQOtraOpcion">Twitter / X</a>
+        <a href="https://noquedaotraopcion.com/mi-historia.html">Mi historia</a>
+        <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+        <a href="https://noquedaotraopcion.com/recursos/recursos.html">Recursos</a>
+      </nav>
+    </div>
+    <p class="footer-copy">© 2026 · noquedaotraopcion.com</p>
+  </footer>
+
+</body>
+</html>
