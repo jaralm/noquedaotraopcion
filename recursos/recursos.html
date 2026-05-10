@@ -110,6 +110,33 @@
     }
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
+    .quote-divider{
+      max-width:680px;
+      margin:0 auto;
+      padding:0 2rem 4.5rem;
+      text-align:center;
+    }
+    .quote-divider blockquote{
+      font-family:var(--serif);
+      font-size:clamp(1.25rem,2.2vw,1.75rem);
+      font-style:italic;
+      color:var(--muted);
+      line-height:1.45;
+      border:none;
+      padding:0;
+    }
+    .quote-divider blockquote::before{
+      content:'';
+      display:block;
+      width:32px;
+      height:2px;
+      background:var(--primary);
+      border-radius:2px;
+      margin:0 auto 1.5rem;
+    }
+
+    @media(max-width:780px){.bridges{grid-template-columns:1fr;}}
+
     footer{border-top:1px solid var(--line-soft);padding:2rem;}
     .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
     .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
@@ -117,15 +144,12 @@
     .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
     .foot-links a:hover{color:var(--primary);}
     .foot-copy{font-size:.78rem;color:var(--faint);}
-
-    @media(max-width:780px){.bridges{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
 
 <a href="#contenido" style="position:absolute;left:1rem;top:-3rem;background:var(--primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;font-size:.85rem;font-weight:600;transition:top .2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-3rem'">Saltar al contenido</a>
 
-  
 <nav class="nav">
   <div class="nav-in">
     <a class="nav-brand" href="/index.html">
@@ -183,6 +207,12 @@
     <p>Comparativa IV / HV y percentiles históricos para evaluar el entorno de volatilidad antes de entrar.</p>
   </div>
 
+</div>
+
+<div class="quote-divider">
+  <blockquote>
+    El mercado no premia al que más hace…<br>sino al que mejor gestiona.
+  </blockquote>
 </div>
 
 <footer>
