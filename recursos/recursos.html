@@ -24,6 +24,7 @@
       --serif:'Instrument Serif',Georgia,serif;
       --sans:'Inter',system-ui,sans-serif;
       --ease:180ms cubic-bezier(0.16,1,0.3,1);
+      --nav-h:68px;
     }
     [data-theme="dark"]{
       --bg:#151310; --surface:rgba(255,255,255,0.04); --surface2:#1e1b16;
@@ -49,7 +50,7 @@
 
     .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--line-soft);}
     .nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;min-height:68px;}
-    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;}
+    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;flex-shrink:0;}
     .nav-ico{width:32px;height:32px;border-radius:8px;background:var(--primary);display:grid;place-items:center;flex-shrink:0;}
     .nav-links{display:flex;align-items:center;gap:1rem;}
     .nav-a{font-size:.85rem;color:var(--muted);transition:color var(--ease);}
@@ -144,6 +145,43 @@
     .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
     .foot-links a:hover{color:var(--primary);}
     .foot-copy{font-size:.78rem;color:var(--faint);}
+
+    /* Hamburguesa */
+    .nav-toggle{
+      display:none;
+      width:40px;height:40px;border-radius:8px;
+      border:1px solid var(--line);background:var(--surface);
+      place-items:center;color:var(--text);
+      transition:background var(--ease);flex-shrink:0;
+    }
+    .nav-toggle:hover{background:var(--surface2);}
+
+    @media(max-width:720px){
+      .nav-in{padding:0 1.25rem;}
+      .nav-toggle{display:grid;}
+      .nav-links{
+        display:none;position:absolute;
+        top:var(--nav-h);left:0;right:0;
+        flex-direction:column;align-items:stretch;gap:0;
+        padding:.75rem 1.25rem 1.25rem;
+        background:color-mix(in srgb,var(--bg) 96%,transparent);
+        backdrop-filter:blur(20px);
+        border-bottom:1px solid var(--line-soft);
+        box-shadow:0 8px 32px rgba(30,20,10,0.08);
+      }
+      .nav-links.is-open{display:flex;}
+      .nav-a{
+        font-size:.95rem;padding:.75rem .5rem;
+        border-bottom:1px solid var(--line-soft);color:var(--text);
+      }
+      .nav-a:last-of-type{border-bottom:none;}
+      .nav-a:hover{color:var(--primary);background:none;}
+      .nav-links .theme-btn{
+        margin-top:.75rem;width:100%;border-radius:8px;
+        font-size:.85rem;gap:.5rem;color:var(--muted);
+      }
+      .nav-in > .theme-btn{display:none;}
+    }
   </style>
 </head>
 <body>
@@ -161,7 +199,16 @@
       </span>
       No Queda Otra Opción
     </a>
-    <div class="nav-links">
+    <!-- Hamburguesa -->
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-panel">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <line x1="3" y1="6"  x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <div class="nav-links" id="nav-panel" role="navigation" aria-label="Menú principal">
       <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
       <a class="nav-a" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
       <a class="nav-a" href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
@@ -181,7 +228,7 @@
 
 <div class="bridges">
 
-  <!-- RECURSO 1 — No disponible Aún -->
+  <!-- RECURSO 1 -->
   <a class="bridge" href="TU_ENLACE_GOOGLE_SHEETS_1/copy" target="_blank" rel="noopener">
     <span class="badge badge--live">No Disponible aún</span>
     <div class="bridge-k">Google Sheets</div>
@@ -190,7 +237,7 @@
     <span class="bridge-cta">Hacer una copia →</span>
   </a>
 
-  <!-- RECURSO 2 — No disponible Aún -->
+  <!-- RECURSO 2 -->
   <a class="bridge" href="TU_ENLACE_GOOGLE_SHEETS_2/copy" target="_blank" rel="noopener">
     <span class="badge badge--live">No Disponible aún</span>
     <div class="bridge-k">Google Sheets</div>
@@ -199,7 +246,7 @@
     <span class="bridge-cta">Hacer una copia →</span>
   </a>
 
-  <!-- RECURSO 3 — próximamente (no clicable) -->
+  <!-- RECURSO 3 — próximamente -->
   <div class="bridge bridge--soon" aria-disabled="true">
     <span class="badge badge--soon">Próximamente</span>
     <div class="bridge-k">Google Sheets</div>
@@ -241,7 +288,10 @@
 <script>
 (function(){
   const root = document.documentElement;
-  const btn  = document.querySelector('[data-theme-toggle]');
+  const themeBtn = document.querySelector('[data-theme-toggle]');
+  const toggle   = document.querySelector('.nav-toggle');
+  const panel    = document.getElementById('nav-panel');
+
   let t = localStorage.getItem('theme') ||
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   root.setAttribute('data-theme', t);
@@ -250,13 +300,11 @@
       ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
       : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
   }
-  btn.innerHTML = ic(t);
-  btn.addEventListener('click', function(){
-    t = t === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', t);
-    btn.innerHTML = ic(t);
-    localStorage.setItem('theme', t);
-  });
+  if(themeBtn){ themeBtn.innerHTML=ic(t); themeBtn.addEventListener('click',function(){ t=t==='dark'?'light':'dark'; root.setAttribute('data-theme',t); themeBtn.innerHTML=ic(t); localStorage.setItem('theme',t); }); }
+
+  function closeMenu(){ panel.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>'; }
+  function openMenu(){ panel.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>'; }
+  if(toggle){ toggle.addEventListener('click',function(){ panel.classList.contains('is-open')?closeMenu():openMenu(); }); panel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); }); document.addEventListener('click',function(e){ if(!e.target.closest('.nav')) closeMenu(); }); }
 })();
 </script>
 </body>
