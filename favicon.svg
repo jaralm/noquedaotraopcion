@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Fondo naranja con esquinas redondeadas -->
+  <rect width="32" height="32" rx="7" fill="#FF6719"/>
+  <!-- Icono: línea de opciones + punto (igual que el nav) -->
+  <polyline points="4,22 11,22 22,8" fill="none" stroke="#FFFBEB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="11" cy="22" r="2.5" fill="#FFFBEB"/>
+</svg>
