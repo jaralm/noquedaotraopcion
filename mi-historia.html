@@ -13,9 +13,6 @@
   <meta property="og:url" content="https://noquedaotraopcion.com/mi-historia.html"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Mi historia – No Queda Otra Opción"/>
-  <meta name="twitter:description" content="Más de treinta años construyendo criterio. Una carrera en finanzas, una empresa propia y el camino hasta las opciones."/>
-  <meta name="twitter:image" content="https://jaralm.github.io/noquedaotraopcion/viejuno.png"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,16 +44,12 @@
     body{
       font-family:var(--sans);font-size:1rem;line-height:1.7;
       color:var(--text);min-height:100vh;
-      background:
-        radial-gradient(circle at 8% 6%,rgba(255,103,25,0.08),transparent 28%),
-        radial-gradient(circle at 92% 12%,rgba(255,103,25,0.05),transparent 22%),
-        var(--bg);
+      background: radial-gradient(circle at 8% 6%,rgba(255,103,25,0.08),transparent 28%), radial-gradient(circle at 92% 12%,rgba(255,103,25,0.05),transparent 22%), var(--bg);
     }
-    img{display:block;max-width:100%;}
     a{text-decoration:none;color:inherit;}
     button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
 
-    /* NAV */
+    /* NAV TOTALMENTE COHERENTE */
     .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--line-soft);}
     .nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;min-height:68px;}
     .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;}
@@ -99,19 +92,24 @@
     .bio-cta h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:1rem;}
     .bio-cta p{color:var(--muted);font-size:1.1rem;}
 
-    footer{border-top:1px solid var(--line-soft);padding:3rem 2rem;}
-    .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;}
-    .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;}
+    /* FOOTER CORREGIDO SEGÚN CAPTURA */
+    footer{border-top:1px solid var(--line-soft);padding:2rem;}
+    .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;}
+    .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
     .foot-links{display:flex;gap:1.5rem;}
-    .foot-copy{font-size:.78rem;color:var(--faint);width:100%;text-align:center;margin-top:2rem;border-top:1px solid var(--line-soft);padding-top:2rem;}
+    .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
+    .foot-links a:hover{color:var(--primary);}
+    .foot-copy{font-size:.82rem;color:var(--faint);}
 
     @media(max-width:780px){
       .bio-hero{grid-template-columns:1fr;}
       .bio-aside{position:static; order: -1;}
       .bio-photo{aspect-ratio:1/1;}
+      .foot-in{flex-direction:column; text-align:center;}
+      .foot-links{flex-wrap:wrap; justify-content:center;}
     }
 
-    /* Menu Movil */
+    /* Hamburguesa Móvil */
     .nav-toggle{display:none;width:40px;height:40px;border-radius:8px;border:1px solid var(--line);background:var(--surface);place-items:center;}
     @media(max-width:720px){
       .nav-toggle{display:grid;}
@@ -139,9 +137,10 @@
     <div class="nav-links" id="nav-panel">
       <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank">YouTube</a>
       <a class="nav-a" href="https://jaralm.substack.com" target="_blank">Newsletter</a>
+      <a class="nav-a" href="https://x.com/NoQOtraOpcion" target="_blank">Twitter / X</a>
       <a class="nav-a active" href="mi-historia.html">Mi historia</a>
-      <a class="nav-a" href="recursos/recursos.html">Recursos</a>
       <a class="nav-a" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+      <a class="nav-a" href="recursos/recursos.html">Recursos</a>
       <button class="theme-btn" data-theme-toggle></button>
     </div>
   </div>
@@ -209,10 +208,18 @@
 
 <footer>
   <div class="foot-in">
-    <div class="foot-brand">No Queda Otra Opción</div>
+    <div class="foot-brand">
+        <span class="nav-ico" style="width:24px; height:24px; border-radius:6px; display:inline-grid; place-items:center; margin-right:5px; background:var(--primary);">
+            <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="16" r="2" fill="#FFFBEB"/></svg>
+        </span>
+        No Queda Otra Opción
+    </div>
     <div class="foot-links">
       <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank">YouTube</a>
       <a href="https://jaralm.substack.com" target="_blank">Newsletter</a>
+      <a href="https://x.com/NoQOtraOpcion" target="_blank">Twitter / X</a>
+      <a href="mi-historia.html">Mi historia</a>
+      <a href="recursos/recursos.html">Recursos</a>
       <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
     </div>
     <div class="foot-copy">© 2026 · noquedaotraopcion.com</div>
@@ -235,15 +242,19 @@
       : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
   }
 
-  themeBtn.innerHTML = ic(t);
-  themeBtn.addEventListener('click', () => {
-    t = t === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', t);
+  if(themeBtn){
     themeBtn.innerHTML = ic(t);
-    localStorage.setItem('theme', t);
-  });
+    themeBtn.addEventListener('click', () => {
+        t = t === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', t);
+        themeBtn.innerHTML = ic(t);
+        localStorage.setItem('theme', t);
+    });
+  }
 
-  toggle.addEventListener('click', () => panel.classList.toggle('is-open'));
+  if(toggle) {
+    toggle.addEventListener('click', () => panel.classList.toggle('is-open'));
+  }
 })();
 </script>
 
