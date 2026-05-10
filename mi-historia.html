@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mi Historia: Trayectoria Financiera y Opciones – No Queda Otra Opción</title>
   <meta name="description" content="La historia de José Antonio Rodríguez: más de treinta años en finanzas, una empresa propia y un camino largo hasta entender las opciones de verdad."/>
+  
+  <!-- Open Graph -->
   <meta property="og:title" content="Mi historia – No Queda Otra Opción"/>
   <meta property="og:description" content="Más de treinta años construyendo criterio. Una carrera en finanzas, una empresa propia y el camino hasta las opciones."/>
   <meta property="og:image" content="https://jaralm.github.io/noquedaotraopcion/viejuno.png"/>
@@ -14,12 +16,13 @@
   <meta name="twitter:title" content="Mi historia – No Queda Otra Opción"/>
   <meta name="twitter:description" content="Más de treinta años construyendo criterio. Una carrera en finanzas, una empresa propia y el camino hasta las opciones."/>
   <meta name="twitter:image" content="https://jaralm.github.io/noquedaotraopcion/viejuno.png"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="canonical" href="https://noquedaotraopcion.com/mi-historia.html"/>
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
   <style>
     :root,[data-theme="light"]{
       --bg:#FFFBEB; --surface:rgba(255,255,255,0.6); --surface2:#FFF6D6;
@@ -52,19 +55,18 @@
     img{display:block;max-width:100%;}
     a{text-decoration:none;color:inherit;}
     button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
-    :focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
 
+    /* NAV */
     .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--line-soft);}
     .nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;min-height:68px;}
-    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;flex-shrink:0;}
-    .nav-ico{width:32px;height:32px;border-radius:8px;background:var(--primary);display:grid;place-items:center;flex-shrink:0;}
-    .nav-links{display:flex;align-items:center;gap:1rem;}
+    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;}
+    .nav-ico{width:32px;height:32px;border-radius:8px;background:var(--primary);display:grid;place-items:center;}
+    .nav-links{display:flex;align-items:center;gap:1.2rem;}
     .nav-a{font-size:.85rem;color:var(--muted);transition:color var(--ease);}
-    .nav-a:hover{color:var(--primary);}
-    .nav-a.active{color:var(--primary);font-weight:600;}
-    .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:all var(--ease);}
-    .theme-btn:hover{transform:translateY(-1px);}
+    .nav-a:hover, .nav-a.active{color:var(--primary);}
+    .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;}
 
+    /* LAYOUT BIO */
     .bio-hero{max-width:1100px;margin:0 auto;padding:4rem 2rem 3rem;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start;}
     .bio-head{margin-bottom:2rem;}
     .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
@@ -75,87 +77,55 @@
     .bio-blocks{display:flex;flex-direction:column;gap:3.5rem;padding-top:1rem;}
     .bio-block{border-top:1px solid var(--line-soft);padding-top:2rem;}
     .block-num{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--primary);margin-bottom:.6rem;}
-    .block-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.2rem;}
+    .block-title{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;line-height:1.1;margin-bottom:1.2rem;}
     .bio-block p{color:var(--muted);line-height:1.85;margin-bottom:1rem;}
-    .bio-block p:last-child{margin-bottom:0;}
-    .bio-block strong{color:var(--text);}
     .bio-quote{margin:1.5rem 0;padding:1.2rem 1.5rem;border-left:3px solid var(--primary);background:rgba(255,103,25,0.05);border-radius:0 12px 12px 0;}
     .bio-quote p{font-family:var(--serif);font-size:1.15rem;font-style:italic;color:var(--text);margin:0 !important;}
 
-    .bio-aside{position:sticky;top:90px;display:flex;flex-direction:column;gap:1.5rem;}
-    .bio-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line-soft);}
-    .bio-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:.8rem;}
-    .bio-card-title{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);}
-    .bio-stat{display:flex;justify-content:space-between;align-items:baseline;padding:.4rem 0;border-bottom:1px solid var(--line-soft);}
+    /* SIDEBAR */
+    .bio-aside{position:sticky;top:100px;display:flex;flex-direction:column;gap:1.5rem;}
+    .bio-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:24px;box-shadow:var(--shadow);border:1px solid var(--line-soft);}
+    .bio-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:.4rem;}
+    .bio-card-title{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:.5rem;}
+    .bio-stat{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0;border-bottom:1px solid var(--line-soft);}
     .bio-stat:last-child{border-bottom:0;}
     .bio-stat-l{font-size:.82rem;color:var(--muted);}
     .bio-stat-n{font-size:.95rem;font-weight:700;color:var(--text);}
-    .sig{font-family:var(--serif);font-size:1.5rem;color:var(--primary);margin-top:.5rem;}
+    .sig{font-family:var(--serif);font-size:1.6rem;color:var(--primary);margin-top:0.5rem;text-align:right;}
 
-    .bio-cta{max-width:1100px;margin:2rem auto 5rem;padding:2.5rem;background:var(--surface2);border:1px solid var(--line);border-radius:24px;}
-    .bio-cta h2{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:400;letter-spacing:-0.02em;}
+    /* CTA FINAL */
+    .cta-container {max-width: 1100px; margin: 2rem auto 5rem; padding: 0 2rem;}
+    .bio-cta{padding:3rem;background:var(--surface2);border:1px solid var(--line);border-radius:24px;text-align: center;}
+    .bio-cta h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:1rem;}
+    .bio-cta p{color:var(--muted);font-size:1.1rem;}
 
-    footer{border-top:1px solid var(--line-soft);padding:2rem;}
-    .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-    .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
-    .foot-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
-    .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
-    .foot-links a:hover{color:var(--primary);}
-    .foot-copy{font-size:.78rem;color:var(--faint);}
+    footer{border-top:1px solid var(--line-soft);padding:3rem 2rem;}
+    .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:2rem;}
+    .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;}
+    .foot-links{display:flex;gap:1.5rem;}
+    .foot-copy{font-size:.78rem;color:var(--faint);width:100%;text-align:center;margin-top:2rem;border-top:1px solid var(--line-soft);padding-top:2rem;}
 
     @media(max-width:780px){
       .bio-hero{grid-template-columns:1fr;}
-      .bio-aside{position:static;}
-      .bio-photo{aspect-ratio:4/3;}
-      .bio-cta{margin-left:2rem;margin-right:2rem;}
+      .bio-aside{position:static; order: -1;}
+      .bio-photo{aspect-ratio:1/1;}
     }
 
-    /* Hamburguesa */
-    .nav-toggle{
-      display:none;
-      width:40px;height:40px;border-radius:8px;
-      border:1px solid var(--line);background:var(--surface);
-      place-items:center;color:var(--text);
-      transition:background var(--ease);flex-shrink:0;
-    }
-    .nav-toggle:hover{background:var(--surface2);}
-
+    /* Menu Movil */
+    .nav-toggle{display:none;width:40px;height:40px;border-radius:8px;border:1px solid var(--line);background:var(--surface);place-items:center;}
     @media(max-width:720px){
-      .nav-in{padding:0 1.25rem;}
       .nav-toggle{display:grid;}
-      .nav-links{
-        display:none;position:absolute;
-        top:var(--nav-h);left:0;right:0;
-        flex-direction:column;align-items:stretch;gap:0;
-        padding:.75rem 1.25rem 1.25rem;
-        background:color-mix(in srgb,var(--bg) 96%,transparent);
-        backdrop-filter:blur(20px);
-        border-bottom:1px solid var(--line-soft);
-        box-shadow:0 8px 32px rgba(30,20,10,0.08);
-      }
+      .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;padding:1.5rem;background:var(--bg);border-bottom:1px solid var(--line-soft);}
       .nav-links.is-open{display:flex;}
-      .nav-a{
-        font-size:.95rem;padding:.75rem .5rem;
-        border-bottom:1px solid var(--line-soft);color:var(--text);
-      }
-      .nav-a:last-of-type{border-bottom:none;}
-      .nav-a:hover{color:var(--primary);background:none;}
-      .nav-links .theme-btn{
-        margin-top:.75rem;width:100%;border-radius:8px;
-        font-size:.85rem;gap:.5rem;color:var(--muted);
-      }
-      .nav-in > .theme-btn{display:none;}
     }
   </style>
 </head>
 <body>
 
-<a href="#contenido" style="position:absolute;left:1rem;top:-3rem;background:var(--primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;font-size:.85rem;font-weight:600;transition:top .2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-3rem'">Saltar al contenido</a>
-
 <nav class="nav">
   <div class="nav-in">
-    <a class="nav-brand" href="/index.html">
-      <span class="nav-ico" aria-hidden="true">
+    <a class="nav-brand" href="index.html">
+      <span class="nav-ico">
         <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
           <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
@@ -163,41 +133,34 @@
       </span>
       No Queda Otra Opción
     </a>
-    <!-- Hamburguesa -->
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-panel">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-        <line x1="3" y1="6"  x2="21" y2="6" />
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
-
-    <div class="nav-links" id="nav-panel" role="navigation" aria-label="Menú principal">
-      <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
-      <a class="nav-a" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
-      <a class="nav-a" href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
-      <a class="nav-a active" href="/mi-historia.html">Mi historia</a>
+    <div class="nav-links" id="nav-panel">
+      <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank">YouTube</a>
+      <a class="nav-a" href="https://jaralm.substack.com" target="_blank">Newsletter</a>
+      <a class="nav-a active" href="mi-historia.html">Mi historia</a>
+      <a class="nav-a" href="recursos/recursos.html">Recursos</a>
       <a class="nav-a" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
-      <a class="nav-a" href="/recursos/recursos.html">Recursos</a>
-      <button class="theme-btn" data-theme-toggle aria-label="Cambiar modo"></button>
+      <button class="theme-btn" data-theme-toggle></button>
     </div>
   </div>
 </nav>
 
 <div class="bio-hero" id="contenido">
-  <div>
+  <div class="bio-main">
     <div class="bio-head">
       <div class="kicker">Mi historia</div>
       <h1>Más de treinta años construyendo criterio.</h1>
-      <p class="bio-intro">Una carrera en las finanzas, una empresa propia, y un camino largo hasta entender las opciones de verdad. Esto es lo que hay detrás del canal y la newsletter.</p>
+      <p class="bio-intro">Una carrera en las finanzas, una empresa propia, y un camino largo hasta entender las opciones de verdad.</p>
     </div>
 
     <div class="bio-blocks">
       <div class="bio-block">
         <div class="block-num">01</div>
         <div class="block-title">De dónde vengo</div>
-        <p>Estudié Economía en la Complutense — Finanzas y Auditoría — y llevo más de treinta años en el sector financiero, la mayor parte de ellos en una de las principales aseguradoras multinacionales de Europa, donde he construido mi carrera siempre en finanzas, trabajando sobre todo en control de gestión y reporting financiero.</p>
-        <p>En paralelo, en 2008 fundé con un socio una empresa de administración de fincas. Sin inversores, sin red de seguridad corporativa. La construimos, la hicimos crecer y la vendimos en 2016 — y sigue funcionando con sus nuevos dueños. Fue una de las experiencias más completas que he tenido: cliente, proveedor, gestor y propietario al mismo tiempo.</p>
+        <p>Estudié Economía en la Complutense y llevo más de treinta años en el sector financiero, trabajando sobre todo en control de gestión y reporting financiero en una multinacional aseguradora.</p>
+        <p>En paralelo, en 2008 fundé con un socio una empresa de administración de fincas. La construimos desde cero y la vendimos en 2016. Fue la mejor escuela sobre riesgo real y gestión de capital.</p>
         <div class="bio-quote">
           <p>"La única forma de entender de verdad el riesgo es tener algo propio en juego."</p>
         </div>
@@ -206,78 +169,53 @@
       <div class="bio-block">
         <div class="block-num">02</div>
         <div class="block-title">Cómo llegué a las opciones</div>
-        <p>Los mercados siempre estuvieron ahí — fondos, acciones, CFDs, futuros. Fui pasando por todos ellos, aprendiendo a base de experiencia directa y dinero real en juego. Pero el salto real llegó en 2018, cuando decidí estudiar las opciones en serio.</p>
-        <p>El primer obstáculo fue que no había material en español que fuera más allá de los tópicos y las definiciones teóricas. Así que me lo fabriqué yo: documentos, apuntes, hojas de cálculo después de cientos de horas de vídeo y lectura para entender el "por qué" y el "¿y si…?" de cada estructura. Un trabajo largo, solitario y enormemente valioso.</p>
-        <p>Hoy mi cartera lleva treinta años de capas:</p>
-        <p>-Fondos y acciones hacen el trabajo <strong>aburrido, 'diesel' y sin adornos</strong>.</p>
-        <p>-Los derivados a los que dedico <strong>tiempo, energía y pasión</strong> (representando entre el 15 y el 20% del total de la cartera y el ¡ 90% del tiempo !).</p>
-
-        <p>Lo que empezó como una actividad paralela de ahorro, lleva años ganando peso en mi ecuación personal — no como promesa de libertad financiera, sino como parte de una transición planificada hacia el momento en que deje de trabajar. Mas de treinta años construyendo ese margen.<p>
-        <p>Y sigo aprendiendo. Cada semana hay algo nuevo que me recuerda que en esto nunca se termina de llegar. Eso, lejos de frustrarme, es exactamente lo que me sigue enganchando.</p>
+        <p>Los mercados siempre estuvieron ahí —acciones, CFDs, futuros—. Pero el salto real llegó en 2018, cuando decidí estudiar las opciones en serio ante la falta de material profundo en español.</p>
+        <p>Me fabriqué mi propio camino: cientos de horas analizando griegas, fabricando mis propias hojas de cálculo y entendiendo que el trading no va de acertar, sino de sobrevivir cuando te equivocas.</p>
         <div class="bio-quote">
-          <p>"Descubrí que las opciones no son un instrumento para tener razón. Son un instrumento para sobrevivir cuando te equivocas."</p>
+          <p>"Las opciones no son un instrumento para tener razón. Son un instrumento para gestionar la incertidumbre."</p>
         </div>
       </div>
 
       <div class="bio-block">
         <div class="block-num">03</div>
         <div class="block-title">Por qué el canal</div>
-        <p>Porque lo que yo necesitaba en 2018 no existía. En español hay pocos recursos serios sobre opciones — y los que hay, muchas veces tienen como objetivo vender algo. No es lo que quiero hacer aquí.</p>
-        <p>Comparto lo que aprendo porque me gusta hacerlo, y porque en este mundo lo que das, lo recibes. El canal y la newsletter son el espacio donde cuento el proceso real: lo que funciona, lo que no, y por qué la mayoría del ruido financiero no merece tu atención.</p>
-        <div class="bio-quote">
-          <p>"El mayor error que puedes cometer en opciones no es elegir el lado equivocado. Es creer que tu lado es el único válido."</p>
-        </div>
+        <p>Comparto lo que aprendo porque lo que yo necesitaba en 2018 no existía. El canal y la newsletter son el espacio donde cuento el proceso real: sin filtros, sin promesas vacías y centrado en el capital propio.</p>
       </div>
     </div>
   </div>
 
   <aside class="bio-aside">
-    <img class="bio-photo"
-      src="https://jaralm.github.io/noquedaotraopcion/viejuno.png"
-      alt="José Antonio Rodríguez operando en un entorno de bolsa antiguo"
-      
-      loading="eager" fetchpriority="high"/>
-  </div>
-
+    <img class="bio-photo" src="https://jaralm.github.io/noquedaotraopcion/viejuno.png" alt="José Antonio Rodríguez" loading="eager" fetchpriority="high">
     
     <div class="bio-card">
       <div class="bio-card-title">En números</div>
       <div class="bio-stat"><span class="bio-stat-l">Años en finanzas</span><span class="bio-stat-n">+30</span></div>
       <div class="bio-stat"><span class="bio-stat-l">Empresa fundada</span><span class="bio-stat-n">2008</span></div>
       <div class="bio-stat"><span class="bio-stat-l">Opciones desde</span><span class="bio-stat-n">2018</span></div>
-      <div class="bio-stat"><span class="bio-stat-l">Estudio en serio desde</span><span class="bio-stat-n">2018</span></div>
-      <div class="bio-stat"><span class="bio-stat-l">Canal YouTube</span><span class="bio-stat-n">Activo · 2 años</span></div>
+      <div class="bio-stat"><span class="bio-stat-l">Canal YouTube</span><span class="bio-stat-n">2 años</span></div>
       <div class="bio-stat"><span class="bio-stat-l">Newsletter activa</span><span class="bio-stat-n">2 años</span></div>
     </div>
-   
+
+    <div class="sig">José Antonio Rodríguez</div>
   </aside>
 </div>
-    <div class="sig">José Antonio Rodríguez</div>
-<div class="bio-cta" style="margin-left:2rem;margin-right:2rem;">
-  <h2>¿Te identificas con esta forma de ver los mercados?</h2>
-  <p>Si quieres conocer cómo aplico esta filosofía, suscríbete a la Newsletter o sígueme en YouTube <p>
+
+<div class="cta-container">
+  <div class="bio-cta">
+    <h2>¿Te identificas con esta forma de ver los mercados?</h2>
+    <p>Si quieres ver cómo aplico esta filosofía, suscríbete a la Newsletter o sígueme en YouTube.</p>
+  </div>
 </div>
 
 <footer>
   <div class="foot-in">
-    <div class="foot-brand">
-      <span class="nav-ico" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
-          <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
-        </svg>
-      </span>
-      No Queda Otra Opción
-    </div>
+    <div class="foot-brand">No Queda Otra Opción</div>
     <div class="foot-links">
-      <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
-      <a href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
-      <a href="/mi-historia.html">Mi historia</a>
+      <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank">YouTube</a>
+      <a href="https://jaralm.substack.com" target="_blank">Newsletter</a>
       <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
-      <a href="/recursos/recursos.html">Recursos</a>
     </div>
-    <span class="foot-copy">© 2026 · noquedaotraopcion.com</span>
+    <div class="foot-copy">© 2026 · noquedaotraopcion.com</div>
   </div>
 </footer>
 
@@ -285,23 +223,29 @@
 (function(){
   const root = document.documentElement;
   const themeBtn = document.querySelector('[data-theme-toggle]');
-  const toggle   = document.querySelector('.nav-toggle');
-  const panel    = document.getElementById('nav-panel');
+  const toggle = document.querySelector('.nav-toggle');
+  const panel = document.getElementById('nav-panel');
 
-  let t = localStorage.getItem('theme') ||
-          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  let t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   root.setAttribute('data-theme', t);
+
   function ic(v){
-    return v === 'light'
+    return v === 'light' 
       ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
       : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
   }
-  if(themeBtn){ themeBtn.innerHTML=ic(t); themeBtn.addEventListener('click',function(){ t=t==='dark'?'light':'dark'; root.setAttribute('data-theme',t); themeBtn.innerHTML=ic(t); localStorage.setItem('theme',t); }); }
 
-  function closeMenu(){ panel.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>'; }
-  function openMenu(){ panel.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>'; }
-  if(toggle){ toggle.addEventListener('click',function(){ panel.classList.contains('is-open')?closeMenu():openMenu(); }); panel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); }); document.addEventListener('click',function(e){ if(!e.target.closest('.nav')) closeMenu(); }); }
+  themeBtn.innerHTML = ic(t);
+  themeBtn.addEventListener('click', () => {
+    t = t === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', t);
+    themeBtn.innerHTML = ic(t);
+    localStorage.setItem('theme', t);
+  });
+
+  toggle.addEventListener('click', () => panel.classList.toggle('is-open'));
 })();
 </script>
+
 </body>
 </html>
