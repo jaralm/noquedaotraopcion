@@ -4,120 +4,228 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Recursos Gratuitos – No Queda Otra Opción</title>
-  <!-- Usamos los mismos estilos que tu index.html -->
+  <meta name="description" content="Hojas de cálculo y documentos gratuitos para operar opciones con criterio. Por José Antonio Rodríguez."/>
+  <meta property="og:title" content="Recursos Gratuitos – No Queda Otra Opción"/>
+  <meta property="og:description" content="Hojas de cálculo y documentos gratuitos para operar opciones con criterio."/>
+  <meta property="og:url" content="https://noquedaotraopcion.com/recursos/recursos.html"/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://noquedaotraopcion.com/recursos/recursos.html"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
-    /* PEGADO DE TUS ESTILOS ORIGINALES (Mantenemos la coherencia) */
     :root,[data-theme="light"]{
-      --bg:#FFFBEB; --surface:rgba(255,255,255,0.6); --surface2:#FFF6D6; --line:rgba(30,26,20,0.11);
-      --line-soft:rgba(30,26,20,0.07); --text:#1c1a14; --muted:#7a6e55; --faint:#a89880;
-      --primary:#FF6719; --primary-h:#e55610; --shadow:0 16px 48px rgba(30,20,10,0.10);
-      --serif:'Instrument Serif',Georgia,serif; --sans:'Inter',system-ui,sans-serif; --ease:180ms cubic-bezier(0.16,1,0.3,1);
+      --bg:#FFFBEB; --surface:rgba(255,255,255,0.6); --surface2:#FFF6D6;
+      --line:rgba(30,26,20,0.11); --line-soft:rgba(30,26,20,0.07);
+      --text:#1c1a14; --muted:#7a6e55; --faint:#a89880;
+      --primary:#FF6719; --primary-h:#e55610;
+      --shadow:0 16px 48px rgba(30,20,10,0.10);
+      --serif:'Instrument Serif',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+      --ease:180ms cubic-bezier(0.16,1,0.3,1);
     }
     [data-theme="dark"]{
-      --bg:#151310; --surface:rgba(255,255,255,0.04); --surface2:#1e1b16; --line:rgba(245,235,220,0.11);
-      --line-soft:rgba(245,235,220,0.06); --text:#ede7d9; --muted:#b8aa96; --faint:#8a7d6a; --primary:#ff8c4a; --primary-h:#ff7733; --shadow:0 18px 48px rgba(0,0,0,0.30);
+      --bg:#151310; --surface:rgba(255,255,255,0.04); --surface2:#1e1b16;
+      --line:rgba(245,235,220,0.11); --line-soft:rgba(245,235,220,0.06);
+      --text:#ede7d9; --muted:#b8aa96; --faint:#8a7d6a;
+      --primary:#ff8c4a; --primary-h:#ff7733;
+      --shadow:0 18px 48px rgba(0,0,0,0.30);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;}
-    
-    /* REUTILIZACIÓN DE TUS CLASES NAV, HERO Y BRIDGES */
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:var(--sans);font-size:1rem;line-height:1.7;
+      color:var(--text);min-height:100vh;
+      background:
+        radial-gradient(circle at 8% 6%,rgba(255,103,25,0.08),transparent 28%),
+        radial-gradient(circle at 92% 12%,rgba(255,103,25,0.05),transparent 22%),
+        var(--bg);
+    }
+    img{display:block;max-width:100%;}
+    a{text-decoration:none;color:inherit;}
+    button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
+    :focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
+
     .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--line-soft);}
     .nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;min-height:68px;}
-    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;text-decoration:none;color:inherit;}
+    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;}
     .nav-ico{width:32px;height:32px;border-radius:8px;background:var(--primary);display:grid;place-items:center;flex-shrink:0;}
     .nav-links{display:flex;align-items:center;gap:1rem;}
-    .nav-a{font-size:.85rem;color:var(--muted);transition:color var(--ease);text-decoration:none;}
+    .nav-a{font-size:.85rem;color:var(--muted);transition:color var(--ease);}
     .nav-a:hover{color:var(--primary);}
-    .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;}
+    .nav-a.active{color:var(--primary);font-weight:600;}
+    .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:all var(--ease);}
+    .theme-btn:hover{transform:translateY(-1px);}
 
-    .hero-wrap{max-width:1100px;margin:0 auto;padding:4rem 2rem 2rem;}
-    h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1.1;margin-bottom:1rem;}
+    .hero-wrap{max-width:1100px;margin:0 auto;padding:3.5rem 2rem 2.5rem;}
+    .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
+    .kicker::before{content:'';width:24px;height:2px;background:var(--primary);border-radius:2px;}
+    h1{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem;}
     h1 em{font-style:italic;color:var(--primary);}
-    .intro-text{color:var(--muted);max-width:600px;margin-bottom:3rem;font-size:1.1rem;}
+    .intro-text{color:var(--muted);max-width:620px;margin-bottom:3rem;font-size:1rem;line-height:1.85;}
 
     .bridges{max-width:1100px;margin:0 auto;padding:0 2rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
-    .bridge{border:1px solid var(--line);border-radius:20px;padding:2rem;background:var(--surface);display:flex;flex-direction:column;gap:1rem;transition:all var(--ease);text-decoration:none;color:inherit;}
-    .bridge:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow);}
+
+    .bridge{
+      border:1px solid var(--line);border-radius:20px;padding:2rem 2.2rem;
+      background:var(--surface);display:flex;flex-direction:column;gap:1rem;
+      transition:all var(--ease);color:inherit;position:relative;overflow:hidden;
+    }
+    .bridge[href]:hover{border-color:var(--primary);transform:translateY(-3px);box-shadow:var(--shadow);}
     .bridge-k{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);}
-    .bridge h2{font-family:var(--serif);font-size:1.6rem;font-weight:400;}
-    .bridge p{color:var(--muted);font-size:.9rem;}
-    .bridge-cta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.86rem;color:var(--primary);}
+    .bridge h2{font-family:var(--serif);font-size:clamp(1.4rem,2vw,1.9rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;}
+    .bridge p{color:var(--muted);font-size:.9rem;line-height:1.7;}
+    .bridge-cta{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.86rem;color:var(--primary);margin-top:.4rem;}
+
+    .bridge--soon{
+      border-style:dashed;
+      opacity:.72;
+      cursor:default;
+      pointer-events:none;
+    }
+    .bridge--soon h2,
+    .bridge--soon p{color:var(--faint);}
+
+    .badge{
+      display:inline-flex;align-items:center;gap:.35rem;
+      padding:.28rem .75rem;border-radius:999px;
+      font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      width:fit-content;
+    }
+    .badge--soon{
+      background:rgba(30,26,20,0.07);
+      color:var(--faint);
+      border:1px solid var(--line);
+    }
+    [data-theme="dark"] .badge--soon{background:rgba(245,235,220,0.06);}
+    .badge--live{
+      background:rgba(255,103,25,0.10);
+      color:var(--primary);
+      border:1px solid rgba(255,103,25,0.25);
+    }
+    .badge--live::before{
+      content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);
+      animation:pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
     footer{border-top:1px solid var(--line-soft);padding:2rem;}
     .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
+    .foot-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
+    .foot-links a:hover{color:var(--primary);}
     .foot-copy{font-size:.78rem;color:var(--faint);}
 
-    @media(max-width:780px){ .bridges{grid-template-columns:1fr;} }
+    @media(max-width:780px){.bridges{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
 
+<a href="#contenido" style="position:absolute;left:1rem;top:-3rem;background:var(--primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;font-size:.85rem;font-weight:600;transition:top .2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-3rem'">Saltar al contenido</a>
+
 <nav class="nav">
   <div class="nav-in">
-    <a class="nav-brand" href="index.html">
-      <span class="nav-ico">
-        <svg width="18" height="18" viewBox="0 0 22 22" fill="none"><polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="16" r="2" fill="#FFFBEB"/></svg>
+    <a class="nav-brand" href="/index.html">
+      <span class="nav-ico" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+          <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
+        </svg>
       </span>
       No Queda Otra Opción
     </a>
     <div class="nav-links">
-      <a class="nav-a" href="index.html">Inicio</a>
-      <a class="nav-a" href="https://jaralm.substack.com" target="_blank">Newsletter</a>
-      <button class="theme-btn" data-theme-toggle></button>
+      <a class="nav-a active" href="/recursos/recursos.html">Recursos</a>
+      <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
+      <a class="nav-a" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a class="nav-a" href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
+      <a class="nav-a" href="/mi-historia.html">Mi historia</a>
+      <a class="nav-a" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+      <button class="theme-btn" data-theme-toggle aria-label="Cambiar modo"></button>
     </div>
   </div>
 </nav>
 
-<div class="hero-wrap">
-  <div class="kicker" style="color:var(--primary); font-size:.72rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem;">
-    <span style="width:24px; height:2px; background:var(--primary);"></span> Herramientas Gratuitas
-  </div>
+<div class="hero-wrap" id="contenido">
+  <div class="kicker">Herramientas Gratuitas</div>
   <h1>Recursos para <em>operar con criterio.</em></h1>
   <p class="intro-text">Hojas de cálculo y documentos que utilizo en mi día a día. Diseñados para gestionar el riesgo y entender la probabilidad, no para predecir el futuro.</p>
 </div>
 
 <div class="bridges">
-  <!-- RECURSO 1 -->
-  <a class="bridge" href="TU_ENLACE_GOOGLE_SHEETS_1/copy" target="_blank">
+
+  <!-- RECURSO 1 — disponible -->
+  <a class="bridge" href="TU_ENLACE_GOOGLE_SHEETS_1/copy" target="_blank" rel="noopener">
+    <span class="badge badge--live">Disponible</span>
     <div class="bridge-k">Google Sheets</div>
     <h2>Calculadora de Gestión de Riesgo</h2>
     <p>Calcula el tamaño de posición y el riesgo por operación basado en tu capital actual.</p>
     <span class="bridge-cta">Hacer una copia →</span>
   </a>
 
-  <!-- RECURSO 2 -->
-  <a class="bridge" href="TU_ENLACE_GOOGLE_SHEETS_2/copy" target="_blank">
+  <!-- RECURSO 2 — disponible -->
+  <a class="bridge" href="TU_ENLACE_GOOGLE_SHEETS_2/copy" target="_blank" rel="noopener">
+    <span class="badge badge--live">Disponible</span>
     <div class="bridge-k">Google Sheets</div>
     <h2>Diario de Operaciones (Opciones)</h2>
-    <p>Registro detallado de tus entradas, salidas y el seguimiento de griegas principales.</p>
+    <p>Registro detallado de tus entradas, salidas y el seguimiento de las griegas principales.</p>
     <span class="bridge-cta">Hacer una copia →</span>
   </a>
+
+  <!-- RECURSO 3 — próximamente (no clicable) -->
+  <div class="bridge bridge--soon" aria-disabled="true">
+    <span class="badge badge--soon">Próximamente</span>
+    <div class="bridge-k">Google Sheets</div>
+    <h2>Analizador de Volatilidad</h2>
+    <p>Comparativa IV / HV y percentiles históricos para evaluar el entorno de volatilidad antes de entrar.</p>
+  </div>
+
 </div>
 
 <footer>
   <div class="foot-in">
-    <span class="foot-copy">© 2026 · noquedaotraopcion.com</span>
-    <div class="nav-links">
-        <a class="nav-a" href="index.html">Volver a inicio</a>
+    <div class="foot-brand">
+      <span class="nav-ico" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+          <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
+        </svg>
+      </span>
+      No Queda Otra Opción
     </div>
+    <div class="foot-links">
+      <a href="/recursos/recursos.html">Recursos</a>
+      <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
+      <a href="/mi-historia.html">Mi historia</a>
+      <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+    </div>
+    <span class="foot-copy">© 2026 · noquedaotraopcion.com</span>
   </div>
 </footer>
 
 <script>
-/* MISMO SCRIPT DE MODO OSCURO */
 (function(){
-  const root=document.documentElement;
-  const btn=document.querySelector('[data-theme-toggle]');
-  let t=localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
-  root.setAttribute('data-theme',t);
-  function ic(v){return v==='light'
-    ?'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-    :'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';}
-  btn.innerHTML=ic(t);
-  btn.addEventListener('click',function(){t=t==='dark'?'light':'dark';root.setAttribute('data-theme',t);btn.innerHTML=ic(t);localStorage.setItem('theme',t);});
+  const root = document.documentElement;
+  const btn  = document.querySelector('[data-theme-toggle]');
+  let t = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', t);
+  function ic(v){
+    return v === 'light'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  }
+  btn.innerHTML = ic(t);
+  btn.addEventListener('click', function(){
+    t = t === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', t);
+    btn.innerHTML = ic(t);
+    localStorage.setItem('theme', t);
+  });
 })();
 </script>
 </body>
