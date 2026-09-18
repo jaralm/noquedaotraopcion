@@ -330,12 +330,19 @@
 /* El iframe de Substack recoloca la pagina al cargar y cancela el salto del ancla.
    Rehacemos el salto cuando ya ha cargado todo. */
 (function(){
+  if(!location.hash) return;
   function irAlAncla(){
-    if(!location.hash) return;
     var el = document.getElementById(location.hash.slice(1));
-    if(el) el.scrollIntoView({block:'start'});
+    if(!el) return;
+    var y = el.getBoundingClientRect().top + window.scrollY - 96;
+    window.scrollTo({top: Math.max(0, y), behavior: 'auto'});
   }
-  window.addEventListener('load', function(){ setTimeout(irAlAncla, 120); });
+  /* Varios intentos: el iframe de Substack cambia la altura de la pagina
+     mientras carga, y un solo salto se queda corto o se pasa. */
+  window.addEventListener('load', irAlAncla);
+  [100, 400, 900, 1600].forEach(function(ms){ setTimeout(irAlAncla, ms); });
+  var ifr = document.querySelector('.bridge--lead iframe');
+  if(ifr) ifr.addEventListener('load', function(){ setTimeout(irAlAncla, 150); });
 })();
 </script>
 </body>
