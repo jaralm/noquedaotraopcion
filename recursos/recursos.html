@@ -111,7 +111,7 @@
     }
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-    .bridge--lead{border-color:rgba(255,103,25,0.35);}
+    .bridge--lead{border-color:rgba(255,103,25,0.35);scroll-margin-top:96px;}
     .bridge--lead iframe{display:block;width:100%;max-width:420px;height:150px;border:0;background:transparent;color-scheme:light;}
     @media(max-width:780px){.bridge--lead iframe{height:210px;}}
     .bridge--lead .lead-alt{font-size:.8rem;color:var(--muted);}
@@ -323,6 +323,19 @@
   function closeMenu(){ panel.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>'; }
   function openMenu(){ panel.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>'; }
   if(toggle){ toggle.addEventListener('click',function(){ panel.classList.contains('is-open')?closeMenu():openMenu(); }); panel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); }); document.addEventListener('click',function(e){ if(!e.target.closest('.nav')) closeMenu(); }); }
+})();
+</script>
+
+<script>
+/* El iframe de Substack recoloca la pagina al cargar y cancela el salto del ancla.
+   Rehacemos el salto cuando ya ha cargado todo. */
+(function(){
+  function irAlAncla(){
+    if(!location.hash) return;
+    var el = document.getElementById(location.hash.slice(1));
+    if(el) el.scrollIntoView({block:'start'});
+  }
+  window.addEventListener('load', function(){ setTimeout(irAlAncla, 120); });
 })();
 </script>
 </body>
