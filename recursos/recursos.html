@@ -111,6 +111,12 @@
     }
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
+    .bridge--lead{border-color:rgba(255,103,25,0.35);}
+    .bridge--lead iframe{display:block;width:100%;max-width:420px;height:92px;border:0;background:transparent;color-scheme:light;}
+    .bridge--lead .lead-alt{font-size:.8rem;color:var(--muted);}
+    .bridge--lead .lead-alt a{color:var(--primary);text-decoration:underline;text-underline-offset:2px;}
+    .bridge--lead .lead-note{font-size:.74rem;line-height:1.6;color:var(--faint);}
+
     .quote-divider{
       max-width:680px;
       margin:0 auto;
@@ -246,12 +252,15 @@
     <span class="bridge-cta">Hacer una copia →</span>
   </a>
 
-  <!-- RECURSO 3 — Diario de Operaciones (desactivado) -->
-  <div class="bridge bridge--soon" aria-disabled="true">
-    <span class="badge badge--soon">Próximamente</span>
-    <div class="bridge-k">Google Sheets</div>
-    <h2>Diario de Operaciones (Opciones)</h2>
-    <p>Registro detallado de tus entradas, salidas y el seguimiento de las griegas principales.</p>
+  <!-- RECURSO 3 — Lista de comprobación (imán de la newsletter) -->
+  <div class="bridge bridge--lead">
+    <span class="badge badge--live"> ! Disponible !  </span>
+    <div class="bridge-k">PDF · Newsletter</div>
+    <h2>Antes de abrir una opción: la lista de comprobación</h2>
+    <p>Las diecinueve comprobaciones que hago antes de confirmar una orden: volatilidad relativa, tipo de estrategia, strike, vencimiento, tamaño y regla de salida decidida de antemano. Dos páginas, sin relleno. Te la mando al suscribirte a la newsletter.</p>
+    <iframe src="https://jaralm.substack.com/embed" title="Suscribirse a la newsletter de No Queda Otra Opción" scrolling="no" loading="lazy"></iframe>
+    <p class="lead-alt">Si el formulario no carga, puedes suscribirte <a href="https://jaralm.substack.com/subscribe" target="_blank" rel="noopener">en esta página</a>.</p>
+    <p class="lead-note">No es asesoramiento financiero ni una recomendación de operación. Es mi proceso, con mi capital y mi tolerancia al riesgo. Puedes darte de baja cuando quieras, con un clic, desde cualquier correo.</p>
   </div>
 
   <!-- RECURSO 4 — Analizador de Volatilidad (sin cambios) -->
