@@ -123,6 +123,11 @@
     .cta p{color:var(--muted);margin-bottom:1.6rem;}
     .cta .actions{justify-content:center;margin-bottom:0;}
 
+    .also{max-width:1100px;margin:0 auto 4.5rem;padding:0 2rem;text-align:center;}
+    .also p{max-width:62ch;margin:0 auto;font-size:.88rem;line-height:1.75;color:var(--faint);}
+    .also a{color:var(--muted);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line);transition:color var(--ease);}
+    .also a:hover{color:var(--primary);}
+
     footer{border-top:1px solid var(--line-soft);padding:2rem;}
     .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
     .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
@@ -142,7 +147,7 @@
     .nav-toggle:hover{background:var(--surface2);}
     @media(max-width:720px){
       .nav-in{padding:0 1.25rem;}
-      .book-hero,.sec,.cta-container{padding-left:1.25rem;padding-right:1.25rem;}
+      .book-hero,.sec,.cta-container,.also{padding-left:1.25rem;padding-right:1.25rem;}
       .nav-toggle{display:grid;}
       .nav-links{
         display:none;position:absolute;top:var(--nav-h);left:0;right:0;
@@ -287,6 +292,10 @@
       <a class="btn btn--ghost" href="https://www.amazon.es/stores/Jos%C3%A9-Antonio-Rodr%C3%ADguez/author/B0HSNGQSTP" target="_blank" rel="noopener">Ver mi página de autor</a>
     </div>
   </div>
+</div>
+
+<div class="also">
+  <p>También he escrito, junto a Héctor Sancho, <a href="https://www.amazon.es/dp/B0HS79T53M" target="_blank" rel="noopener"><em>Aquí no hay preguntas tontas</em></a>: finanzas personales desde cero, sin tecnicismos ni rollos macabeos. Es otro libro, para otro punto de partida.</p>
 </div>
 
 </main>
