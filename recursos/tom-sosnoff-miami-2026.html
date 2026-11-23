@@ -275,6 +275,7 @@
       <a class="nav-a" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
       <a class="nav-a" href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
       <a class="nav-a" href="/mi-historia.html">Mi historia</a>
+      <a class="nav-a" href="/libro/">Libro</a>
       <a class="nav-a" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
       <a class="nav-a active" href="/recursos/recursos.html" aria-current="page">Recursos</a>
       <button class="theme-btn" data-theme-toggle aria-label="Cambiar modo"></button>
@@ -482,6 +483,7 @@
       <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
       <a href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
       <a href="/mi-historia.html">Mi historia</a>
+      <a href="/libro/">Libro</a>
       <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
       <a href="/recursos/recursos.html">Recursos</a>
     </div>
@@ -508,7 +510,7 @@
 
   function closeMenu(){ panel.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>'; }
   function openMenu(){ panel.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>'; }
-  if(toggle){ toggle.addEventListener('click',function(){ panel.classList.contains('is-open')?closeMenu():openMenu(); }); panel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); }); document.addEventListener('click',function(e){ if(!e.target.closest('.nav')) closeMenu(); }); }
+  if(toggle){ toggle.addEventListener('click',function(){ panel.classList.contains('is-open')?closeMenu():openMenu(); }); panel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); }); document.addEventListener('click',function(e){ var dentro=e.composedPath().some(function(el){ return el.classList && el.classList.contains('nav'); }); if(!dentro) closeMenu(); }); }
 })();
 </script>
 </body>

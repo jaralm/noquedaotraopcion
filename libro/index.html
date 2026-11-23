@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No queda otra opción: el libro sobre venta de opciones – José Antonio Rodríguez</title>
+  <meta name="description" content="No queda otra opción: Manual práctico para vender opciones con método. Las reglas, las estrategias una a una con sus números y los casos que se salen de la norma. Por José Antonio Rodríguez."/>
+  <meta property="og:title" content="No queda otra opción: Manual práctico para vender opciones con método"/>
+  <meta property="og:description" content="Las reglas, las estrategias una a una con sus números y los casos que se salen de la norma. Por José Antonio Rodríguez."/>
+  <meta property="og:image" content="https://noquedaotraopcion.com/libro/og_libro.jpg"/>
+  <meta property="og:url" content="https://noquedaotraopcion.com/libro/"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://noquedaotraopcion.com/libro/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "No queda otra opción",
+    "alternativeHeadline": "Manual práctico para vender opciones con método",
+    "author": { "@type": "Person", "name": "José Antonio Rodríguez" },
+    "inLanguage": "es",
+    "image": "https://noquedaotraopcion.com/libro/portada.jpg",
+    "url": "https://noquedaotraopcion.com/libro/"
+  }
+  </script>
+  <style>
+    :root,[data-theme="light"]{
+      --bg:#FFFBEB; --surface:rgba(255,255,255,0.6); --surface2:#FFF6D6;
+      --line:rgba(30,26,20,0.11); --line-soft:rgba(30,26,20,0.07);
+      --text:#1c1a14; --muted:#7a6e55; --faint:#a89880;
+      --primary:#FF6719; --primary-h:#e55610;
+      --shadow:0 16px 48px rgba(30,20,10,0.10);
+      --serif:'Instrument Serif',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+      --ease:180ms cubic-bezier(0.16,1,0.3,1);
+      --nav-h:68px;
+    }
+    [data-theme="dark"]{
+      --bg:#151310; --surface:rgba(255,255,255,0.04); --surface2:#1e1b16;
+      --line:rgba(245,235,220,0.11); --line-soft:rgba(245,235,220,0.06);
+      --text:#ede7d9; --muted:#b8aa96; --faint:#8a7d6a;
+      --primary:#ff8c4a; --primary-h:#ff7733;
+      --shadow:0 18px 48px rgba(0,0,0,0.30);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:var(--sans);font-size:1rem;line-height:1.7;
+      color:var(--text);min-height:100vh;
+      background:
+        radial-gradient(circle at 8% 6%,rgba(255,103,25,0.08),transparent 28%),
+        radial-gradient(circle at 92% 12%,rgba(255,103,25,0.05),transparent 22%),
+        var(--bg);
+    }
+    img{display:block;max-width:100%;}
+    a{text-decoration:none;color:inherit;}
+    button{font:inherit;border:0;background:none;color:inherit;cursor:pointer;}
+    :focus-visible{outline:2px solid var(--primary);outline-offset:3px;}
+
+    .nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 88%,transparent);border-bottom:1px solid var(--line-soft);}
+    .nav-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;min-height:68px;}
+    .nav-brand{display:flex;align-items:center;gap:.7rem;font-weight:700;font-size:.95rem;flex-shrink:0;}
+    .nav-ico{width:32px;height:32px;border-radius:8px;background:var(--primary);display:grid;place-items:center;flex-shrink:0;}
+    .nav-links{display:flex;align-items:center;gap:1rem;}
+    .nav-a{font-size:.85rem;color:var(--muted);transition:color var(--ease);}
+    .nav-a:hover{color:var(--primary);}
+    .nav-a.active{color:var(--primary);font-weight:600;}
+    .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;transition:all var(--ease);}
+    .theme-btn:hover{transform:translateY(-1px);}
+
+    /* HERO DEL LIBRO */
+    .book-hero{max-width:1100px;margin:0 auto;padding:3.5rem 2rem 3rem;display:grid;grid-template-columns:1fr 360px;gap:4.5rem;align-items:center;}
+    .kicker{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;}
+    .kicker::before{content:'';width:24px;height:2px;background:var(--primary);border-radius:2px;}
+    h1{font-family:var(--serif);font-size:clamp(2.6rem,5.2vw,4.4rem);font-weight:400;line-height:1.02;letter-spacing:-0.02em;margin-bottom:.9rem;}
+    h1 em{font-style:italic;color:var(--primary);}
+    .book-sub{font-size:1.15rem;font-weight:500;line-height:1.5;margin-bottom:1.2rem;}
+    .book-lead{color:var(--muted);max-width:56ch;line-height:1.85;margin-bottom:1.6rem;}
+    .badge{display:inline-flex;align-items:center;gap:.35rem;padding:.28rem .75rem;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;width:fit-content;background:rgba(255,103,25,0.10);color:var(--primary);border:1px solid rgba(255,103,25,0.25);margin-bottom:1.2rem;}
+    .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.4rem;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;font-size:.92rem;transition:all var(--ease);}
+    .btn--primary{background:var(--primary);color:#fff;}
+    .btn--primary:hover{background:var(--primary-h);transform:translateY(-1px);box-shadow:var(--shadow);}
+    [data-theme="dark"] .btn--primary{color:#151310;}
+    .btn--ghost{border:1px solid var(--line);background:var(--surface);color:var(--text);}
+    .btn--ghost:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px);}
+    .fine{font-size:.76rem;line-height:1.6;color:var(--faint);max-width:60ch;}
+
+    .book-cover{justify-self:center;width:100%;max-width:360px;}
+    .book-cover img{width:100%;height:auto;aspect-ratio:5/8;border-radius:6px;box-shadow:var(--shadow);border:1px solid var(--line);}
+
+    /* CONTENIDO */
+    .sec{max-width:1100px;margin:0 auto;padding:0 2rem 3.5rem;}
+    .sec-k{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:.6rem;}
+    .sec h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:400;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.6rem;}
+    .parts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+    .part{border:1px solid var(--line);border-radius:20px;padding:1.8rem 1.8rem 1.6rem;background:var(--surface);display:flex;flex-direction:column;gap:.7rem;}
+    .part-n{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);}
+    .part h3{font-family:var(--serif);font-size:1.5rem;font-weight:400;line-height:1.1;}
+    .part p{color:var(--muted);font-size:.9rem;line-height:1.7;}
+    .part ul{list-style:none;display:flex;flex-direction:column;gap:.35rem;}
+    .part li{color:var(--muted);font-size:.88rem;line-height:1.55;padding-left:1.1rem;position:relative;}
+    .part li::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:2px;background:var(--primary);border-radius:2px;}
+    .extras{margin-top:1.25rem;border:1px solid var(--line);border-radius:20px;padding:1.5rem 1.8rem;background:var(--surface2);color:var(--muted);font-size:.92rem;line-height:1.8;}
+
+    .fit{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+    .fit-card{border:1px solid var(--line);border-radius:20px;padding:1.8rem;background:var(--surface);}
+    .fit-card h3{font-family:var(--serif);font-size:1.4rem;font-weight:400;margin-bottom:.7rem;}
+    .fit-card p{color:var(--muted);font-size:.92rem;line-height:1.8;}
+
+    .quote-divider{max-width:680px;margin:0 auto;padding:0 2rem 4rem;text-align:center;}
+    .quote-divider blockquote{font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.9rem);font-style:italic;color:var(--muted);line-height:1.45;border:none;padding:0;}
+    .quote-divider blockquote::before{content:'';display:block;width:32px;height:2px;background:var(--primary);border-radius:2px;margin:0 auto 1.5rem;}
+
+    .cta-container{max-width:1100px;margin:0 auto 5rem;padding:0 2rem;}
+    .cta{padding:3rem 2rem;background:var(--surface2);border:1px solid var(--line);border-radius:24px;text-align:center;}
+    .cta h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:.8rem;}
+    .cta p{color:var(--muted);margin-bottom:1.6rem;}
+    .cta .actions{justify-content:center;margin-bottom:0;}
+
+    footer{border-top:1px solid var(--line-soft);padding:2rem;}
+    .foot-in{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .foot-brand{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem;}
+    .foot-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .foot-links a{font-size:.82rem;color:var(--muted);transition:color var(--ease);}
+    .foot-links a:hover{color:var(--primary);}
+    .foot-copy{font-size:.78rem;color:var(--faint);}
+
+    @media(max-width:900px){
+      .book-hero{grid-template-columns:1fr;gap:2.5rem;padding-top:2.5rem;}
+      .book-cover{order:-1;max-width:260px;}
+      .parts,.fit{grid-template-columns:1fr;}
+    }
+
+    /* Hamburguesa */
+    .nav-toggle{display:none;width:40px;height:40px;border-radius:8px;border:1px solid var(--line);background:var(--surface);place-items:center;color:var(--text);transition:background var(--ease);flex-shrink:0;}
+    .nav-toggle:hover{background:var(--surface2);}
+    @media(max-width:720px){
+      .nav-in{padding:0 1.25rem;}
+      .book-hero,.sec,.cta-container{padding-left:1.25rem;padding-right:1.25rem;}
+      .nav-toggle{display:grid;}
+      .nav-links{
+        display:none;position:absolute;top:var(--nav-h);left:0;right:0;
+        flex-direction:column;align-items:stretch;gap:0;
+        padding:.75rem 1.25rem 1.25rem;
+        background:color-mix(in srgb,var(--bg) 96%,transparent);
+        backdrop-filter:blur(20px);
+        border-bottom:1px solid var(--line-soft);
+        box-shadow:0 8px 32px rgba(30,20,10,0.08);
+      }
+      .nav-links.is-open{display:flex;}
+      .nav-a{font-size:.95rem;padding:.75rem .5rem;border-bottom:1px solid var(--line-soft);color:var(--text);}
+      .nav-a:last-of-type{border-bottom:none;}
+      .nav-a:hover{color:var(--primary);background:none;}
+      .nav-links .theme-btn{margin-top:.75rem;width:100%;border-radius:8px;font-size:.85rem;gap:.5rem;color:var(--muted);}
+      .nav-in > .theme-btn{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<a href="#contenido" style="position:absolute;left:1rem;top:-3rem;background:var(--primary);color:#fff;padding:.75rem 1rem;border-radius:999px;z-index:50;font-size:.85rem;font-weight:600;transition:top .2s;" onfocus="this.style.top='1rem'" onblur="this.style.top='-3rem'">Saltar al contenido</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="/">
+      <span class="nav-ico" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+          <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
+        </svg>
+      </span>
+      No Queda Otra Opción
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-panel">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <line x1="3" y1="6"  x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+
+    <div class="nav-links" id="nav-panel" role="navigation" aria-label="Menú principal">
+      <a class="nav-a" href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
+      <a class="nav-a" href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a class="nav-a" href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
+      <a class="nav-a" href="/mi-historia.html">Mi historia</a>
+      <a class="nav-a active" href="/libro/" aria-current="page">Libro</a>
+      <a class="nav-a" href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+      <a class="nav-a" href="/recursos/recursos.html">Recursos</a>
+      <button class="theme-btn" data-theme-toggle aria-label="Cambiar modo"></button>
+    </div>
+  </div>
+</nav>
+
+<main id="contenido">
+
+<section class="book-hero">
+  <div class="book-text">
+    <div class="kicker">El libro</div>
+    <h1>No queda otra <em>opción</em></h1>
+    <p class="book-sub">Manual práctico para vender opciones con método</p>
+    <span class="badge">Disponible en Kindle y tapa blanda</span>
+    <p class="book-lead">En español hay manuales académicos de valoración y mucho ruido en redes. Lo que cuesta encontrar es lo de en medio: cómo se vende prima con método, decisión a decisión. Cuándo se abre, a qué plazo y con qué tamaño, qué se hace con una posición que se tuerce y cuándo se recoge el beneficio.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="https://www.amazon.es/dp/B0HSLJ3BWS" target="_blank" rel="noopener">Comprar en Amazon.es →</a>
+      <a class="btn btn--ghost" href="https://www.amazon.es/stores/Jos%C3%A9-Antonio-Rodr%C3%ADguez/author/B0HSNGQSTP" target="_blank" rel="noopener">Ver mi página de autor</a>
+    </div>
+    <p class="fine">Enlaces directos a Amazon.es, sin afiliación. Libro divulgativo: no constituye asesoramiento financiero. Las opciones son productos complejos y algunas estrategias pueden perder más de lo cobrado, e incluso más de lo depositado en la cuenta.</p>
+  </div>
+
+  <div class="book-cover">
+    <img src="/libro/portada.jpg" width="800" height="1280" alt="Portada del libro No queda otra opción: Manual práctico para vender opciones con método, de José Antonio Rodríguez" fetchpriority="high">
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-k">Qué encontrarás</div>
+  <h2>Tres partes, en el orden en que se toman las decisiones.</h2>
+  <div class="parts">
+    <div class="part">
+      <span class="part-n">Parte I</span>
+      <h3>El método</h3>
+      <ul>
+        <li>El entorno de volatilidad: IV, IVR, VIX y movimiento esperado</li>
+        <li>La elección del subyacente y de la estrategia</li>
+        <li>Los strikes y el plazo</li>
+        <li>El tamaño y la garantía</li>
+        <li>La gestión a 21 días, la defensa y el rolo</li>
+        <li>El cierre de las ganadoras</li>
+        <li>La cartera vista como una sola posición</li>
+      </ul>
+    </div>
+    <div class="part">
+      <span class="part-n">Parte II</span>
+      <h3>Las estrategias, una a una</h3>
+      <p>Catorce fichas, desde la put vendida hasta las estructuras menos habituales: strangle, iron condor, jade lizard, covered call, collar, PMCC, diagonales y calendars, LEAPS, ZEBRA y otras.</p>
+      <p>Cada ficha lleva sus números, su gestión y lo que hace el autor con esa estrategia. También están las que no usa, con el porqué.</p>
+    </div>
+    <div class="part">
+      <span class="part-n">Parte III</span>
+      <h3>Los casos que se salen de la norma</h3>
+      <ul>
+        <li>Resultados empresariales</li>
+        <li>0DTE y scalping</li>
+        <li>Futuros y opciones sobre futuros</li>
+        <li>Dividendos, asignación y vencimiento</li>
+        <li>Cómo se traslada todo a MEFF</li>
+      </ul>
+    </div>
+  </div>
+  <div class="extras">
+    Al final hay un anexo con el cálculo del movimiento esperado, una chuleta de dos caras y un glosario. Por todo el libro hay recuadros con la regla de cada capítulo, cuentas hechas con ejemplos y notas sobre MEFF, además de notas para el minorista en España, que no siempre puede operar lo mismo que un inversor de Estados Unidos.
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-k">Antes de comprarlo</div>
+  <h2>Para quién es, y para quién no.</h2>
+  <div class="fit">
+    <div class="fit-card">
+      <h3>Es para ti si…</h3>
+      <p>Ya sabes qué es una call y una put, has abierto alguna operación y quieres pasar de operar a ratos a operar con método.</p>
+    </div>
+    <div class="fit-card">
+      <h3>No es para ti si…</h3>
+      <p>Buscas empezar de cero. Tampoco es teoría de valoración ni un libro de fiscalidad.</p>
+    </div>
+  </div>
+</section>
+
+<div class="quote-divider">
+  <blockquote>Explicar mucho, prometer nada.</blockquote>
+</div>
+
+<div class="cta-container">
+  <div class="cta">
+    <h2>Léelo con calma y con tu propio capital en mente.</h2>
+    <p>Disponible en Kindle y en tapa blanda en Amazon.es.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="https://www.amazon.es/dp/B0HSLJ3BWS" target="_blank" rel="noopener">Comprar en Amazon.es →</a>
+      <a class="btn btn--ghost" href="https://www.amazon.es/stores/Jos%C3%A9-Antonio-Rodr%C3%ADguez/author/B0HSNGQSTP" target="_blank" rel="noopener">Ver mi página de autor</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">
+      <span class="nav-ico" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+          <polyline points="3,16 9,16 18,5" stroke="#FFFBEB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="16" r="2" fill="#FFFBEB"/>
+        </svg>
+      </span>
+      No Queda Otra Opción
+    </div>
+    <div class="foot-links">
+      <a href="https://www.youtube.com/@noquedaotraopcion" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://jaralm.substack.com" target="_blank" rel="noopener">Newsletter</a>
+      <a href="https://x.com/NoQOtraOpcion" target="_blank" rel="noopener">Twitter / X</a>
+      <a href="/mi-historia.html">Mi historia</a>
+      <a href="/libro/">Libro</a>
+      <a href="mailto:joseantonio@noquedaotraopcion.com">Contacto</a>
+      <a href="/recursos/recursos.html">Recursos</a>
+    </div>
+    <span class="foot-copy">© 2026 · noquedaotraopcion.com</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const root = document.documentElement;
+  const themeBtn = document.querySelector('[data-theme-toggle]');
+  const toggle   = document.querySelector('.nav-toggle');
+  const panel    = document.getElementById('nav-panel');
+
+  let t = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  root.setAttribute('data-theme', t);
+  function ic(v){
+    return v === 'light'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  }
+  if(themeBtn){ themeBtn.innerHTML=ic(t); themeBtn.addEventListener('click',function(){ t=t==='dark'?'light':'dark'; root.setAttribute('data-theme',t); themeBtn.innerHTML=ic(t); localStorage.setItem('theme',t); }); }
+
+  function closeMenu(){ panel.classList.remove('is-open'); toggle.setAttribute('aria-expanded','false'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>'; }
+  function openMenu(){ panel.classList.add('is-open'); toggle.setAttribute('aria-expanded','true'); toggle.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>'; }
+  if(toggle){ toggle.addEventListener('click',function(){ panel.classList.contains('is-open')?closeMenu():openMenu(); }); panel.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMenu); }); document.addEventListener('click',function(e){ var dentro=e.composedPath().some(function(el){ return el.classList && el.classList.contains('nav'); }); if(!dentro) closeMenu(); }); }
+})();
+</script>
+</body>
+</html>
